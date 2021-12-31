@@ -101,7 +101,11 @@ return packer.startup(function(use)
         requires = {
             'nvim-treesitter/nvim-treesitter-refactor',
             'p00f/nvim-ts-rainbow',
-            { 'windwp/nvim-autopairs', config = getConfig('autopair') },
+            {
+                'windwp/nvim-autopairs',
+                event = 'InsertCharPre',
+                config = getConfig('autopair')
+            },
         },
         config = getConfig('treesitter'),
     }
@@ -242,9 +246,9 @@ return packer.startup(function(use)
     }
 
     use {
-        'mhartington/formatter.nvim',
-        cmd = 'Format',
-        config = getConfig('format'),
+        'jose-elias-alvarez/null-ls.nvim',
+        event = 'BufReadPre',
+        config = getConfig('nullls'),
     }
 
     use { 'vim-scripts/LargeFile' }
