@@ -1,5 +1,12 @@
 require'nvim-treesitter.configs'.setup{
+    autotag = {
+        enable = true,
+    },
     ensure_installed = "maintained",
+    context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+    },
     highlight = {
         enable = true,
         disable = {},
@@ -7,6 +14,12 @@ require'nvim-treesitter.configs'.setup{
     },
     refactor = {
         highlight_definitions = { enable = true },
+        smart_rename = {
+            enable = true,
+            keymaps = {
+                smart_rename = "gR",
+            },
+        },
     },
     rainbow = {
         enable = true,

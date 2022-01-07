@@ -16,12 +16,13 @@ vim.g.coq_settings = {
     },
     keymap = {
         recommended = false,
-        jump_to_mark = '<c-x>',
+        jump_to_mark = '<c-e>',
     },
 }
 
 local lspconfig = require'lspconfig'
 local coq = require'coq'
+local coq_3p = require'coq_3p'
 local lspinstall = require'nvim-lsp-installer'
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -31,7 +32,6 @@ lspinstall.on_server_ready(function(server)
     local config = {
         capabilities = capabilities,
         flags = { debounce_text_changes = 500 },
-        root_dir = lspconfig.util.path.dirname,
         on_attach = function(client)
             client.resolved_capabilities.document_formatting = false
             client.resolved_capabilities.document_range_formatting = false
@@ -50,6 +50,10 @@ lspinstall.on_server_ready(function(server)
 
     server:setup(coq.lsp_ensure_capabilities(config))
 end)
+
+coq_3p{
+    { src = 'copilot', short_name = 'COP', accept_key = '<C-f>' },
+}
 
 require'lspsaga'.init_lsp_saga{
     finder_action_keys = {

@@ -72,15 +72,14 @@ return packer.startup(function(use)
         requires = {
             {
                 'ibhagwan/fzf-lua',
+                event = 'VimEnter',
                 config = function()
-                    require'fzf-lua'.setup{
-                        winopts = {
+                    require'fzf-lua'.setup{ winopts = {
                             preview = {
                                 scrollbar = false,
                                 wrap = 'wrap',
                             },
-                        },
-                    }
+                        }, }
                 end
             },
             'kyazdani42/nvim-web-devicons'
@@ -100,10 +99,17 @@ return packer.startup(function(use)
         run = ':TSUpdateSync all',
         requires = {
             'nvim-treesitter/nvim-treesitter-refactor',
-            'p00f/nvim-ts-rainbow',
+            {
+                'p00f/nvim-ts-rainbow',
+                event = 'BufReadPre',
+            },
+            {
+                'windwp/nvim-ts-autotag',
+                event = 'InsertEnter',
+            },
             {
                 'windwp/nvim-autopairs',
-                event = 'InsertCharPre',
+                event = 'InsertEnter',
                 config = getConfig('autopair')
             },
         },
@@ -145,7 +151,13 @@ return packer.startup(function(use)
                 branch = 'coq',
                 run = 'python3 -m coq deps',
             },
-            { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
+            'ms-jpq/coq.artifacts',
+            'ms-jpq/coq.thirdparty',
+            {
+                'PlatyPew/copilot.vim',
+                branch = 'removevirt',
+                cmd = 'Copilot',
+            },
         },
         config = getConfig('lsp'),
     }
@@ -156,6 +168,7 @@ return packer.startup(function(use)
             'MunifTanjim/nui.nvim',
             'nvim-lua/plenary.nvim',
         },
+        ft = { 'python', 'javascript', 'typescript', 'go', 'sh' },
         event = 'VimEnter',
         config = function()
             require'nvim-magic'.setup()
@@ -184,22 +197,16 @@ return packer.startup(function(use)
         config = getConfig('whichkey')
     }
 
-    use { 'mg979/vim-visual-multi', branch = 'master' }
-
     use {
-        'phaazon/hop.nvim',
+        'mg979/vim-visual-multi',
         event = 'BufReadPre',
-        config = function()
-            require'hop'.setup()
-        end
     }
 
     use {
         'numToStr/Comment.nvim',
         event = 'VimEnter',
-        config = function()
-            require'Comment'.setup()
-        end
+        requires = 'JoosepAlviste/nvim-ts-context-commentstring',
+        config = getConfig('comment'),
     }
 
     use {
@@ -215,6 +222,7 @@ return packer.startup(function(use)
 
     use {
         'hkupty/iron.nvim',
+        cmd = { 'IronRepl', 'IronReplHere' },
         config = getConfig('iron'),
     }
 
@@ -247,7 +255,7 @@ return packer.startup(function(use)
 
     use {
         'jose-elias-alvarez/null-ls.nvim',
-        event = 'BufReadPre',
+        requires = 'PlatyPew/format-installer.nvim',
         config = getConfig('nullls'),
     }
 
