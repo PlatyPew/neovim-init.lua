@@ -1,5 +1,5 @@
 vim.cmd([[
-    command Format lua vim.lsp.buf.formatting()
+    command Format lua vim.lsp.buf.formatting_sync()
 ]])
 
 local null_ls = require("null-ls")
@@ -15,19 +15,14 @@ for _, formatter in ipairs(formatter_install.get_installed_formatters()) do
         }
     elseif formatter.name == "prettier" then
         config["extra_args"] = { "--tab-width=4", "--print-width=100" }
+    elseif formatter.name == "stylua" then
+        config["extra_args"] = { "--column-width=100", "--indent-type=Spaces" }
     elseif formatter.name == "yapf" then
         config["extra_args"] = { "--style", "{column_limit:100}" }
     end
 
     table.insert(sources, null_ls.builtins.formatting[formatter.name].with(config))
 end
-
-table.insert(
-    sources,
-    null_ls.builtins.formatting.stylua.with({
-        extra_args = { "--column-width=100", "--indent-type=Spaces" },
-    })
-)
 
 null_ls.setup({
     sources = sources,

@@ -1,4 +1,4 @@
--- vim.g.python3_host_prog = '/usr/bin/python3' -- For plugins using Python
+vim.g.python3_host_prog = vim.fn.getenv("DOTFILES") .. "/configs/neovim/venv/bin/python3"
 
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -95,7 +95,7 @@ return packer.startup(function(use)
     use({
         "ms-jpq/chadtree",
         branch = "chad",
-        run = "python3 -m chadtree deps --nvim",
+        run = ":CHADdeps",
         cmd = "CHADopen",
     })
 
@@ -104,14 +104,8 @@ return packer.startup(function(use)
         run = ":TSUpdateSync all",
         requires = {
             "nvim-treesitter/nvim-treesitter-refactor",
-            {
-                "p00f/nvim-ts-rainbow",
-                event = "BufReadPre",
-            },
-            {
-                "windwp/nvim-ts-autotag",
-                event = "InsertEnter",
-            },
+            "windwp/nvim-ts-autotag",
+            "p00f/nvim-ts-rainbow",
             {
                 "windwp/nvim-autopairs",
                 event = "InsertEnter",
@@ -134,16 +128,7 @@ return packer.startup(function(use)
         "lewis6991/gitsigns.nvim",
         requires = "nvim-lua/plenary.nvim",
         event = "BufReadPre",
-        config = function()
-            require("gitsigns").setup({
-                signs = {
-                    delete = { text = "│" },
-                    topdelete = { text = "│" },
-                    changedelete = { text = "│" },
-                },
-                numhl = true,
-            })
-        end,
+        config = getConfig("gitsigns"),
     })
 
     use({
@@ -154,7 +139,7 @@ return packer.startup(function(use)
             {
                 "ms-jpq/coq_nvim",
                 branch = "coq",
-                run = "python3 -m coq deps",
+                run = ":COQdeps",
             },
             "ms-jpq/coq.artifacts",
             "ms-jpq/coq.thirdparty",
@@ -185,6 +170,7 @@ return packer.startup(function(use)
         requires = {
             "rcarriga/nvim-dap-ui",
             "theHamsta/nvim-dap-virtual-text",
+            "mfussenegger/nvim-jdtls",
             "Pocco81/DAPInstall.nvim",
         },
         event = "BufReadPre",
@@ -234,7 +220,9 @@ return packer.startup(function(use)
     use({
         "jbyuki/instant.nvim",
         cmd = { "InstantStartServer", "InstantJoinSession" },
-        config = getConfig("instant"),
+        config = function()
+            vim.g.instant_username = io.popen("whoami"):read("*a"):sub(0, -2)
+        end,
     })
 
     use({
@@ -261,6 +249,7 @@ return packer.startup(function(use)
     use({
         "jose-elias-alvarez/null-ls.nvim",
         requires = "PlatyPew/format-installer.nvim",
+        after = "nvim-lspconfig",
         config = getConfig("nullls"),
     })
 

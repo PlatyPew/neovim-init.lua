@@ -7,7 +7,7 @@ vim.cmd([[
 vim.cmd([[
     augroup highlights
         autocmd!
-        autocmd Filetype * if &ft!="dashboard" && &ft!="WhichKey" && &ft!="packer" | call matchadd('ColorColumn', '\%101v[^\n]')
+        autocmd Filetype * if &ft!="dashboard" && &ft!="WhichKey" && &ft!="packer" && &ft!="lsp-installer" | call matchadd('ColorColumn', '\%101v[^\n]')
         autocmd FileType text,markdown,tex setlocal spell
         autocmd FileType text,markdown,tex highlight clear ColorColumn
     augroup END
@@ -48,5 +48,17 @@ vim.cmd([[
         autocmd TermOpen * tnoremap <buffer> <C-j> <C-\><C-n><C-w>j
         autocmd TermOpen * tnoremap <buffer> <C-k> <C-\><C-n><C-w>k
         autocmd TermOpen * tnoremap <buffer> <C-l> <C-\><C-n><C-w>l
+    augroup END
+]])
+
+-- COQ
+vim.cmd([[
+    augroup coq
+        autocmd!
+        autocmd VimEnter * highlight Pmenu ctermfg=247 ctermbg=235
+        autocmd VimEnter * highlight PmenuSel ctermfg=0 ctermbg=13
+        autocmd VimEnter * highlight LspDiagnosticsDefaultError ctermfg=9
+        autocmd VimEnter * highlight LspDiagnosticsDefaultWarning ctermfg=3
+        autocmd VimEnter * highlight COQMarks guifg=#FFE37E guibg=#353B45
     augroup END
 ]])

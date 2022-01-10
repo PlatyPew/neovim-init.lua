@@ -100,6 +100,8 @@ remap("n", "gh", [[<Cmd>Lspsaga hover_doc<CR>]], { noremap = true, silent = true
 remap("n", "gf", [[<Cmd>Lspsaga lsp_finder<CR>]], { noremap = true, silent = true })
 remap("n", "gr", [[<Cmd>Lspsaga rename<CR>]], { noremap = true, silent = true })
 remap("n", "gc", [[<Cmd>Lspsaga code_action<CR>]], { noremap = true, silent = true })
+remap("n", "[g", [[<Cmd>Lspsaga diagnostic_jump_prev<CR>]], { noremap = true, silent = true })
+remap("n", "]g", [[<Cmd>Lspsaga diagnostic_jump_next<CR>]], { noremap = true, silent = true })
 
 -- COQ Autopairs
 remap("i", "<esc>", [[pumvisible() ? "<c-e><esc>" : "<esc>"]], { expr = true, noremap = true })
@@ -114,10 +116,10 @@ remap("n", "<Tab>", [[<Cmd>UndotreeToggle<CR>]], {})
 remap("n", "g=", [[<Cmd>lua vim.lsp.buf.formatting_sync()<CR>]], { noremap = true, silent = true })
 
 -- Instant
-remap("n", "<Leader>Is", [[<Cmd>lua InstantStartSession()<CR>]], {})
-remap("n", "<Leader>Ij", [[<Cmd>lua InstantJoinSession()<CR>]], {})
-remap("n", "<Leader>Iq", [[<Cmd>lua InstantStopSession()<CR>]], {})
-remap("n", "<Leader>IQ", [[<Cmd>lua InstantStopServer()<CR>]], {})
+remap("n", "<Leader>Is", [[<Cmd>call v:lua.InstantStartSession()<CR>]], {})
+remap("n", "<Leader>Ij", [[<Cmd>call v:lua.InstantJoinSession()<CR>]], {})
+remap("n", "<Leader>Iq", [[<Cmd>call v:lua.InstantStopSession()<CR>]], {})
+remap("n", "<Leader>IQ", [[<Cmd>call v:lua.InstantStopServer()<CR>]], {})
 
 -- Gitsigns
 remap(

@@ -1,11 +1,3 @@
--- Colours
-vim.cmd([[
-    highlight Pmenu ctermfg=247 ctermbg=235
-    highlight PmenuSel ctermfg=0 ctermbg=13
-    highlight LspDiagnosticsDefaultError ctermfg=9
-    highlight LspDiagnosticsDefaultWarning ctermfg=3
-]])
-
 -- Settings
 vim.g.coq_settings = {
     auto_start = "shut-up",
@@ -14,13 +6,15 @@ vim.g.coq_settings = {
             enabled = true,
         },
     },
+    display = {
+        mark_highlight_group = "COQMarks",
+    },
     keymap = {
         recommended = false,
         jump_to_mark = "<c-e>",
     },
 }
 
-local lspconfig = require("lspconfig")
 local coq = require("coq")
 local coq_3p = require("coq_3p")
 local lspinstall = require("nvim-lsp-installer")
@@ -35,6 +29,11 @@ lspinstall.on_server_ready(function(server)
         on_attach = function(client)
             client.resolved_capabilities.document_formatting = false
             client.resolved_capabilities.document_range_formatting = false
+
+            if client.name == "jdtls" then
+                require("jdtls").setup_dap({ hotcodereplace = "auto" })
+                require("jdtls.dap").setup_dap_main_class_configs()
+            end
         end,
     }
 
@@ -50,6 +49,15 @@ lspinstall.on_server_ready(function(server)
         }
     elseif server.name == "html" or server.name == "emmet_ls" then
         config.filetypes = { "html", "css", "javascriptreact" }
+    elseif server.name == "jdtls" then
+        config.init_options = {
+            bundles = {
+                vim.fn.glob(
+                    vim.fn.stdpath("data")
+                        .. "/dapinstall/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+                ),
+            },
+        }
     end
 
     server:setup(coq.lsp_ensure_capabilities(config))
