@@ -40,7 +40,7 @@ function _G.install_javadebug()
 
     vim.cmd(
         string.format(
-            "split | terminal cd %s && JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home ./mvnw clean install",
+            "split | terminal cd %s && ./mvnw clean install",
             installation_path
         )
     )
