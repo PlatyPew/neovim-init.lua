@@ -1,4 +1,4 @@
-vim.g.python3_host_prog = vim.fn.getenv("DOTFILES") .. "/configs/neovim/venv/bin/python3"
+-- vim.g.python3_host_prog = '/usr/bin/python3' -- For plugins using Python
 
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -101,7 +101,7 @@ return packer.startup(function(use)
 
     use({
         "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdateSync all",
+        run = ":TSUpdate all",
         requires = {
             "nvim-treesitter/nvim-treesitter-refactor",
             "windwp/nvim-ts-autotag",
