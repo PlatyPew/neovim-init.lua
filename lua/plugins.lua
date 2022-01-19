@@ -35,7 +35,7 @@ packer.init({
     },
 })
 
-function getConfig(name)
+local function getConfig(name)
     return string.format("require('config/%s')", name)
 end
 
@@ -106,6 +106,8 @@ return packer.startup(function(use)
             "nvim-treesitter/nvim-treesitter-refactor",
             "windwp/nvim-ts-autotag",
             "p00f/nvim-ts-rainbow",
+            "nvim-treesitter/nvim-treesitter-textobjects",
+            "yioneko/nvim-yati",
             {
                 "windwp/nvim-autopairs",
                 event = "InsertEnter",
