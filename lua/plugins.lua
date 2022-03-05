@@ -258,13 +258,18 @@ return packer.startup(function(use)
     use({ "vim-scripts/LargeFile" })
 
     use({
-        "iamcco/markdown-preview.nvim",
+        "GregBowyer/markdown-preview.nvim",
+        branch = "katex",
         ft = "markdown",
         run = "cd app && npm install",
         cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
     })
 
-    require("packer_compiled")
+    local status_ok, packer = pcall(require, "packer_compiled")
+    if not status_ok then
+        vim.cmd("PackerCompile")
+        return
+    end
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
