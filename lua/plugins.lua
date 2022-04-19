@@ -95,7 +95,7 @@ return packer.startup(function(use)
     use({
         "ms-jpq/chadtree",
         branch = "chad",
-        run = ":CHADdeps",
+        run = "rm -rf .vars && python3 -m chadtree deps --nvim",
         cmd = "CHADopen",
     })
 
@@ -119,7 +119,7 @@ return packer.startup(function(use)
 
     use({
         "machakann/vim-highlightedyank",
-        event = "BufReadPost",
+        event = "BufEnter",
         config = function()
             vim.cmd("highlight HighlightedyankRegion gui=reverse")
             vim.g.highlightedyank_highlight_duration = -1
@@ -141,7 +141,7 @@ return packer.startup(function(use)
             {
                 "ms-jpq/coq_nvim",
                 branch = "coq",
-                run = ":COQdeps",
+                run = "rm -rf .vars && python3 -m coq deps",
             },
             "ms-jpq/coq.artifacts",
             "ms-jpq/coq.thirdparty",
@@ -160,7 +160,10 @@ return packer.startup(function(use)
             "rcarriga/nvim-dap-ui",
             "theHamsta/nvim-dap-virtual-text",
             "mfussenegger/nvim-jdtls",
-            "Pocco81/DAPInstall.nvim",
+            {
+                "Pocco81/dap-buddy.nvim",
+                branch = "dev",
+            },
         },
         event = "BufReadPre",
         config = getConfig("dap"),
@@ -198,12 +201,6 @@ return packer.startup(function(use)
             vim.g.tex_conceal_frac = 1
             vim.cmd("highlight clear Conceal")
         end,
-    })
-
-    use({
-        "hkupty/iron.nvim",
-        cmd = { "IronRepl", "IronReplHere" },
-        config = getConfig("iron"),
     })
 
     use({
@@ -250,6 +247,17 @@ return packer.startup(function(use)
         ft = "markdown",
         run = "cd app && npm install",
         cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
+    })
+
+    use({
+        "michaelb/sniprun",
+        run = "bash ./install.sh 1",
+        event = "BufEnter",
+        config = function()
+            require("sniprun").setup({
+                snipruncolors = { SniprunVirtualTextOk = { bg = "#b1e3ad", fg = "#000000" } },
+            })
+        end,
     })
 
     local status_ok, packer = pcall(require, "packer_compiled")
