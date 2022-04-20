@@ -89,6 +89,7 @@ return packer.startup(function(use)
             },
             "kyazdani42/nvim-web-devicons",
         },
+        after = "Catppuccino.nvim",
         config = getConfig("dashboard"),
     })
 
@@ -135,6 +136,7 @@ return packer.startup(function(use)
 
     use({
         "neovim/nvim-lspconfig",
+        event = "BufEnter",
         requires = {
             "williamboman/nvim-lsp-installer",
             "tami5/lspsaga.nvim",
@@ -142,6 +144,7 @@ return packer.startup(function(use)
                 "ms-jpq/coq_nvim",
                 branch = "coq",
                 run = "rm -rf .vars && python3 -m coq deps",
+                after = "nvim-lspconfig",
             },
             "ms-jpq/coq.artifacts",
             "ms-jpq/coq.thirdparty",
