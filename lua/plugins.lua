@@ -150,13 +150,20 @@ return packer.startup(function(use)
             { "tami5/lspsaga.nvim", event = "BufEnter" },
             {
                 "ms-jpq/coq_nvim",
-                commit = "bb03037d7888b40e9bd205b0b05365dd94a5b06e",
+                commit = "cd76fefc230e4e1126f8c5cc296337d0b3545fd5",
                 branch = "coq",
                 run = "rm -rf .vars && python3 -m coq deps",
                 event = "InsertCharPre",
             },
-            { "ms-jpq/coq.artifacts", after = "nvim-lspconfig" },
-            "ms-jpq/coq.thirdparty",
+            {
+                "ms-jpq/coq.artifacts",
+                commit = "400d13cbd2ddadc5347d498c046d8ed94efe513c",
+                after = "nvim-lspconfig",
+            },
+            {
+                "ms-jpq/coq.thirdparty",
+                commit = "4346162aae5854355985196cb24ab9d14f123de4",
+            },
             {
                 "PlatyPew/copilot.vim",
                 branch = "removevirt",
