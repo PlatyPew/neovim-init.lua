@@ -1,62 +1,44 @@
-local dap_install = require("dap-install")
-
-dap_install.setup()
-for debugger, _ in pairs(require("dap-install.core.debuggers_list").debuggers) do
-    dap_install.config(debugger, {})
-end
-
 local dap = require("dap")
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "Conditional" })
 vim.fn.sign_define("DapStopped", { text = "", texthl = "String" })
 
-dap.configurations.cpp = {
-    {
-        name = "Launch LLDB",
-        type = "lldb",
-        request = "launch",
-        program = function()
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-        end,
-        cwd = "${workspaceFolder}",
-        stopOnEntry = false,
-        args = function()
-            local args_string = vim.fn.input("Arguments: ")
-            return vim.split(args_string, " ")
-        end,
-    },
-}
-
-dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+require("neodev").setup({
+    library = { plugins = { "nvim-dap-ui" }, types = true },
+})
 
 dap.configurations.java = {
     {
         type = "java",
         request = "attach",
-        name = "Attach To Process",
+        name = "Debug (Attach) - Remote",
         hostName = "127.0.0.1",
         port = 5005,
     },
 }
 
-if dap.configurations.javascript ~= nil then
-    dap.configurations.javascript[1].name = "Launch Node2"
-    dap.configurations.javascript[1].program = "${file}"
-    dap.configurations.javascript[2] = {
-        name = "Attach To Process",
-        type = "node2",
-        request = "attach",
-        processId = require("dap.utils").pick_process,
-    }
-end
-
-if dap.configurations.javascriptreact ~= nil then
-    dap.configurations.javascriptreact[1].name = "Attach To Chrome"
-    dap.configurations.typescriptreact[1].name = "Attach To Chrome"
-    dap.configurations.javascript[3] = dap.configurations.javascriptreact[1]
-end
+require("mason-nvim-dap").setup({
+    ensure_installed = {
+        -- Update this to ensure that you have the debuggers for the langs you want
+    },
+    -- Makes a best effort to setup the various debuggers with
+    -- reasonable debug configurations
+    automatic_setup = true,
+    -- You can provide additional configuration to the handlers,
+    -- see mason-nvim-dap README for more information
+    handlers = {},
+})
 
 require("nvim-dap-virtual-text").setup()
 
 require("dapui").setup()
+
+function _G.dap_args()
+    local num = tonumber(vim.fn.input("Number of arguments: "))
+    local t = {}
+    for i = 1, num do
+        t[i] = vim.fn.input("Argument " .. i .. ": ")
+    end
+
+    dap.configurations[vim.bo.filetype][1].args = t
+end
