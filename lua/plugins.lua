@@ -363,16 +363,6 @@ return require("lazy").setup({
     },
 
     {
-        "kkoomen/vim-doge",
-        build = "./scripts/install.sh",
-        event = { "BufReadPost", "BufNewFile" },
-        config = function()
-            vim.g.doge_mapping = "<Leader>K"
-            vim.g.doge_doc_standard_c = "kernel_doc"
-        end,
-    },
-
-    {
         "lambdalisue/suda.vim",
         cmd = { "SudaWrite", "SudaRead" },
     },
