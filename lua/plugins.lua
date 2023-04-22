@@ -70,6 +70,9 @@ return require("lazy").setup({
         config = function()
             require("config.dashboard")
         end,
+        cond = function()
+            return vim.api.nvim_buf_get_name(0) == ""
+        end,
     },
 
     {
