@@ -77,10 +77,7 @@ return require("lazy").setup({
         lazy = true,
         opts = {
             winopts = {
-                preview = {
-                    scrollbar = false,
-                    wrap = "wrap",
-                },
+                preview = { scrollbar = false, wrap = "wrap" },
             },
         },
     },
@@ -295,8 +292,8 @@ return require("lazy").setup({
         "numToStr/Comment.nvim",
         keys = {
             { "gcc", "<Plug>(comment_toggle_linewise_current)" },
-            { "gc",  "<Plug>(comment_toggle_linewise_current)",  mode = "v" },
-            { "gb",  "<Plug>(comment_toggle_blockwise_current)", mode = "v" },
+            { "gc", "<Plug>(comment_toggle_linewise_current)", mode = "v" },
+            { "gb", "<Plug>(comment_toggle_blockwise_current)", mode = "v" },
         },
         config = function()
             require("config.comment")

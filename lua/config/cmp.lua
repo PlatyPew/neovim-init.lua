@@ -5,7 +5,7 @@ local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 
 local border_opts = {
-    border = "single",
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
 }
 
@@ -57,7 +57,7 @@ cmp.setup({
             symbol_map = {
                 String = "󰊄",
                 Comment = "󰅺",
-            }
+            },
         }),
     },
     window = {
