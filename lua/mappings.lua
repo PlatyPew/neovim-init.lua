@@ -30,9 +30,7 @@ remap("n", "<C-l>", "<C-w>l")
 
 -- Remap semicolon to colon
 remap("n", ";", ":")
-
--- Lazy colon, {noremap = true
-remap("n", ";", ":")
+remap("v", ";", ":")
 
 -- Cycling buffers
 remap("n", "<Leader>bh", "<Cmd>:bfirst<CR>")
@@ -79,11 +77,6 @@ remap("n", "gr", "<Cmd>Lspsaga rename<CR>")
 
 -- UndoTree
 remap("n", "<Tab>", "<Cmd>UndotreeToggle<CR>")
-
--- Format
-remap("n", "g=", function()
-    vim.lsp.buf.format()
-end)
 
 -- Instant
 remap("n", "<Leader>Is", function()
@@ -142,3 +135,17 @@ end)
 -- SnipRun
 remap("n", "<Leader>f", "<Plug>SnipRun")
 remap("v", "f", "<Plug>SnipRun")
+
+-- Harpoon
+remap("n", "mm", function()
+    require("harpoon.ui").toggle_quick_menu()
+end)
+remap("n", "mh", function()
+    require("harpoon.mark").add_file()
+end)
+remap("n", "]m", function()
+    require("harpoon.ui").nav_next()
+end)
+remap("n", "[m", function()
+    require("harpoon.ui").nav_prev()
+end)

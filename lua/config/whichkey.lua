@@ -8,7 +8,7 @@ wk.register({
     D = { "<Cmd>DogeGenerate<CR>", "Generate Docs" },
     F = { "<Cmd>lua vim.lsp.buf.format()<CR>", "Format code" },
     T = { "<Cmd>Transparency<CR>", "Toggle Transparency" },
-    S = { "<Cmd>SudaWrite<CR>", "Write with sudo" },
+    W = { "<Cmd>SudaWrite<CR>", "Write with sudo" },
     o = { "<Cmd>NvimTreeToggle<CR>", "File Explorer" },
     u = { "<Cmd>UndotreeToggle<CR>", "Toggle UndoTree" },
     m = { "<Cmd>MarkdownPreviewToggle<CR>", "Toggle Markdown Preview" },

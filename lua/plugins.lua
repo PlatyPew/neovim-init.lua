@@ -233,7 +233,20 @@ return require("lazy").setup({
 
     {
         "jose-elias-alvarez/null-ls.nvim",
-        event = "LspAttach",
+        keys = {
+            {
+                "g=",
+                function()
+                    vim.lsp.buf.format()
+                end,
+            },
+            {
+                ",F",
+                function()
+                    vim.lsp.buf.format()
+                end,
+            },
+        },
         dependencies = {
             "williamboman/mason.nvim",
             "jay-babu/mason-null-ls.nvim",
@@ -376,5 +389,22 @@ return require("lazy").setup({
             require("leap").set_default_keymaps()
             vim.api.nvim_set_hl(0, "LeapLabelPrimary", { fg = "Black", bg = "#cf637e" })
         end,
+    },
+
+    {
+        "ThePrimeagen/harpoon",
+        lazy = true,
+        opts = {
+            excluded_filetypes = {
+                "harpoon",
+                "dashboard",
+                "fzf",
+                "NvimTree",
+                "mason",
+                "undotree",
+                "lazy",
+            },
+        },
+        dependencies = { "nvim-lua/plenary.nvim" },
     },
 })

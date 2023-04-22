@@ -66,6 +66,7 @@ require("lualine").setup({
                     undotree = " UndoTree",
                     lspinfo = " LSP Info",
                     lazy = "󰒲  Lazy",
+                    harpoon = "󱡅  Harpoon",
                 },
             },
         },
