@@ -76,5 +76,5 @@ require("lualine").setup({
             end,
         },
     },
-    extensions = { "fzf", "nvim-tree", "nvim-dap-ui", "quickfix" },
+    extensions = { "nvim-tree", "nvim-dap-ui", "quickfix" },
 })
