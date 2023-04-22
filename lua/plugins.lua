@@ -394,17 +394,6 @@ return require("lazy").setup({
     {
         "ThePrimeagen/harpoon",
         lazy = true,
-        opts = {
-            excluded_filetypes = {
-                "harpoon",
-                "dashboard",
-                "fzf",
-                "NvimTree",
-                "mason",
-                "undotree",
-                "lazy",
-            },
-        },
         dependencies = { "nvim-lua/plenary.nvim" },
     },
 })
