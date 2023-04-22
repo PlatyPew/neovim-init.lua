@@ -13,16 +13,15 @@ local highlights = augroup("highlights", { clear = true })
 autocmd("FileType", {
     pattern = "*",
     group = highlights,
-    command =
-    "if &ft!='dashboard' && &ft!='WhichKey' && &ft!='lazy' && &ft!='mason' | call matchadd('ColorColumn', '\\%101v[^\n]')",
+    command = "if &ft!='dashboard' && &ft!='WhichKey' && &ft!='lazy' && &ft!='mason' | call matchadd('ColorColumn', '\\%101v[^\n]')",
 })
 autocmd("FileType", {
-    pattern = { "text", "markdown", "text" },
+    pattern = { "text", "markdown" },
     group = highlights,
     command = "setlocal spell",
 })
 autocmd("FileType", {
-    pattern = { "text", "markdown", "text" },
+    pattern = { "text", "markdown" },
     group = highlights,
     callback = function()
         vim.api.nvim_set_hl(0, "ColorColumn", {})
@@ -37,42 +36,40 @@ autocmd("FileType", {
 })
 
 -- Dashboard
-cmd([[
-    augroup dashboard_au
-        autocmd! * <buffer>
-        autocmd User DashboardReady nnoremap <buffer> i <Cmd>enew<CR>i
-        autocmd User DashboardReady nnoremap <buffer> e <Cmd>enew<CR>
-        autocmd User DashboardReady nnoremap <buffer> q <Cmd>exit<CR>
-    augroup END
-]])
+local dashboard = vim.api.nvim_create_augroup("dashboard_au", {})
+vim.api.nvim_create_autocmd("User", {
+    pattern = "DashboardReady",
+    command = "nnoremap <buffer> i <Cmd>enew<CR>i",
+    group = dashboard,
+})
+vim.api.nvim_create_autocmd(
+    "User",
+    { pattern = "DashboardReady", command = "nnoremap <buffer> e <Cmd>enew<CR>", group = dashboard }
+)
+vim.api.nvim_create_autocmd(
+    "User",
+    { pattern = "DashboardReady", command = "nnoremap <buffer> q <Cmd>exit<CR>", group = dashboard }
+)
 
 -- Terminal
-cmd([[
-    augroup term_nonumber
-        autocmd!
-        autocmd TermOpen * setlocal nonumber norelativenumber
-    augroup END
-
-    augroup vimrc_term
-        autocmd!
-        autocmd WinEnter term://* nohlsearch
-        autocmd WinEnter term://* startinsert
-        autocmd TermOpen * setlocal listchars= | set nocursorline | set nocursorcolumn
-        autocmd TermOpen * tnoremap <buffer> <C-h> <C-\><C-n><C-w>h
-        autocmd TermOpen * tnoremap <buffer> <C-j> <C-\><C-n><C-w>j
-        autocmd TermOpen * tnoremap <buffer> <C-k> <C-\><C-n><C-w>k
-        autocmd TermOpen * tnoremap <buffer> <C-l> <C-\><C-n><C-w>l
-    augroup END
-]])
-
--- COQ
-cmd([[
-    augroup coq
-        autocmd!
-        autocmd VimEnter * highlight Pmenu ctermfg=247 ctermbg=235
-        autocmd VimEnter * highlight PmenuSel ctermfg=0 ctermbg=13
-        autocmd VimEnter * highlight LspDiagnosticsDefaultError ctermfg=9
-        autocmd VimEnter * highlight LspDiagnosticsDefaultWarning ctermfg=3
-        autocmd VimEnter * highlight COQMarks guifg=#FFE37E guibg=#353B45
-    augroup END
-]])
+local term = vim.api.nvim_create_augroup("term_au", {})
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = "*",
+    command = "setlocal nonumber norelativenumber",
+    group = term,
+})
+vim.api.nvim_create_autocmd("WinEnter", {
+    pattern = "term://*",
+    command = "nohlsearch",
+    group = term,
+})
+vim.api.nvim_create_autocmd("WinEnter", {
+    pattern = "term://*",
+    command = "startinsert",
+    group = term,
+})
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = "*",
+    command = "setlocal listchars= | set nocursorline | set nocursorcolumn",
+    group = term,
+})
