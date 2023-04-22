@@ -166,13 +166,17 @@ return require("lazy").setup({
             -- Automatically install LSPs to stdpath for neovim
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-
-            -- Additional lua configuration, makes nvim stuff amazing!
-            "folke/neodev.nvim",
         },
         config = function()
             require("config.lsp")
         end,
+    },
+
+    {
+        "folke/neodev.nvim",
+        ft = "lua",
+        after = "neovim/nvim-lspconfig",
+        opts = {},
     },
 
     {
@@ -283,7 +287,13 @@ return require("lazy").setup({
 
     {
         "anyakichi/vim-surround",
-        event = { "BufReadPost", "BufNewFile" },
+        keys = {
+            { "ys",  "<Plug>Ysurround" },
+            { "ygs", "<Plug>Ygsurround" },
+            { "cs",  "<Plug>Csurround" },
+            { "ds",  "<Plug>Dsurround" },
+            { "s",   "<Plug>Vsurround", mode = "v" },
+        },
         dependencies = { "tpope/vim-repeat" },
     },
 
