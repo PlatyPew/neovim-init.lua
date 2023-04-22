@@ -55,6 +55,13 @@ wk.register({
         r = { "<Cmd>lua require'fzf-lua'.live_grep_native()<CR>", "Ripgrep" },
         s = { "<Cmd>lua require'fzf-lua'.spell_suggest()<CR>", "Spell Suggest" },
     },
+    h = {
+        name = "Harpoon",
+        ["["] = { "<Cmd>lua require'harpoon.ui'.nav_prev()", "Previous Harpoon" },
+        ["]"] = { "<Cmd>lua require'harpoon.ui'.nav_next()", "Next Harpoon" },
+        h = { "<Cmd>lua require'harpoon.mark'.add_file()", "Add file to Harpoon" },
+        m = { "<Cmd>lua require'harpoon.ui'.toggle_quick_menu()", "List Harpoons" },
+    },
     g = {
         name = "Git",
         R = { "<Cmd>Gitsigns reset_buffer<CR>", "Reset Buffer" },
