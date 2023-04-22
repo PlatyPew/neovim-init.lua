@@ -1,15 +1,15 @@
 vim.g.dashboard_custom_header = {
-    "          ▀████▀▄▄              ▄█ ",
-    "            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ",
-    "    ▄        █          ▀▀▀▀▄  ▄▀  ",
-    "   ▄▀ ▀▄      ▀▄              ▀▄▀  ",
-    "  ▄▀    █     █▀   ▄█▀▄      ▄█    ",
-    "  ▀▄     ▀▄  █     ▀██▀     ██▄█   ",
-    "   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ",
-    "    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ",
-    "   █   █  █      ▄▄           ▄▀   ",
-    "                                   ",
-    "          Better Than VSCode       ",
+    "         ▄▄                     ▄▄      ",
+    "  ▄█▄   ▐█▌    ██     ▀█▄  ████████████▌",
+    "   ▀██  ▐█▌  ▄██        ▀   ▄▄▄▄██▄▄▄▄▄ ",
+    "     ▀  ▐█▌                ▐██  ██   █▌ ",
+    " ▀▀▀▀▀██▀▀▀██▀▀▀▀▀   ▀▀▀█  ▐██▄▄██▄▄▄█▌ ",
+    "      █▌  ▐█▌          ▐█     ████ ▄▄   ",
+    "     ██   ▐█▌          ▐█  ▄██  ▐█  ▀██▄",
+    "   ██▀    ▐█▌    ██    ▄██▄     ▐█      ",
+    "▐██▀       ███████▀  ▀█▀  ▀▀▀▀█████████▀",
+    "                                        ",
+    "           Better Than VSCode           ",
 }
 
 vim.g.dashboard_custom_section = {
@@ -19,7 +19,7 @@ vim.g.dashboard_custom_section = {
     },
     b = {
         description = { "  Find files              ,ff" },
-        command = ':Telescope find_files',
+        command = ":Telescope find_files",
     },
     c = {
         description = { "  Find Word               ,fr" },

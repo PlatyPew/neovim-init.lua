@@ -153,9 +153,7 @@ return require("lazy").setup({
         config = function()
             require("config.gitsigns")
         end,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
+        dependencies = { "nvim-lua/plenary.nvim" },
     },
 
     {
@@ -270,9 +268,7 @@ return require("lazy").setup({
     {
         "anyakichi/vim-surround",
         event = { "BufReadPost", "BufNewFile" },
-        dependencies = {
-            "tpope/vim-repeat",
-        },
+        dependencies = { "tpope/vim-repeat" },
     },
 
     {
@@ -366,5 +362,19 @@ return require("lazy").setup({
     {
         "lambdalisue/suda.vim",
         cmd = { "SudaWrite", "SudaRead" },
+    },
+
+    {
+        "ggandor/leap.nvim",
+        keys = {
+            { "s", "<Plug>(leap-forward)" },
+            { "S", "<Plug>(leap-backward)" },
+            { "gs", "<Plug>(leap-cross-window)" },
+        },
+        dependencies = { "tpope/vim-repeat" },
+        config = function()
+            require("leap").set_default_keymaps()
+            vim.api.nvim_set_hl(0, "LeapLabelPrimary", { fg = "Black", bg = "#cf637e" })
+        end,
     },
 })
