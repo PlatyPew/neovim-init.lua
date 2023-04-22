@@ -295,8 +295,8 @@ return require("lazy").setup({
         "numToStr/Comment.nvim",
         keys = {
             { "gcc", "<Plug>(comment_toggle_linewise_current)" },
-            { "gc", "<Plug>(comment_toggle_linewise_current)", mode = "v" },
-            { "gb", "<Plug>(comment_toggle_blockwise_current)", mode = "v" },
+            { "gc",  "<Plug>(comment_toggle_linewise_current)",  mode = "v" },
+            { "gb",  "<Plug>(comment_toggle_blockwise_current)", mode = "v" },
         },
         config = function()
             require("config.comment")
@@ -364,5 +364,10 @@ return require("lazy").setup({
             vim.g.doge_mapping = "<Leader>K"
             vim.g.doge_doc_standard_c = "kernel_doc"
         end,
+    },
+
+    {
+        "lambdalisue/suda.vim",
+        cmd = { "SudaWrite", "SudaRead" },
     },
 })
