@@ -53,15 +53,36 @@ remap("i", ".", ".<C-g>u")
 -- Move stuff in visual mode
 remap("v", "J", [[:m '>+1'<CR>gv=gv]])
 remap("v", "K", [[:m '<-2'<CR>gv=gv]])
+remap("v", "H", "<gv")
+remap("v", "L", ">gv")
+remap("v", "<", "<gv")
+remap("v", ">", ">gv")
 
--- Colorizer
+-- Indent when going into insert mode
+remap("n", "i", function()
+    if #vim.fn.getline(".") == 0 then
+        return [["_cc]]
+    else
+        return "i"
+    end
+end, { expr = true })
+
+-- Do not yank while deleting empty line
+remap("n", "dd", function()
+    if vim.api.nvim_get_current_line():match("^%s*$") then
+        return '"_dd'
+    else
+        return "dd"
+    end
+end, { expr = true })
+
+-- Adjust transparency
 remap("n", "<Leader>T", [[<Cmd>Transparency<CR>]])
 
 -- FZF-Lua
 remap("n", "<C-p>", function()
-    require("fzf-lua").files({ cmd = 'rg --files --hidden --no-ignore-vcs -g "!.git/*"' })
+    require("fzf-lua").files({ cmd = [[ rg --files --hidden --no-ignore-vcs -g "!.git/*" ]] })
 end)
-
 remap("n", "<C-g>", function()
     require("fzf-lua").live_grep_native()
 end)
