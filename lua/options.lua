@@ -52,9 +52,9 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- WhichKey
 opt.timeoutlen = 500
 
--- Vim DoGe
-glo.doge_comment_interactive = 0
-
 -- UndoTree
 opt.undodir = vim.fn.getenv("HOME") .. "/.cache/nvim/undotree"
 opt.undofile = true
+
+-- Suda
+vim.api.nvim_create_user_command("W", "SudaWrite", {})

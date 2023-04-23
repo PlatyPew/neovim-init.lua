@@ -45,9 +45,6 @@ require("nvim-treesitter.configs").setup({
             },
         },
     },
-    yati = {
-        enable = true,
-    },
 })
 
 vim.api.nvim_set_hl(0, "TSDefinitionUsage", { underline = true })

@@ -55,8 +55,6 @@ remap("v", "J", [[:m '>+1'<CR>gv=gv]])
 remap("v", "K", [[:m '<-2'<CR>gv=gv]])
 remap("v", "H", "<gv")
 remap("v", "L", ">gv")
-remap("v", "<", "<gv")
-remap("v", ">", ">gv")
 
 -- Indent when going into insert mode
 remap("n", "i", function()

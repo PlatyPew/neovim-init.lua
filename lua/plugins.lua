@@ -112,7 +112,6 @@ return require("lazy").setup({
             "nvim-treesitter/nvim-treesitter-textobjects",
             "nvim-treesitter/nvim-treesitter-refactor",
             "p00f/nvim-ts-rainbow",
-            "yioneko/nvim-yati",
         },
         config = function()
             require("config.treesitter")
@@ -129,16 +128,7 @@ return require("lazy").setup({
 
     {
         "windwp/nvim-ts-autotag",
-        event = "InsertEnter",
-        cond = function()
-            local ft = { "html", "javascriptreact", "typescriptreact" }
-            for _, value in ipairs(ft) do
-                if value == vim.bo.filetype then
-                    return true
-                end
-            end
-            return false
-        end,
+        ft = { "html", "javascriptreact", "typescriptreact" },
     },
 
     {
@@ -364,7 +354,6 @@ return require("lazy").setup({
         "iamcco/markdown-preview.nvim",
         ft = "markdown",
         build = "cd app && npm install",
-        cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
     },
 
     {
