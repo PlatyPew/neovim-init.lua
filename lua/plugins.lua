@@ -346,8 +346,16 @@ return require("lazy").setup({
 
     {
         "mattn/emmet-vim",
-        ft = { "html", "css", "markdown", "javascriptreact", "typescriptreact" },
         event = "InsertEnter",
+        cond = function()
+            local ft = { "html", "css", "markdown", "javascriptreact", "typescriptreact" }
+            for _, value in ipairs(ft) do
+                if value == vim.bo.filetype then
+                    return true
+                end
+            end
+            return false
+        end,
     },
 
     { "mbbill/undotree", cmd = "UndotreeToggle" },
