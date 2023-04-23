@@ -67,15 +67,6 @@ remap("n", "i", function()
     end
 end, { expr = true })
 
--- Do not yank while deleting empty line
-remap("n", "dd", function()
-    if vim.api.nvim_get_current_line():match("^%s*$") then
-        return '"_dd'
-    else
-        return "dd"
-    end
-end, { expr = true })
-
 -- Adjust transparency
 remap("n", "<Leader>T", [[<Cmd>Transparency<CR>]])
 
