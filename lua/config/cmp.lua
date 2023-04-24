@@ -86,5 +86,3 @@ vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { link = "@character" })
 vim.api.nvim_set_hl(0, "CmpItemKindStruct", { link = "@lsp.type.struct" })
 vim.api.nvim_set_hl(0, "CmpItemKindText", { link = "@exception" })
 vim.api.nvim_set_hl(0, "CmpItemKindVariable", { link = "@variable" })
-
-vim.api.nvim_set_hl(0, "ColorColumn", {})
