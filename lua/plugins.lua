@@ -51,9 +51,7 @@ return require("lazy").setup({
                     ["cmp.entry.get_documentation"] = true,
                 },
             },
-            presets = {
-                long_message_to_split = true,
-            },
+            presets = { long_message_to_split = true },
         },
         dependencies = { "MunifTanjim/nui.nvim" },
     },
@@ -164,16 +162,10 @@ return require("lazy").setup({
         cmd = "Lspsaga",
         opts = {
             finder = {
-                keys = {
-                    expand_or_jump = "<CR>",
-                },
+                keys = { expand_or_jump = "<CR>" },
             },
-            lightbulb = {
-                enable = false,
-            },
-            symbol_in_winbar = {
-                enable = false,
-            },
+            lightbulb = { enable = false },
+            symbol_in_winbar = { enable = false },
         },
     },
 
@@ -255,11 +247,11 @@ return require("lazy").setup({
     {
         "anyakichi/vim-surround",
         keys = {
-            { "ys",  "<Plug>Ysurround" },
+            { "ys", "<Plug>Ysurround" },
             { "ygs", "<Plug>Ygsurround" },
-            { "cs",  "<Plug>Csurround" },
-            { "ds",  "<Plug>Dsurround" },
-            { "s",   "<Plug>Vsurround", mode = "v" },
+            { "cs", "<Plug>Csurround" },
+            { "ds", "<Plug>Dsurround" },
+            { "s", "<Plug>Vsurround", mode = "v" },
         },
         dependencies = { "tpope/vim-repeat" },
     },
@@ -287,9 +279,7 @@ return require("lazy").setup({
         config = function()
             require("config.comment")
         end,
-        dependencies = {
-            "JoosepAlviste/nvim-ts-context-commentstring",
-        },
+        dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
     },
 
     {
