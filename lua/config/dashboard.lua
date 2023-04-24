@@ -21,15 +21,15 @@ vim.g.dashboard_custom_section = {
     },
     b = {
         description = { "  Find files              ,ff" },
-        command = ":Telescope find_files",
+        command = ":lua require'fzf-lua'.files({cmd='rg --files --hidden --no-ignore-vcs -g \"!.git/*\"'})",
     },
     c = {
         description = { "  Find Word               ,fr" },
-        command = ":Telescope live_grep",
+        command = ":lua require'fzf-lua'.live_grep_native()",
     },
     d = {
         description = { "  Find Marks              ,fm" },
-        command = ":Telescope marks",
+        command = ":lua require'fzf-lua'.marks()",
     },
     e = {
         description = { "  File Explorer            ,o" },
