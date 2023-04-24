@@ -17,6 +17,8 @@ else
     servers.clangd = {}
 end
 
+require("neodev").setup()
+
 -- Setup mason so it can manage external tooling
 require('mason').setup()
 
@@ -32,9 +34,13 @@ mason_lspconfig.setup_handlers {
         require('lspconfig')[server_name].setup {
             capabilities = capabilities,
             settings = servers[server_name],
+            on_attach = function(client)
+                client.server_capabilities.documentFormattingProvider = false
+                client.server_capabilities.documentRangeFormattingProvider = false
+            end,
         }
     end,
-    ["jdtls"] = function()
+    --[[ ["jdtls"] = function()
         require('lspconfig').jdtls.setup({
             init_options = {
                 bundles = {
@@ -53,7 +59,7 @@ mason_lspconfig.setup_handlers {
                 require("jdtls.dap").setup_dap_main_class_configs()
             end,
         })
-    end,
+    end, ]]
 }
 
 vim.fn.sign_define(

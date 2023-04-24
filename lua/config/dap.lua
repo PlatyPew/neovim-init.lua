@@ -7,7 +7,7 @@ require("neodev").setup({
     library = { plugins = { "nvim-dap-ui" }, types = true },
 })
 
-dap.configurations.java = {
+--[[ dap.configurations.java = {
     {
         type = "java",
         request = "attach",
@@ -15,7 +15,7 @@ dap.configurations.java = {
         hostName = "127.0.0.1",
         port = 5005,
     },
-}
+} ]]
 
 require("mason-nvim-dap").setup({
     ensure_installed = {

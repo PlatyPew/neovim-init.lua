@@ -156,17 +156,12 @@ return require("lazy").setup({
             -- Automatically install LSPs to stdpath for neovim
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
+
+            "folke/neodev.nvim",
         },
         config = function()
             require("config.lsp")
         end,
-    },
-
-    {
-        "folke/neodev.nvim",
-        ft = "lua",
-        after = "neovim/nvim-lspconfig",
-        opts = {},
     },
 
     {
@@ -268,7 +263,7 @@ return require("lazy").setup({
             "jay-babu/mason-nvim-dap.nvim",
 
             -- Add your own debuggers here
-            "mfussenegger/nvim-jdtls",
+            --[[ "mfussenegger/nvim-jdtls", ]]
         },
         config = function()
             require("config.dap")
