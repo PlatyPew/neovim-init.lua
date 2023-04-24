@@ -26,11 +26,6 @@ return require("lazy").setup({
     },
 
     {
-        "kyazdani42/nvim-web-devicons",
-        lazy = true,
-    },
-
-    {
         "norcalli/nvim-colorizer.lua",
         event = { "BufReadPost", "BufNewFile" },
         opts = {},
