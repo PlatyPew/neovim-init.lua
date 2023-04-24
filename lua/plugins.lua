@@ -220,26 +220,13 @@ return require("lazy").setup({
 
     {
         "jose-elias-alvarez/null-ls.nvim",
-        keys = {
-            {
-                "g=",
-                function()
-                    vim.lsp.buf.format()
-                end,
-            },
-            {
-                ",F",
-                function()
-                    vim.lsp.buf.format()
-                end,
-            },
-        },
+        event = "LspAttach",
         dependencies = {
             "williamboman/mason.nvim",
             "jay-babu/mason-null-ls.nvim",
         },
         config = function()
-            require("config.nullls") -- require your null-ls config here (example below)
+            require("config.nullls")
         end,
     },
 

@@ -76,6 +76,10 @@ remap("n", "<C-g>", function()
     require("fzf-lua").live_grep_native()
 end)
 
+remap("n", "g=", function()
+    vim.lsp.buf.format({ async = true })
+end)
+
 -- LSPSaga
 remap("n", "[g", "<Cmd>Lspsaga diagnostic_jump_prev<CR>")
 remap("n", "]g", "<Cmd>Lspsaga diagnostic_jump_next<CR>")

@@ -5,7 +5,7 @@ wk.setup({
 })
 
 wk.register({
-    F = { "<Cmd>lua vim.lsp.buf.format()<CR>", "Format code" },
+    F = { "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", "Format code" },
     T = { "<Cmd>Transparency<CR>", "Toggle Transparency" },
     W = { "<Cmd>SudaWrite<CR>", "Write with sudo" },
     o = { "<Cmd>NvimTreeToggle<CR>", "File Explorer" },
