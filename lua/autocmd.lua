@@ -72,3 +72,15 @@ vim.api.nvim_create_autocmd("TermOpen", {
     command = "setlocal listchars= | set nocursorline | set nocursorcolumn",
     group = term,
 })
+
+-- Fix nvim tree lazy load but override netrw
+local nvimtree = vim.api.nvim_create_augroup("nvimtree_au", {})
+vim.api.nvim_create_autocmd("UIEnter", {
+    pattern = "*",
+    callback = function()
+        if vim.fn.isdirectory(vim.fn.expand("%:p")) == 1 then
+            vim.cmd("NvimTreeToggle")
+        end
+    end,
+    group = nvimtree,
+})

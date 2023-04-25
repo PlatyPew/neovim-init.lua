@@ -44,6 +44,10 @@ glo.clipboard = {
     cache_enabled = 0,
 }
 
+-- Disable netrw
+glo.loaded_netrw = 1
+glo.loaded_netrwPlugin = 1
+
 -- TreeSitter
 opt.foldenable = false
 opt.foldlevel = 20
