@@ -85,6 +85,9 @@ return require("lazy").setup({
             disable_netrw = true,
             hijack_cursor = true,
             update_cwd = true,
+            actions = {
+                change_dir = { global = true },
+            },
             filesystem_watchers = { enable = true },
             renderer = {
                 indent_markers = { enable = true },
