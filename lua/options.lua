@@ -53,7 +53,7 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.timeoutlen = 500
 
 -- UndoTree
-opt.undodir = vim.fn.getenv("HOME") .. "/.cache/nvim/undotree"
+opt.undodir = vim.fn.stdpath("cache") .. "/undotree"
 opt.undofile = true
 
 -- Suda
