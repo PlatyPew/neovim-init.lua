@@ -367,4 +367,10 @@ return require("lazy").setup({
         lazy = true,
         dependencies = { "nvim-lua/plenary.nvim" },
     },
+
+    {
+        "ojroques/nvim-osc52",
+        lazy = true,
+        opts = { trim = true, silent = true },
+    },
 })

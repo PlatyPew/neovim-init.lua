@@ -31,17 +31,14 @@ opt.cmdheight = 0
 opt.showcmdloc = "statusline"
 
 -- Copy Paste
+local function copy(lines, _)
+    require("osc52").copy(table.concat(lines, "\n"))
+end
+
 glo.clipboard = {
-    name = "pbcopy",
-    copy = {
-        ["*"] = "pbcopy",
-        ["+"] = "pbcopy",
-    },
-    paste = {
-        ["*"] = "pbpaste",
-        ["+"] = "pbpaste",
-    },
-    cache_enabled = 0,
+    name = "osc52",
+    copy = { ["+"] = copy, ["*"] = copy },
+    paste = { ["+"] = "pbpaste", ["*"] = "pbpaste" },
 }
 
 -- Disable netrw
