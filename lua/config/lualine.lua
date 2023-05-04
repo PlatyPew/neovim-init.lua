@@ -60,9 +60,9 @@ require("lualine").setup({
                 },
                 padding = 1,
                 filetype_names = {
-                    dashboard = "舘Dashboard",
+                    dashboard = "󰕮 Dashboard",
                     NvimTree = " NvimTree",
-                    mason = " Mason",
+                    mason = "󰇚 Mason",
                     undotree = " UndoTree",
                     lspinfo = " LSP Info",
                     lazy = "󰒲  Lazy",
