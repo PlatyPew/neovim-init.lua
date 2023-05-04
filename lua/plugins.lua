@@ -70,7 +70,8 @@ return require("lazy").setup({
     },
 
     {
-        "ibhagwan/fzf-lua",
+        "XenoPhex/fzf-lua",
+        branch = "fix-icons",
         lazy = true,
         opts = {
             winopts = {
