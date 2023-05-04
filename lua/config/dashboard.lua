@@ -24,7 +24,7 @@ vim.g.dashboard_custom_section = {
         command = ":lua require'fzf-lua'.files({cmd='rg --files --hidden --no-ignore-vcs -g \"!.git/*\"'})",
     },
     c = {
-        description = { "  Find Word               ,fr" },
+        description = { "󰊄  Find Word               ,fr" },
         command = ":lua require'fzf-lua'.live_grep_native()",
     },
     d = {
@@ -36,7 +36,7 @@ vim.g.dashboard_custom_section = {
         command = ":NvimTreeToggle",
     },
     f = {
-        description = { "  Exit                      q" },
+        description = { "󰗼  Exit                      q" },
         command = ":exit",
     },
 }
