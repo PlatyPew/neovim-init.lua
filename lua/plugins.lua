@@ -37,7 +37,7 @@ return require("lazy").setup({
         config = function()
             require("config.lualine")
         end,
-        dependencies = { "vlada-dudr/nvim-web-devicons" },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
     {
@@ -98,7 +98,7 @@ return require("lazy").setup({
                 },
             },
         },
-        dependencies = { "vlada-dudr/nvim-web-devicons" },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
     {
