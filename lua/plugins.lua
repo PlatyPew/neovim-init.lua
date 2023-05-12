@@ -53,8 +53,12 @@ return require("lazy").setup({
             },
             presets = { long_message_to_split = true },
         },
-        dependencies = { "MunifTanjim/nui.nvim" },
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            { "stevearc/dressing.nvim", opts = {} },
+        },
     },
+
 
     {
         "nvimdev/dashboard-nvim",
