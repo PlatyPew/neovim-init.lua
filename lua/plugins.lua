@@ -217,7 +217,7 @@ return require("lazy").setup({
 
     {
         "jose-elias-alvarez/null-ls.nvim",
-        event = "LspAttach",
+        event = "VeryLazy",
         dependencies = {
             "williamboman/mason.nvim",
             "jay-babu/mason-null-ls.nvim",
