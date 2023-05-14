@@ -22,16 +22,6 @@ require("nvim-treesitter.configs").setup({
     },
     rainbow = {
         enable = true,
-        extended_mode = true,
-        colors = {
-            "#cf637e",
-            "#f4a261",
-            "#dbc074",
-            "#aace8d",
-            "#73d2d4",
-            "#90c7f4",
-            "#d59ee6",
-        },
     },
     textobjects = {
         select = {
@@ -48,3 +38,11 @@ require("nvim-treesitter.configs").setup({
 })
 
 vim.api.nvim_set_hl(0, "TSDefinitionUsage", { underline = true })
+
+vim.api.nvim_set_hl(0, "TSRainbowRed", { fg = "#cf637e" })
+vim.api.nvim_set_hl(0, "TSRainbowOrange", { fg = "#f4a261" })
+vim.api.nvim_set_hl(0, "TSRainbowYellow", { fg = "#dbc074" })
+vim.api.nvim_set_hl(0, "TSRainbowGreen", { fg = "#aace8d" })
+vim.api.nvim_set_hl(0, "TSRainbowCyan", { fg = "#73d2d4" })
+vim.api.nvim_set_hl(0, "TSRainbowBlue", { fg = "#90c7f4" })
+vim.api.nvim_set_hl(0, "TSRainbowViolet", { fg = "#d59ee6" })

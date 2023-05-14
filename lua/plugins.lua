@@ -113,7 +113,7 @@ return require("lazy").setup({
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
             "nvim-treesitter/nvim-treesitter-refactor",
-            "p00f/nvim-ts-rainbow",
+            "HiPhish/nvim-ts-rainbow2",
         },
         config = function()
             require("config.treesitter")
@@ -254,15 +254,24 @@ return require("lazy").setup({
     },
 
     {
-        "anyakichi/vim-surround",
+        "kylechui/nvim-surround",
         keys = {
-            { "ys", "<Plug>Ysurround" },
-            { "ygs", "<Plug>Ygsurround" },
-            { "cs", "<Plug>Csurround" },
-            { "ds", "<Plug>Dsurround" },
-            { "s", "<Plug>Vsurround", mode = "v" },
+            { "ys", "<Plug>(nvim-surround-normal)" },
+            { "cs", "<Plug>(nvim-surround-change)" },
+            { "ds", "<Plug>(nvim-surround-delete)" },
+            { "s", "<Plug>(nvim-surround-visual)", mode = "v" },
         },
-        dependencies = { "tpope/vim-repeat" },
+        opts = {
+            surrounds = {
+                ["("] = { add = { "(", ")" } },
+                [")"] = { add = { "( ", " )" } },
+                ["["] = { add = { "[", "]" } },
+                ["]"] = { add = { "[ ", " ]" } },
+                ["{"] = { add = { "{", "}" } },
+                ["}"] = { add = { "{ ", " }" } },
+            },
+            visual = "s",
+        },
     },
 
     {
