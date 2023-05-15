@@ -15,6 +15,7 @@
   "fzf-lua": { "branch": "fix-icons", "commit": "0d97ca8495f7f63eb2e3c48e59304edf8f21f2dc" },
   "gitsigns.nvim": { "branch": "main", "commit": "814158f6c4b1724c039fcefe79b0be72c9131c2d" },
   "harpoon": { "branch": "master", "commit": "3476228be2d79f66ebbdb34eafc45842d054f7df" },
+  "incolla.nvim": { "branch": "master", "commit": "a3e5f170e37c8da61906f31fd8d61a475b32bfd5" },
   "instant.nvim": { "branch": "master", "commit": "294b6d08143b3db8f9db7f606829270149e1a786" },
   "lazy.nvim": { "branch": "main", "commit": "aba872ec78ffe7f7367764ab0fff6f0170421fde" },
   "leap.nvim": { "branch": "main", "commit": "6f2912755c9c4ae790abd829f0cf1b07c037b2a4" },
