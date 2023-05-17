@@ -57,10 +57,10 @@ wk.register({
     },
     h = {
         name = "Harpoon",
-        ["["] = { "<Cmd>lua require'harpoon.ui'.nav_prev()", "Previous Harpoon" },
-        ["]"] = { "<Cmd>lua require'harpoon.ui'.nav_next()", "Next Harpoon" },
-        h = { "<Cmd>lua require'harpoon.mark'.add_file()", "Add file to Harpoon" },
-        m = { "<Cmd>lua require'harpoon.ui'.toggle_quick_menu()", "List Harpoons" },
+        ["["] = { "<Cmd>lua require'harpoon.ui'.nav_prev()<CR>", "Previous Harpoon" },
+        ["]"] = { "<Cmd>lua require'harpoon.ui'.nav_next()<CR>", "Next Harpoon" },
+        h = { "<Cmd>lua require'harpoon.mark'.add_file()<CR>", "Add file to Harpoon" },
+        m = { "<Cmd>lua require'harpoon.ui'.toggle_quick_menu()<CR>", "List Harpoons" },
     },
     g = {
         name = "Git",
