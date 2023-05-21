@@ -1,3 +1,5 @@
+vim.lsp.set_log_level("off")
+
 local servers = {
     lua_ls = {},
     pyright = {},
