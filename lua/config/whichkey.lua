@@ -9,6 +9,7 @@ wk.register({
     T = { "<Cmd>Transparency<CR>", "Toggle Transparency" },
     W = { "<Cmd>SudaWrite<CR>", "Write with sudo" },
     o = { "<Cmd>NvimTreeToggle<CR>", "File Explorer" },
+    p = { "<Cmd>Incolla<CR>", "Paste Image" },
     u = { "<Cmd>UndotreeToggle<CR>", "Toggle UndoTree" },
     m = { "<Cmd>MarkdownPreviewToggle<CR>", "Toggle Markdown Preview" },
     t = { "<Cmd>Lspsaga term_toggle<CR>", "Open Terminal" },
