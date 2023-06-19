@@ -84,7 +84,7 @@ return require("lazy").setup({
     },
 
     {
-        "kyazdani42/nvim-tree.lua",
+        "nvim-tree/nvim-tree.lua",
         cmd = "NvimTreeToggle",
         opts = {
             disable_netrw = true,
