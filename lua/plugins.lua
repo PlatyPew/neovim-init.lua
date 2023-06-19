@@ -100,6 +100,7 @@ return require("lazy").setup({
                     show = { folder_arrow = false },
                 },
             },
+            view = { adaptive_size = true },
         },
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
