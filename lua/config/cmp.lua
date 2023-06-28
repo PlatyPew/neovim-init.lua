@@ -71,6 +71,15 @@ cmp.setup({
         { name = "buffer" },
         { name = "luasnip" },
     },
+    sorting = {
+        comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            cmp.config.compare.recently_used,
+            cmp.config.compare.kind,
+        },
+    },
 })
 
 vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { link = "@label" })
