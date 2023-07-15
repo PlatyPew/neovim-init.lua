@@ -406,6 +406,6 @@ return require("lazy").setup({
     {
         "ojroques/nvim-osc52",
         lazy = true,
-        opts = { trim = true, silent = true },
+        opts = { trim = false, silent = true },
     },
 })
