@@ -17,8 +17,7 @@ vim.g.maplocalleader = "\\"
 return require("lazy").setup({
     {
         "catppuccin/nvim",
-        name = "catppuccino",
-        tag = "v0.1",
+        name = "catppuccin",
         priority = 1000,
         config = function()
             require("config.catppuccino")
@@ -393,7 +392,7 @@ return require("lazy").setup({
         dependencies = { "tpope/vim-repeat" },
         config = function()
             require("leap").set_default_keymaps()
-            vim.api.nvim_set_hl(0, "LeapLabelPrimary", { fg = "Black", bg = "#cf637e" })
+            vim.api.nvim_set_hl(0, "LeapLabelPrimary", { fg = "#11111b", bg = "#f38ba8" })
         end,
     },
 

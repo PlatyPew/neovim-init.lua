@@ -40,10 +40,10 @@ require("nvim-treesitter.configs").setup({
 
 vim.api.nvim_set_hl(0, "TSDefinitionUsage", { underline = true })
 
-vim.api.nvim_set_hl(0, "TSRainbowRed", { fg = "#cf637e" })
-vim.api.nvim_set_hl(0, "TSRainbowOrange", { fg = "#f4a261" })
-vim.api.nvim_set_hl(0, "TSRainbowYellow", { fg = "#dbc074" })
-vim.api.nvim_set_hl(0, "TSRainbowGreen", { fg = "#aace8d" })
-vim.api.nvim_set_hl(0, "TSRainbowCyan", { fg = "#73d2d4" })
-vim.api.nvim_set_hl(0, "TSRainbowBlue", { fg = "#90c7f4" })
-vim.api.nvim_set_hl(0, "TSRainbowViolet", { fg = "#d59ee6" })
+vim.api.nvim_set_hl(0, "TSRainbowRed", { fg = "#f38ba8" })
+vim.api.nvim_set_hl(0, "TSRainbowOrange", { fg = "#fab387" })
+vim.api.nvim_set_hl(0, "TSRainbowYellow", { fg = "#f9e2af" })
+vim.api.nvim_set_hl(0, "TSRainbowGreen", { fg = "#a6e3a1" })
+vim.api.nvim_set_hl(0, "TSRainbowCyan", { fg = "#74c7ec" })
+vim.api.nvim_set_hl(0, "TSRainbowBlue", { fg = "#89b4fa" })
+vim.api.nvim_set_hl(0, "TSRainbowViolet", { fg = "#cba6f7" })
