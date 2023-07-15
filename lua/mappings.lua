@@ -18,16 +18,6 @@ remap("v", "<Left>", "<Cmd>vertical resize -2<CR>")
 remap("n", "<Right>", "<Cmd>vertical resize +2<CR>")
 remap("v", "<Right>", "<Cmd>vertical resize +2<CR>")
 
--- Better window switching
--- Move to pane on the left      Ctrl-h
-remap("n", "<C-h>", "<C-w>h")
--- Move to lower pane            Ctrl-j
-remap("n", "<C-j>", "<C-w>j")
--- Move to upper pane            Ctrl-j
-remap("n", "<C-k>", "<C-w>k")
--- Move to pane on the right     Ctrl-h
-remap("n", "<C-l>", "<C-w>l")
-
 -- Remap semicolon to colon
 remap("n", ";", ":")
 remap("v", ";", ":")

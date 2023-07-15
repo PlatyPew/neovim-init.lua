@@ -407,4 +407,9 @@ return require("lazy").setup({
         lazy = true,
         opts = { trim = false, silent = true },
     },
+
+    {
+        "christoomey/vim-tmux-navigator",
+        event = "VeryLazy",
+    },
 })
