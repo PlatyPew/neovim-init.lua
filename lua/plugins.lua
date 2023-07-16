@@ -20,7 +20,7 @@ return require("lazy").setup({
         name = "catppuccin",
         priority = 1000,
         config = function()
-            require("config.catppuccino")
+            require("config.catppuccin")
         end,
     },
 
