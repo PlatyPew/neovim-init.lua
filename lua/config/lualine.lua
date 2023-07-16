@@ -11,6 +11,11 @@ require("lualine").setup({
         lualine_b = { "branch", "diff" },
         lualine_c = { "filename", "filesize" },
         lualine_x = {
+            {
+                require("noice").api.status.mode.get,
+                cond = require("noice").api.status.mode.has,
+                color = { fg = "#6c7086" },
+            },
             "%S",
             "location",
             {
@@ -38,18 +43,6 @@ require("lualine").setup({
                 },
             },
         },
-    },
-    inactive_sections = {
-        lualine_a = {},
-        lualine_b = {
-            "branch",
-            {
-                "diff",
-                colored = false,
-            },
-        },
-        lualine_c = { "filename" },
-        lualine_x = { "filetype" },
     },
     tabline = {
         lualine_a = {
