@@ -10,6 +10,6 @@ require("gitsigns").setup({
     numhl = true,
 })
 
-vim.api.nvim_set_hl(0, "GitSignsAddLn", { fg = "#11111b", bg = "#90c7f4" })
-vim.api.nvim_set_hl(0, "GitSignsChangeLn", { fg = "#11111b", bg = "#dbc074" })
-vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { fg = "#11111b", bg = "#f38ba8" })
+vim.api.nvim_set_hl(0, "GitSignsAddLn", { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_sky })
+vim.api.nvim_set_hl(0, "GitSignsChangeLn", { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_yellow })
+vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_maroon })

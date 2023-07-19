@@ -14,7 +14,7 @@ require("lualine").setup({
             {
                 require("noice").api.status.mode.get,
                 cond = require("noice").api.status.mode.has,
-                color = { fg = "#6c7086" },
+                color = { fg = vim.g.catppuccin_overlay0 },
             },
             "%S",
             "location",
@@ -36,10 +36,10 @@ require("lualine").setup({
                 sources = { "nvim_diagnostic" },
                 symbols = { error = " ", warn = " ", info = " " },
                 diagnostics_color = {
-                    error = { bg = "#222424", fg = "#cf637e" },
-                    warn = { bg = "#222424", fg = "#f4a261" },
-                    info = { bg = "#222424", fg = "#dbc074" },
-                    hint = { bg = "#222424", fg = "#dbc074" },
+                    error = { bg = vim.g.catppuccin_base, fg = vim.g.catppuccin_red },
+                    warn = { bg = vim.g.catppuccin_base, fg = vim.g.catppuccin_peach },
+                    info = { bg = vim.g.catppuccin_base, fg = vim.g.catppuccin_yellow },
+                    hint = { bg = vim.g.catppuccin_base, fg = vim.g.catppuccin_sky },
                 },
             },
         },
@@ -49,7 +49,7 @@ require("lualine").setup({
             {
                 "buffers",
                 buffers_color = {
-                    inactive = { bg = "#44475a", fg = "#ffffff" },
+                    inactive = { bg = vim.g.catppuccin_surface0, fg = vim.g.catppuccin_text },
                 },
                 padding = 1,
                 filetype_names = {

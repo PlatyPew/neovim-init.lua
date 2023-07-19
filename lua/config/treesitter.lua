@@ -40,10 +40,10 @@ require("nvim-treesitter.configs").setup({
 
 vim.api.nvim_set_hl(0, "TSDefinitionUsage", { underline = true })
 
-vim.api.nvim_set_hl(0, "TSRainbowRed", { fg = "#f38ba8" })
-vim.api.nvim_set_hl(0, "TSRainbowOrange", { fg = "#fab387" })
-vim.api.nvim_set_hl(0, "TSRainbowYellow", { fg = "#f9e2af" })
-vim.api.nvim_set_hl(0, "TSRainbowGreen", { fg = "#a6e3a1" })
-vim.api.nvim_set_hl(0, "TSRainbowCyan", { fg = "#74c7ec" })
-vim.api.nvim_set_hl(0, "TSRainbowBlue", { fg = "#89b4fa" })
-vim.api.nvim_set_hl(0, "TSRainbowViolet", { fg = "#cba6f7" })
+vim.api.nvim_set_hl(0, "TSRainbowRed", { fg = vim.g.catppuccin_red })
+vim.api.nvim_set_hl(0, "TSRainbowOrange", { fg = vim.g.catppuccin_peach })
+vim.api.nvim_set_hl(0, "TSRainbowYellow", { fg = vim.g.catppuccin_yellow })
+vim.api.nvim_set_hl(0, "TSRainbowGreen", { fg = vim.g.catppuccin_green })
+vim.api.nvim_set_hl(0, "TSRainbowCyan", { fg = vim.g.catppuccin_sapphire })
+vim.api.nvim_set_hl(0, "TSRainbowBlue", { fg = vim.g.catppuccin_blue })
+vim.api.nvim_set_hl(0, "TSRainbowViolet", { fg = vim.g.catppuccin_mauve })

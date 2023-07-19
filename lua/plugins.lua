@@ -355,7 +355,9 @@ return require("lazy").setup({
             "<Plug>SnipTerminate",
         },
         opts = {
-            snipruncolors = { SniprunVirtualTextOk = { bg = "#b1e3ad", fg = "#000000" } },
+            snipruncolors = { SniprunVirtualTextOk = {
+                fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_teal
+            } },
         },
     },
 
@@ -392,7 +394,9 @@ return require("lazy").setup({
         dependencies = { "tpope/vim-repeat" },
         config = function()
             require("leap").set_default_keymaps()
-            vim.api.nvim_set_hl(0, "LeapLabelPrimary", { fg = "#11111b", bg = "#f38ba8" })
+            vim.api.nvim_set_hl(0, "LeapLabelPrimary", {
+                fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_red
+            })
         end,
     },
 

@@ -43,5 +43,5 @@ vim.g.dashboard_custom_section = {
 
 vim.g.dashboard_custom_footer = { "Stay Hydrated Folks" }
 
-vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#f9e2af" })
-vim.api.nvim_set_hl(0, "DashboardFooter", { fg = "#fab387" })
+vim.api.nvim_set_hl(0, "DashboardHeader", { fg = vim.g.catppuccin_yellow })
+vim.api.nvim_set_hl(0, "DashboardFooter", { fg = vim.g.catppuccin_peach })
