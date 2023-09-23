@@ -416,4 +416,11 @@ return require("lazy").setup({
         "christoomey/vim-tmux-navigator",
         event = "VeryLazy",
     },
+
+    {
+        'stevearc/oil.nvim',
+        cmd = "Oil",
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
 })

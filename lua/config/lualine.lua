@@ -60,6 +60,7 @@ require("lualine").setup({
                     lspinfo = " LSP Info",
                     lazy = "󰒲 Lazy",
                     harpoon = "󱡅 Harpoon",
+                    oil = "󰏇 Oil",
                 },
             },
         },

@@ -8,6 +8,7 @@ wk.register({
     F = { "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", "Format code" },
     T = { "<Cmd>Transparency<CR>", "Toggle Transparency" },
     W = { "<Cmd>SudaWrite<CR>", "Write with sudo" },
+    O = { "<Cmd>Oil<CR>", "Edit Filesystem" },
     o = { "<Cmd>NvimTreeToggle<CR>", "File Explorer" },
     p = { "<Cmd>Incolla<CR>", "Paste Image" },
     u = { "<Cmd>UndotreeToggle<CR>", "Toggle UndoTree" },
