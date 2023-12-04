@@ -98,7 +98,7 @@ wk.register({
         ["]"] = { "<Cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
         c = { "<Cmd>Lspsaga code_action<CR>", "Code Action" },
         d = { "<Cmd>Lspsaga show_line_diagnostics<CR>", "Show Line Diagnostics" },
-        f = { "<Cmd>Lspsaga lsp_finder<CR>", "Find Reference" },
+        f = { "<Cmd>Lspsaga finder<CR>", "Find Reference" },
         h = { "<Cmd>Lspsaga hover_doc<CR>", "Docs" },
         i = { "<Cmd>LspInfo<CR>", "LSP Info" },
         o = { "<Cmd>Lspsaga outline<CR>", "Show Outline" },

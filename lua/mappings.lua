@@ -75,7 +75,7 @@ remap("n", "[g", "<Cmd>Lspsaga diagnostic_jump_prev<CR>")
 remap("n", "]g", "<Cmd>Lspsaga diagnostic_jump_next<CR>")
 remap("n", "gc", "<Cmd>Lspsaga code_action<CR>")
 remap("n", "gp", "<Cmd>Lspsaga peek_definition<CR>")
-remap("n", "gf", "<Cmd>Lspsaga lsp_finder<CR>")
+remap("n", "gf", "<Cmd>Lspsaga finder<CR>")
 remap("n", "gh", "<Cmd>Lspsaga hover_doc<CR>")
 remap("n", "gr", "<Cmd>Lspsaga rename<CR>")
 
