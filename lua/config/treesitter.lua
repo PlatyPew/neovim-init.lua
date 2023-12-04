@@ -1,5 +1,9 @@
 require("nvim-treesitter.configs").setup({
     ensure_installed = { "c", "python", "javascript" },
+    sync_install = false,
+    ignore_install = {},
+    modules = {},
+    auto_install = true,
     autotag = {
         enable = true,
     },
@@ -21,9 +25,6 @@ require("nvim-treesitter.configs").setup({
             },
         },
     },
-    rainbow = {
-        enable = true,
-    },
     textobjects = {
         select = {
             enable = true,
@@ -40,10 +41,10 @@ require("nvim-treesitter.configs").setup({
 
 vim.api.nvim_set_hl(0, "TSDefinitionUsage", { underline = true })
 
-vim.api.nvim_set_hl(0, "TSRainbowRed", { fg = vim.g.catppuccin_red })
-vim.api.nvim_set_hl(0, "TSRainbowOrange", { fg = vim.g.catppuccin_peach })
-vim.api.nvim_set_hl(0, "TSRainbowYellow", { fg = vim.g.catppuccin_yellow })
-vim.api.nvim_set_hl(0, "TSRainbowGreen", { fg = vim.g.catppuccin_green })
-vim.api.nvim_set_hl(0, "TSRainbowCyan", { fg = vim.g.catppuccin_sapphire })
-vim.api.nvim_set_hl(0, "TSRainbowBlue", { fg = vim.g.catppuccin_blue })
-vim.api.nvim_set_hl(0, "TSRainbowViolet", { fg = vim.g.catppuccin_mauve })
+vim.api.nvim_set_hl(0, "RainbowDelimeterRed", { fg = vim.g.catppuccin_red })
+vim.api.nvim_set_hl(0, "RainbowDelimeterOrange", { fg = vim.g.catppuccin_peach })
+vim.api.nvim_set_hl(0, "RainbowDelimeterYellow", { fg = vim.g.catppuccin_yellow })
+vim.api.nvim_set_hl(0, "RainbowDelimeterGreen", { fg = vim.g.catppuccin_green })
+vim.api.nvim_set_hl(0, "RainbowDelimeterCyan", { fg = vim.g.catppuccin_sapphire })
+vim.api.nvim_set_hl(0, "RainbowDelimeterBlue", { fg = vim.g.catppuccin_blue })
+vim.api.nvim_set_hl(0, "RainbowDelimeterViolet", { fg = vim.g.catppuccin_mauve })
