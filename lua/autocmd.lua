@@ -2,7 +2,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
 -- Remove comment on newline
-autocmd({ "BufNewFile", "Bufread" }, {
+autocmd({ "BufNewFile", "BufRead" }, {
     pattern = "*",
     command = "setlocal formatoptions-=cro",
 })
@@ -49,6 +49,14 @@ vim.api.nvim_create_autocmd(
     "User",
     { pattern = "DashboardReady", command = "nnoremap <buffer> q <Cmd>exit<CR>", group = dashboard }
 )
+
+-- Null-ls
+local null_ls = vim.api.nvim_create_augroup("null-ls_au", {})
+vim.api.nvim_create_autocmd("BufReadPost", {
+    pattern = "*",
+    command = "lua local nls = require('null-ls'); nls.enable({ name = 'cspell', method = nls.methods.DIAGNOSTICS })",
+    group = null_ls,
+})
 
 -- Terminal
 local term = vim.api.nvim_create_augroup("term_au", {})

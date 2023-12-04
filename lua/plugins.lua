@@ -219,7 +219,7 @@ return require("lazy").setup({
     },
 
     {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         event = { "BufReadPost", "BufNewFile" },
         dependencies = {
             "williamboman/mason.nvim",
