@@ -326,8 +326,9 @@ return require("lazy").setup({
         event = "InsertEnter",
         cond = function()
             local ft = { "html", "css", "markdown", "javascriptreact", "typescriptreact" }
+            local buf_ft = vim.api.nvim_buf_get_name(0):match("[^/]+%.(.-)$")
             for _, value in ipairs(ft) do
-                if value == vim.bo.filetype then
+                if value == buf_ft then
                     return true
                 end
             end
