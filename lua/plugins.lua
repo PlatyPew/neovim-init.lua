@@ -375,7 +375,7 @@ return require("lazy").setup({
         "mattdibi/incolla.nvim",
         cmd = "Incolla",
         cond = function()
-            return vim.fn.has("macunix")
+            return vim.fn.has("macunix") == 1
         end,
         opts = {
             defaults = {
