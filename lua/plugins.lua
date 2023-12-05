@@ -356,6 +356,7 @@ return require("lazy").setup({
             "<Plug>SnipTerminate",
         },
         opts = {
+            display = { "Terminal", "VirtualTextOk" },
             snipruncolors = {
                 SniprunVirtualTextOk = {
                     fg = vim.g.catppuccin_crust,
