@@ -428,35 +428,4 @@ return require("lazy").setup({
         opts = {},
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
-
-    {
-        "nvim-telescope/telescope.nvim",
-        lazy = true,
-        tag = "0.1.5",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
-
-    {
-        "Zeioth/compiler.nvim",
-        cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
-        dependencies = {
-            "stevearc/overseer.nvim",
-            "nvim-telescope/telescope.nvim",
-        },
-        opts = {},
-    },
-
-    {
-        "stevearc/overseer.nvim",
-        commit = "400e762648b70397d0d315e5acaf0ff3597f2d8b",
-        lazy = true,
-        opts = {
-            task_list = {
-                direction = "bottom",
-                min_height = 25,
-                max_height = 25,
-                default_detail = 1,
-            },
-        },
-    },
 })
