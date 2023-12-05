@@ -355,6 +355,8 @@ return require("lazy").setup({
         },
         opts = {
             display = { "Terminal", "VirtualTextOk" },
+            selected_interpreters = { "Python3_fifo" },
+            repl_enable = { "Python3_fifo" },
             snipruncolors = {
                 SniprunVirtualTextOk = {
                     fg = vim.g.catppuccin_crust,
