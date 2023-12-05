@@ -32,7 +32,7 @@ return require("lazy").setup({
 
     {
         "nvim-lualine/lualine.nvim",
-        event = "VeryLazy",
+        event = "UIEnter",
         config = function()
             require("config.lualine")
         end,
