@@ -354,7 +354,7 @@ return require("lazy").setup({
             "<Plug>SnipTerminate",
         },
         opts = {
-            display = { "Terminal", "VirtualTextOk" },
+            display = { "TerminalWithCode", "VirtualTextOk" },
             selected_interpreters = { "Python3_fifo" },
             repl_enable = { "Python3_fifo" },
             snipruncolors = {
