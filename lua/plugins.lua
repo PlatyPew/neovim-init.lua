@@ -149,15 +149,16 @@ return require("lazy").setup({
     },
 
     {
-        -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
         dependencies = {
-            -- Automatically install LSPs to stdpath for neovim
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
 
             "folke/neodev.nvim",
         },
+        cond = function()
+            return vim.api.nvim_buf_get_name(0) ~= ""
+        end,
         config = function()
             require("config.lsp")
         end,
