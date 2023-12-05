@@ -41,6 +41,8 @@ require("nvim-treesitter.configs").setup({
 
 vim.api.nvim_set_hl(0, "TSDefinitionUsage", { underline = true })
 
+require("rainbow-delimiters").enable()
+
 vim.api.nvim_set_hl(0, "RainbowDelimeterRed", { fg = vim.g.catppuccin_red })
 vim.api.nvim_set_hl(0, "RainbowDelimeterOrange", { fg = vim.g.catppuccin_peach })
 vim.api.nvim_set_hl(0, "RainbowDelimeterYellow", { fg = vim.g.catppuccin_yellow })
