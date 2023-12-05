@@ -120,11 +120,10 @@ return require("lazy").setup({
     },
 
     {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        config = function()
-            require("config.autopair")
-        end,
+        "altermo/ultimate-autopair.nvim",
+        event = { "InsertEnter", "CmdlineEnter" },
+        branch = "v0.6",
+        opts = {},
     },
 
     {
