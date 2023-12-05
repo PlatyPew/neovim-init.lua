@@ -156,9 +156,6 @@ return require("lazy").setup({
 
             "folke/neodev.nvim",
         },
-        cond = function()
-            return vim.api.nvim_buf_get_name(0) ~= ""
-        end,
         config = function()
             require("config.lsp")
         end,
