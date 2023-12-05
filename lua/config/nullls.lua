@@ -1,6 +1,6 @@
-local null_ls = require("null-ls");
+local null_ls = require("null-ls")
 
-require('mason-null-ls').setup({
+require("mason-null-ls").setup({
     ensure_installed = { "clang_format", "prettier", "stylua", "yapf" },
     automatic_installation = true,
     automatic_setup = true,
@@ -18,7 +18,7 @@ require('mason-null-ls').setup({
                 extra_args = {
                     "--tab-width=4",
                     "--print-width=100",
-                }
+                },
             }))
         end,
         stylua = function()
@@ -37,5 +37,5 @@ require('mason-null-ls').setup({
                 },
             }))
         end,
-    }
+    },
 })

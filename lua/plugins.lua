@@ -58,7 +58,6 @@ return require("lazy").setup({
         },
     },
 
-
     {
         "nvimdev/dashboard-nvim",
         commit = "a36b3232c98616149784f2ca2654e77caea7a522",
@@ -357,9 +356,12 @@ return require("lazy").setup({
             "<Plug>SnipTerminate",
         },
         opts = {
-            snipruncolors = { SniprunVirtualTextOk = {
-                fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_teal
-            } },
+            snipruncolors = {
+                SniprunVirtualTextOk = {
+                    fg = vim.g.catppuccin_crust,
+                    bg = vim.g.catppuccin_teal,
+                },
+            },
         },
     },
 
@@ -372,13 +374,13 @@ return require("lazy").setup({
         "mattdibi/incolla.nvim",
         cmd = "Incolla",
         cond = function()
-            return vim.fn.has('macunix')
+            return vim.fn.has("macunix")
         end,
         opts = {
             defaults = {
                 img_dir = "img",
                 img_name = function()
-                    return os.date('%Y-%m-%d-%H-%M-%S')
+                    return os.date("%Y-%m-%d-%H-%M-%S")
                 end,
                 affix = "%s",
             },
@@ -397,7 +399,8 @@ return require("lazy").setup({
         config = function()
             require("leap").set_default_keymaps()
             vim.api.nvim_set_hl(0, "LeapLabelPrimary", {
-                fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_red
+                fg = vim.g.catppuccin_crust,
+                bg = vim.g.catppuccin_red,
             })
         end,
     },
@@ -420,7 +423,7 @@ return require("lazy").setup({
     },
 
     {
-        'stevearc/oil.nvim',
+        "stevearc/oil.nvim",
         cmd = "Oil",
         opts = {},
         dependencies = { "nvim-tree/nvim-web-devicons" },
