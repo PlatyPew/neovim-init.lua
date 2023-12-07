@@ -166,7 +166,7 @@ return require("lazy").setup({
         cmd = "Lspsaga",
         opts = {
             finder = {
-                keys = { expand_or_jump = "<CR>" },
+                keys = { toggle_or_open = "<CR>" },
             },
             lightbulb = { enable = false },
             symbol_in_winbar = { enable = false },
