@@ -352,6 +352,7 @@ return require("lazy").setup({
             "<Plug>SnipInfo",
             "<Plug>SnipRun",
             "<Plug>SnipTerminate",
+            { "<Plug>SnipRun", mode = "v" },
         },
         opts = {
             display = { "TerminalWithCode", "VirtualTextOk" },
