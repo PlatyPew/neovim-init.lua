@@ -40,7 +40,7 @@ mason_lspconfig.setup({
                 end,
             })
         end,
-        --[[ ["jdtls"] = function()
+        ["jdtls"] = function()
         require('lspconfig').jdtls.setup({
             init_options = {
                 bundles = {
@@ -59,7 +59,7 @@ mason_lspconfig.setup({
                 require("jdtls.dap").setup_dap_main_class_configs()
             end,
         })
-    end, ]]
+    end,
     },
 })
 

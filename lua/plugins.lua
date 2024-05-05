@@ -240,8 +240,10 @@ return require("lazy").setup({
             "williamboman/mason.nvim",
             "jay-babu/mason-nvim-dap.nvim",
 
+            "nvim-neotest/nvim-nio",
+
             -- Add your own debuggers here
-            --[[ "mfussenegger/nvim-jdtls", ]]
+            "mfussenegger/nvim-jdtls",
         },
         config = function()
             require("config.dap")
