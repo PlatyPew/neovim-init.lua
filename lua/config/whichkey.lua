@@ -14,6 +14,16 @@ wk.register({
     u = { "<Cmd>UndotreeToggle<CR>", "Toggle UndoTree" },
     m = { "<Cmd>MarkdownPreviewToggle<CR>", "Toggle Markdown Preview" },
     t = { "<Cmd>Lspsaga term_toggle<CR>", "Open Terminal" },
+    a = {
+        name = "Ollama AI",
+        a = { "<Cmd>Ollama Ask_About_Code<CR>", "Ask About Code" },
+        c = { "<Cmd>Ollama Comment<CR>", "Comment Code" },
+        e = { "<Cmd>Ollama Explain_Code<CR>", "Explain Code" },
+        g = { "<Cmd>Ollama Generate_Code<CR>", "Generate Code" },
+        m = { "<Cmd>Ollama Modify_Code<CR>", "Modify Code" },
+        r = { "<Cmd>Ollama Raw<CR>", "Raw Input" },
+        s = { "<Cmd>Ollama Simplify_Code<CR>", "Simplify Code" },
+    },
     c = {
         name = "Copilot",
         t = { "<Cmd>Copilot toggle<CR>", "Toggle Copilot" },
@@ -117,6 +127,16 @@ wk.register({
 }, { mode = "n", prefix = "," })
 
 wk.register({
+    a = {
+        name = "Ollama AI",
+        a = { "<Cmd>Ollama Ask_About_Code<CR>", "Ask About Code" },
+        c = { "<Cmd>Ollama Comment<CR>", "Comment Code" },
+        e = { "<Cmd>Ollama Explain_Code<CR>", "Explain Code" },
+        g = { "<Cmd>Ollama Generate_Code<CR>", "Generate Code" },
+        m = { "<Cmd>Ollama Modify_Code<CR>", "Modify Code" },
+        r = { "<Cmd>Ollama Raw<CR>", "Raw Input" },
+        s = { "<Cmd>Ollama Simplify_Code<CR>", "Simplify Code" },
+    },
     c = { "<Cmd>lua require('Comment.api').call('toggle_linewise_op')<CR>g@", "Comment" },
     g = {
         name = "Git",

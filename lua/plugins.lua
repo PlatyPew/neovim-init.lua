@@ -442,4 +442,13 @@ return require("lazy").setup({
             { "ge", "<Cmd>lua require('spider').motion('ge')<CR>", mode = { "n", "o", "x" } },
         },
     },
+
+    {
+        "nomnivore/ollama.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        cmd = "Ollama",
+        config = function()
+            require("config.ollama")
+        end,
+    },
 })
