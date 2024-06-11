@@ -39,3 +39,31 @@ require("mason-null-ls").setup({
         end,
     },
 })
+
+local rustfmt = {
+    method = null_ls.methods.FORMATTING,
+    filetypes = { "rust" },
+    generator = null_ls.generator({
+        command = "rustfmt",
+        args = { "--emit=stdout" },
+        to_stdin = true,
+        format = "raw",
+        on_output = function(params, done)
+            if params.output then
+                done({
+                    {
+                        row = 1,
+                        col = 1,
+                        end_row = #params.content + 1,
+                        end_col = 1,
+                        text = params.output,
+                    },
+                })
+            else
+                done()
+            end
+        end,
+    }),
+}
+
+null_ls.register(rustfmt)
