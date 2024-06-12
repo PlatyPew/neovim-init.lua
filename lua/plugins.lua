@@ -149,6 +149,19 @@ return require("lazy").setup({
     },
 
     {
+        "NeogitOrg/neogit",
+        cmd = "Neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "sindrets/diffview.nvim",
+            "ibhagwan/fzf-lua",
+        },
+        opts = {
+            kind = "auto",
+        },
+    },
+
+    {
         "neovim/nvim-lspconfig",
         dependencies = {
             "williamboman/mason.nvim",

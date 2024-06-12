@@ -83,6 +83,7 @@ wk.register({
         ["]"] = { "<Cmd>Gitsigns next_hunk<CR>", "Next Hunk" },
         b = { "<Cmd>Gitsigns blame_line<CR>", "Blame Line" },
         d = { "<Cmd>Gitsigns diffthis<CR>", "Show Diff" },
+        g = { "<Cmd>Neogit<CR>", "Open Neogit" },
         p = { "<Cmd>Gitsigns preview_hunk<CR>", "Preview Hunk" },
         r = { "<Cmd>Gitsigns reset_hunk<CR>", "Reset Hunk" },
         s = { "<Cmd>Gitsigns stage_hunk<CR>", "Stage Hunk" },
