@@ -5,6 +5,7 @@ wk.setup({
 })
 
 wk.register({
+    D = { "<Cmd>DBUIToggle<CR>", "Open DB UI" },
     F = { "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", "Format code" },
     T = { "<Cmd>Transparency<CR>", "Toggle Transparency" },
     W = { "<Cmd>SudaWrite<CR>", "Write with sudo" },

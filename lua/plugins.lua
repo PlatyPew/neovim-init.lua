@@ -464,4 +464,17 @@ return require("lazy").setup({
             require("config.ollama")
         end,
     },
+
+    {
+        "kristijanhusak/vim-dadbod-ui",
+        dependencies = {
+            { "tpope/vim-dadbod", lazy = true },
+            {
+                "kristijanhusak/vim-dadbod-completion",
+                ft = { "sql", "mysql", "plsql" },
+                lazy = true,
+            },
+        },
+        cmd = { "DB", "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
+    },
 })
