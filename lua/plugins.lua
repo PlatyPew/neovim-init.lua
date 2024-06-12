@@ -477,4 +477,24 @@ return require("lazy").setup({
         },
         cmd = { "DB", "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
     },
+
+    {
+        "stevearc/overseer.nvim",
+        cmd = {
+            "OverseerOpen",
+            "OverseerClose",
+            "OverseerToggle",
+            "OverseerSaveBundle",
+            "OverseerLoadBundle",
+            "OverseerDeleteBundle",
+            "OverseerRunCmd",
+            "OverseerRun",
+            "OverseerInfo",
+            "OverseerBuild",
+            "OverseerQuickAction",
+            "OverseerTaskAction",
+            "OverseerClearCache",
+        },
+        opts = { dap = false },
+    },
 })

@@ -39,3 +39,5 @@ function _G.dap_program()
     dap.configurations[vim.bo.filetype][1].program =
         vim.fn.input("Path: ", vim.fn.getcwd() .. "/", "file")
 end
+
+require("overseer").enable_dap()

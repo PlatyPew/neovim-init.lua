@@ -7,6 +7,12 @@ wk.setup({
 wk.register({
     D = { "<Cmd>DBUIToggle<CR>", "Open DB UI" },
     F = { "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", "Format code" },
+    R = {
+        name = "Overseer",
+        O = { "<Cmd>OverseerToggle right<CR>", "Toggles overseer window" },
+        R = { "<Cmd>OverseerRun<CR>", "Run builtin" },
+        r = { "<Cmd>OverseerRunCmd<CR>", "Run command" },
+    },
     T = { "<Cmd>Transparency<CR>", "Toggle Transparency" },
     W = { "<Cmd>SudaWrite<CR>", "Write with sudo" },
     O = { "<Cmd>Oil<CR>", "Edit Filesystem" },
