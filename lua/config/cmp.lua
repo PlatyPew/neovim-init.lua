@@ -70,7 +70,6 @@ cmp.setup({
         { name = "treesitter" },
         { name = "buffer" },
         { name = "luasnip" },
-        { name = "vim-dadbod-completion" },
     },
     sorting = {
         comparators = {
