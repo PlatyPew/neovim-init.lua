@@ -82,20 +82,6 @@ remap("n", "gr", "<Cmd>Lspsaga rename<CR>")
 -- UndoTree
 remap("n", "<Tab>", "<Cmd>UndotreeToggle<CR>")
 
--- Instant
-remap("n", "<Leader>Is", function()
-    _G.InstantStartSession()
-end)
-remap("n", "<Leader>Ij", function()
-    _G.InstantJoinSession()
-end)
-remap("n", "<Leader>Iq", function()
-    _G.InstantStopSession()
-end)
-remap("n", "<Leader>IQ", function()
-    _G.InstantStopServer()
-end)
-
 -- Gitsigns
 remap("n", "<Leader>hd", function()
     require("gitsigns").diffthis()

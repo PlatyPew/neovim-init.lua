@@ -325,14 +325,6 @@ return require("lazy").setup({
     },
 
     {
-        "jbyuki/instant.nvim",
-        cmd = { "InstantStartServer", "InstantJoinSession" },
-        config = function()
-            vim.g.instant_username = io.popen("whoami"):read("*a"):sub(0, -2)
-        end,
-    },
-
-    {
         "mattn/emmet-vim",
         event = "InsertEnter",
         cond = function()
