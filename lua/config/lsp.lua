@@ -31,35 +31,17 @@ mason_lspconfig.setup({
     ensure_installed = vim.tbl_keys(servers),
     handlers = {
         function(server_name)
-            require("lspconfig")[server_name].setup({
-                capabilities = capabilities,
-                settings = servers[server_name],
-                on_attach = function(client)
-                    client.server_capabilities.documentFormattingProvider = false
-                    client.server_capabilities.documentRangeFormattingProvider = false
-                end,
-            })
+            if server_name ~= "jdtls" then
+                require("lspconfig")[server_name].setup({
+                    capabilities = capabilities,
+                    settings = servers[server_name],
+                    on_attach = function(client)
+                        client.server_capabilities.documentFormattingProvider = false
+                        client.server_capabilities.documentRangeFormattingProvider = false
+                    end,
+                })
+            end
         end,
-        ["jdtls"] = function()
-        require('lspconfig').jdtls.setup({
-            init_options = {
-                bundles = {
-                    vim.fn.glob(
-                        require("mason-registry").get_package("java-debug-adapter"):get_install_path() ..
-                        "/extension/server/com.microsoft.java.debug.plugin-*.jar"
-                    ),
-                },
-            },
-            extendedCapabilities = require("jdtls").extendedClientCapabilities,
-            filetypes = { "java" },
-            on_attach = function(client)
-                client.server_capabilities.documentFormattingProvider = false
-                client.server_capabilities.documentRangeFormattingProvider = false
-                require("jdtls").setup_dap({ hotcodereplace = "auto" })
-                require("jdtls.dap").setup_dap_main_class_configs()
-            end,
-        })
-    end,
     },
 })
 

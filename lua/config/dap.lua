@@ -13,17 +13,36 @@ require("mason-nvim-dap").setup({
         "node2",
         "codelldb",
     },
-    -- Makes a best effort to setup the various debuggers with
-    -- reasonable debug configurations
     automatic_setup = true,
-    -- You can provide additional configuration to the handlers,
-    -- see mason-nvim-dap README for more information
     handlers = {},
 })
 
-require("nvim-dap-virtual-text").setup()
+require("nvim-dap-virtual-text").setup({})
 
 require("dapui").setup()
+
+dap.configurations.java = {
+    {
+        name = "Debug Launch (2GB)",
+        type = "java",
+        request = "launch",
+        vmArgs = "" .. "-Xmx2g ",
+    },
+    {
+        name = "Debug Attach (8000)",
+        type = "java",
+        request = "attach",
+        hostName = "127.0.0.1",
+        port = 8000,
+    },
+    {
+        name = "Debug Attach (5005)",
+        type = "java",
+        request = "attach",
+        hostName = "127.0.0.1",
+        port = 5005,
+    },
+}
 
 function _G.dap_args()
     local num = tonumber(vim.fn.input("Number of arguments: "))

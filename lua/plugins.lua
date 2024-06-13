@@ -248,11 +248,15 @@ return require("lazy").setup({
             "williamboman/mason.nvim",
             "jay-babu/mason-nvim-dap.nvim",
             "nvim-neotest/nvim-nio",
-            "mfussenegger/nvim-jdtls",
         },
         config = function()
             require("config.dap")
         end,
+    },
+
+    {
+        "mfussenegger/nvim-jdtls",
+        ft = "java",
     },
 
     {
