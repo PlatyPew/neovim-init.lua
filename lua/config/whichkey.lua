@@ -5,7 +5,8 @@ wk.setup({
 })
 
 wk.register({
-    D = { "<Cmd>DBUIToggle<CR>", "Open DB UI" },
+    D = { "<Cmd>DogeGenerate<CR>", "Generate Docs" },
+    S = { "<Cmd>DBUIToggle<CR>", "Open DB UI" },
     F = { "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", "Format code" },
     R = {
         name = "Overseer",
