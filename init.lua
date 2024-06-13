@@ -9,17 +9,35 @@
 -- _,88,_,dP   8I   Yb,_,88,_ ,d88b,  d8b ,d8b,_ ,d8b,  ,d8b,,d8,   ,d8b,
 -- 8P""Y88P'   8I   `Y88P""Y888P""Y88 Y8P 8P'"Y888P'"Y88P"`Y8P"Y8888P"`Y8
 
-if vim.fn.has("nvim-0.10") == 1 then
-    require("core.options")
-
-    local status_ok, _ = pcall(require, "plugins")
-    if not status_ok then
-        return
-    end
-
-    require("core.mappings")
-    require("core.autocmd")
-    require("core.functions")
-else
+if vim.fn.has("nvim-0.10") ~= 1 then
     print("Please use Neovim 0.10")
+    return
 end
+
+require("core.options")
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = "\\"
+vim.g.maplocalleader = "\\"
+
+require("lazy").setup("plugins", {
+    change_detection = {
+        notify = false,
+    },
+})
+
+require("core.mappings")
+require("core.autocmd")
+require("core.functions")
