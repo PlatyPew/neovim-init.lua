@@ -5,10 +5,7 @@ local workspace_dir = vim.env.HOME .. "/.jdtls-workspace/" .. project_name
 
 -- Needed for debugging
 local bundles = {
-    vim.fn.glob(
-        vim.fn.stdpath("data")
-            .. "/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"
-    ),
+    vim.fn.stdpath("data") .. "/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar",
 }
 
 -- Needed for running/debugging unit tests
@@ -19,7 +16,7 @@ vim.list_extend(
 
 local home
 local runtimes
-if require("jit").os == "OSX" then
+if vim.fn.has("macunix") == 1 then
     home = "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
     runtimes = {
         {
