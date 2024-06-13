@@ -240,22 +240,14 @@ return require("lazy").setup({
     },
 
     {
-        -- NOTE: Yes, you can install new plugins here!
         "rcarriga/nvim-dap-ui",
         lazy = true,
-        -- NOTE: And you can specify dependencies as well
         dependencies = {
             "mfussenegger/nvim-dap",
-            -- Creates a beautiful debugger UI
             "theHamsta/nvim-dap-virtual-text",
-
-            -- Installs the debug adapters for you
             "williamboman/mason.nvim",
             "jay-babu/mason-nvim-dap.nvim",
-
             "nvim-neotest/nvim-nio",
-
-            -- Add your own debuggers here
             "mfussenegger/nvim-jdtls",
         },
         config = function()
@@ -410,7 +402,7 @@ return require("lazy").setup({
                 fg = vim.g.catppuccin_crust,
                 bg = vim.g.catppuccin_red,
             })
-            vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' })
+            vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
         end,
     },
 
