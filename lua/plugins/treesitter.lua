@@ -16,9 +16,6 @@ return {
                 ignore_install = {},
                 modules = {},
                 auto_install = true,
-                autotag = {
-                    enable = true,
-                },
                 context_commentstring = {
                     enable = true,
                     enable_autocmd = false,
@@ -60,7 +57,7 @@ return {
 
             vim.api.nvim_set_hl(0, "TSDefinitionUsage", { underline = true })
 
-            require("rainbow-delimiters").enable({})
+            require("rainbow-delimiters").enable()
 
             vim.api.nvim_set_hl(0, "RainbowDelimeterRed", { fg = vim.g.catppuccin_red })
             vim.api.nvim_set_hl(0, "RainbowDelimeterOrange", { fg = vim.g.catppuccin_peach })
