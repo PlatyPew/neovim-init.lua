@@ -10,16 +10,16 @@
 -- 8P""Y88P'   8I   `Y88P""Y888P""Y88 Y8P 8P'"Y888P'"Y88P"`Y8P"Y8888P"`Y8
 
 if vim.fn.has("nvim-0.10") == 1 then
-    require("options")
+    require("core.options")
 
     local status_ok, _ = pcall(require, "plugins")
     if not status_ok then
         return
     end
 
-    require("mappings")
-    require("autocmd")
-    require("functions")
+    require("core.mappings")
+    require("core.autocmd")
+    require("core.functions")
 else
     print("Please use Neovim 0.10")
 end
