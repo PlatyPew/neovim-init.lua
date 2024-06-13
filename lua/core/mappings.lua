@@ -58,14 +58,6 @@ end, { expr = true })
 -- Adjust transparency
 remap("n", "<Leader>T", [[<Cmd>Transparency<CR>]])
 
--- FZF-Lua
-remap("n", "<C-p>", function()
-    require("fzf-lua").files({ cmd = [[ rg --files --hidden --no-ignore-vcs -g "!.git/*" ]] })
-end)
-remap("n", "<C-g>", function()
-    require("fzf-lua").live_grep_native()
-end)
-
 remap("n", "g=", function()
     vim.lsp.buf.format({ async = true })
 end)
