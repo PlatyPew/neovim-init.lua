@@ -53,8 +53,9 @@ return {
 
             vim.g.dashboard_custom_footer = { "Stay Hydrated Folks" }
 
-            vim.api.nvim_set_hl(0, "DashboardHeader", { fg = vim.g.catppuccin_yellow })
-            vim.api.nvim_set_hl(0, "DashboardFooter", { fg = vim.g.catppuccin_peach })
+            local hl = vim.api.nvim_set_hl
+            hl(0, "DashboardHeader", { fg = vim.g.catppuccin_yellow })
+            hl(0, "DashboardFooter", { fg = vim.g.catppuccin_peach })
         end,
     },
 }

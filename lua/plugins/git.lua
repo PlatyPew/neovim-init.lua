@@ -16,21 +16,10 @@ return {
                 numhl = true,
             })
 
-            vim.api.nvim_set_hl(
-                0,
-                "GitSignsAddLn",
-                { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_sky }
-            )
-            vim.api.nvim_set_hl(
-                0,
-                "GitSignsChangeLn",
-                { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_yellow }
-            )
-            vim.api.nvim_set_hl(
-                0,
-                "GitSignsDeleteLn",
-                { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_maroon }
-            )
+            local hl = vim.api.nvim_set_hl
+            hl(0, "GitSignsAddLn", { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_sky })
+            hl(0, "GitSignsChangeLn", { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_yellow })
+            hl(0, "GitSignsDeleteLn", { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_maroon })
         end,
     },
 

@@ -53,12 +53,9 @@ return {
             vim.g.catppuccin_mantle = "#181825"
             vim.g.catppuccin_crust = "#11111b"
 
-            vim.api.nvim_set_hl(
-                0,
-                "ColorColumn",
-                { fg = vim.g.catppuccin_red, bg = vim.g.catppuccin_crust }
-            )
-            vim.api.nvim_set_hl(0, "VertSplit", { fg = vim.g.catppuccin_overlay0 })
+            local hl = vim.api.nvim_set_hl
+            hl(0, "ColorColumn", { fg = vim.g.catppuccin_red, bg = vim.g.catppuccin_crust })
+            hl(0, "VertSplit", { fg = vim.g.catppuccin_overlay0 })
         end,
     },
 

@@ -53,24 +53,6 @@ return {
     },
 
     {
-        "mattdibi/incolla.nvim",
-        cmd = "Incolla",
-        cond = function()
-            return vim.fn.has("macunix") == 1
-        end,
-        opts = {
-            defaults = {
-                img_dir = "img",
-                img_name = function()
-                    return os.date("%Y-%m-%d-%H-%M-%S")
-                end,
-                affix = "%s",
-            },
-            markdown = { affix = "![](%s)" },
-        },
-    },
-
-    {
         "ThePrimeagen/harpoon",
         lazy = true,
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -101,5 +83,23 @@ return {
         "kkoomen/vim-doge",
         build = ":call doge#install()",
         cmd = { "DogeGenerate" },
+    },
+
+    {
+        "mattdibi/incolla.nvim",
+        cmd = "Incolla",
+        cond = function()
+            return vim.fn.has("macunix") == 1
+        end,
+        opts = {
+            defaults = {
+                img_dir = "img",
+                img_name = function()
+                    return os.date("%Y-%m-%d-%H-%M-%S")
+                end,
+                affix = "%s",
+            },
+            markdown = { affix = "![](%s)" },
+        },
     },
 }
