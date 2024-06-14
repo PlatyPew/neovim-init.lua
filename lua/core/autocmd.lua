@@ -12,7 +12,7 @@ local highlights = augroup("highlights", { clear = true })
 autocmd("FileType", {
     pattern = "*",
     group = highlights,
-    command = "if &ft!='dashboard' && &ft!='WhichKey' && &ft!='lazy' && &ft!='mason' | call matchadd('ColorColumn', '\\%101v[^\n]')",
+    command = "if &ft!='dashboard' && &ft!='WhichKey' && &ft!='lazy' && &ft!='mason' && &ft!='fzf' && &ft!='NeogitStatus' | call matchadd('ColorColumn', '\\%101v[^\n]')",
 })
 
 -- Dashboard
