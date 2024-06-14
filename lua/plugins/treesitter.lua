@@ -68,4 +68,11 @@ return {
             vim.api.nvim_set_hl(0, "RainbowDelimeterViolet", { fg = vim.g.catppuccin_mauve })
         end,
     },
+
+    {
+        "windwp/nvim-ts-autotag",
+        after = "nvim-treesitter/nvim-treesitter",
+        ft = { "html", "javascript", "javascriptreact", "typescript", "typescriptreact", "xml" },
+        opts = {},
+    },
 }
