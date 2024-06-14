@@ -7,31 +7,12 @@ autocmd({ "BufNewFile", "BufRead" }, {
     command = "setlocal formatoptions-=cro",
 })
 
--- Syntax highlight
+vim.cmd("setlocal spell")
 local highlights = augroup("highlights", { clear = true })
 autocmd("FileType", {
     pattern = "*",
     group = highlights,
     command = "if &ft!='dashboard' && &ft!='WhichKey' && &ft!='lazy' && &ft!='mason' | call matchadd('ColorColumn', '\\%101v[^\n]')",
-})
-autocmd("FileType", {
-    pattern = { "text", "markdown" },
-    group = highlights,
-    command = "setlocal spell",
-})
-autocmd("FileType", {
-    pattern = { "text", "markdown" },
-    group = highlights,
-    callback = function()
-        vim.api.nvim_set_hl(0, "ColorColumn", {})
-    end,
-})
-
-autocmd("FileType", {
-    pattern = { "yaml" },
-    callback = function()
-        vim.o.shiftwidth = 4
-    end,
 })
 
 -- Dashboard
