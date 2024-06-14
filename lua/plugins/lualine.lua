@@ -85,7 +85,6 @@ return {
                             padding = 1,
                             filetype_names = {
                                 dashboard = "󰕮 Dashboard",
-                                NvimTree = " NvimTree",
                                 mason = "󰇚 Mason",
                                 undotree = " UndoTree",
                                 lspinfo = " LSP Info",
@@ -101,7 +100,7 @@ return {
                         end,
                     },
                 },
-                extensions = { "nvim-tree", "nvim-dap-ui", "quickfix" },
+                extensions = { "nvim-dap-ui", "quickfix" },
             })
         end,
     },

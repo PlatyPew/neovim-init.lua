@@ -81,14 +81,15 @@ autocmd("TermOpen", {
     group = term,
 })
 
--- Fix nvim tree lazy load but override netrw
-local nvimtree = augroup("nvimtree_au", {})
+-- Fix oil lazy load but override netrw
+local oil = augroup("oil_au", {})
 autocmd("UIEnter", {
     pattern = "*",
     callback = function()
-        if vim.fn.isdirectory(vim.fn.expand("%:p")) == 1 then
-            vim.cmd("NvimTreeToggle")
+        local dir = vim.fn.expand("%:p")
+        if vim.fn.isdirectory(dir) == 1 then
+            require("oil").open(dir)
         end
     end,
-    group = nvimtree,
+    group = oil,
 })
