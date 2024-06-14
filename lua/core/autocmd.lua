@@ -67,9 +67,8 @@ local oil = augroup("oil_au", {})
 autocmd("UIEnter", {
     pattern = "*",
     callback = function()
-        local dir = vim.fn.expand("%:p")
-        if vim.fn.isdirectory(dir) == 1 then
-            require("oil").open(dir)
+        if vim.fn.isdirectory(vim.fn.expand("%:p")) == 1 then
+            require("oil")
         end
     end,
     group = oil,
