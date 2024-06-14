@@ -6,6 +6,7 @@ return {
             return os.getenv("USER") == "daryllim"
         end,
         opts = {
+            max_count = 3,
             max_time = 3000,
             disable_mouse = false,
             disabled_keys = {
