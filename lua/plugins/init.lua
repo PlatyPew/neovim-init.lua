@@ -54,4 +54,9 @@ return {
         build = ":call doge#install()",
         cmd = "DogeGenerate",
     },
+
+    {
+        "kevinhwang91/nvim-bqf",
+        ft = "qf",
+    },
 }
