@@ -11,5 +11,8 @@ return {
             "DBUIAddConnection",
             "DBUIFindBuffer",
         },
+        keys = {
+            { "<Leader>S", "<Cmd>DBUIToggle<CR>", desc = "Toggle DB UI" },
+        },
     },
 }
