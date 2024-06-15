@@ -40,7 +40,6 @@ return {
             remap("n", "<Leader>gd", function()
                 _G.DiffviewToggle()
             end, { desc = "Show Diff" })
-            remap("n", "<Leader>gg", "<Cmd>Neogit<CR>", { desc = "Open Neogit" })
             remap("n", "<Leader>gh", "<Cmd>DiffviewFileHistory<CR>", { desc = "Open History" })
             remap("n", "<Leader>gp", "<Cmd>Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
             remap("n", "<Leader>gr", "<Cmd>Gitsigns reset_hunk<CR>", { desc = "Reset Hunk" })
@@ -58,7 +57,12 @@ return {
                 { desc = "Undo Stage Hunk" }
             )
             remap("v", "<Leader>gs", "<Cmd>Gitsigns stage_hunk<CR>", { desc = "Stage Hunk" })
-            remap("v", "<Leader>gu", "<Cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Undo Stage Hunk" })
+            remap(
+                "v",
+                "<Leader>gu",
+                "<Cmd>Gitsigns undo_stage_hunk<CR>",
+                { desc = "Undo Stage Hunk" }
+            )
 
             remap(
                 "n",
@@ -80,6 +84,9 @@ return {
     {
         "NeogitOrg/neogit",
         cmd = "Neogit",
+        keys = {
+            { "<Leader>gg", "<Cmd>Neogit<CR>", desc = "Open Neogit" },
+        },
         dependencies = {
             "nvim-lua/plenary.nvim",
             "sindrets/diffview.nvim",
