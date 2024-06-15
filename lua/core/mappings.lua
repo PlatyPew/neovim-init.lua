@@ -55,65 +55,6 @@ remap("n", "i", function()
     end
 end, { expr = true })
 
--- Adjust transparency
-remap("n", "<Leader>T", [[<Cmd>Transparency<CR>]])
-
 remap("n", "g=", function()
     vim.lsp.buf.format({ async = true })
 end)
-
--- LSPSaga
-remap("n", "[g", "<Cmd>Lspsaga diagnostic_jump_prev<CR>")
-remap("n", "]g", "<Cmd>Lspsaga diagnostic_jump_next<CR>")
-remap("n", "gc", "<Cmd>Lspsaga code_action<CR>")
-remap("n", "gp", "<Cmd>Lspsaga peek_definition<CR>")
-remap("n", "gf", "<Cmd>Lspsaga finder<CR>")
-remap("n", "gh", "<Cmd>Lspsaga hover_doc<CR>")
-remap("n", "gr", "<Cmd>Lspsaga rename<CR>")
-
--- UndoTree
-remap("n", "<Tab>", "<Cmd>UndotreeToggle<CR>")
-
--- Gitsigns
-remap("n", "<Leader>hd", function()
-    require("gitsigns").diffthis()
-end)
-remap("n", "]c", function()
-    require("gitsigns").next_hunk()
-end)
-remap("n", "[c", function()
-    require("gitsigns").prev_hunk()
-end)
-
--- DAP
-remap("n", "<F5>", function()
-    require("dap").continue()
-end)
-remap("n", "<F6>", function()
-    require("dap").toggle_breakpoint()
-end)
-remap("n", "<F10>", function()
-    require("dap").step_over()
-end)
-remap("n", "<F11>", function()
-    require("dap").step_into()
-end)
-remap("n", "<F12>", function()
-    require("dap").step_out()
-end)
-remap("n", "<Leader>dc", function()
-    require("dap").close()
-end)
-remap("n", "<Leader>dr", function()
-    require("dap").repl.open()
-end)
-remap("n", "<Leader>du", function()
-    require("dapui").toggle()
-end)
-remap("n", "<Leader>de", function()
-    require("dapui").eval()
-end)
-
--- SnipRun
-remap("n", "<Leader>f", "<Plug>SnipRun")
-remap("v", "f", "<Plug>SnipRun")

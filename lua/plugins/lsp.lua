@@ -78,6 +78,15 @@ return {
     {
         "nvimdev/lspsaga.nvim",
         cmd = "Lspsaga",
+        keys = {
+            { "[g", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous Diagnostic" },
+            { "]g", "<Cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next Diagnostic" },
+            { "gc", "<Cmd>Lspsaga code_action<CR>", desc = "Show Code Actions" },
+            { "gp", "<Cmd>Lspsaga peek_definition<CR>", desc = "Preview Definition" },
+            { "gf", "<Cmd>Lspsaga finder<CR>", desc = "Find Reference" },
+            { "gh", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
+            { "gr", "<Cmd>Lspsaga rename<CR>", desc = "Rename Variable" },
+        },
         opts = {
             finder = {
                 keys = { toggle_or_open = "<CR>" },

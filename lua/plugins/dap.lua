@@ -72,6 +72,35 @@ return {
             end
 
             require("overseer").enable_dap()
+
+            local remap = vim.keymap.set
+            remap("n", "<F5>", function()
+                require("dap").continue()
+            end)
+            remap("n", "<F6>", function()
+                require("dap").toggle_breakpoint()
+            end)
+            remap("n", "<F10>", function()
+                require("dap").step_over()
+            end)
+            remap("n", "<F11>", function()
+                require("dap").step_into()
+            end)
+            remap("n", "<F12>", function()
+                require("dap").step_out()
+            end)
+            remap("n", "<Leader>dc", function()
+                require("dap").close()
+            end)
+            remap("n", "<Leader>dr", function()
+                require("dap").repl.open()
+            end)
+            remap("n", "<Leader>du", function()
+                require("dapui").toggle()
+            end)
+            remap("n", "<Leader>de", function()
+                require("dapui").eval()
+            end)
         end,
     },
 }

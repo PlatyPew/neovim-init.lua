@@ -21,15 +21,6 @@ return {
     },
 
     {
-        "mbbill/undotree",
-        cmd = "UndotreeToggle",
-        init = function()
-            vim.o.undodir = vim.fn.stdpath("cache") .. "/undotree"
-            vim.o.undofile = true
-        end,
-    },
-
-    {
         "iamcco/markdown-preview.nvim",
         ft = "markdown",
         build = function()
