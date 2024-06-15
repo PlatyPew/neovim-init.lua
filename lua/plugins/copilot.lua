@@ -38,7 +38,6 @@ return {
                 "<Leader>cc",
                 "<Cmd>CopilotChatToggle<CR>",
                 desc = "Toggle Copilot Chat",
-                mode = "v",
             },
             { "<Leader>cD", "<Cmd>CopilotChatDocs<CR>", desc = "Copilot Chat Docs", mode = "v" },
             { "<Leader>cT", "<Cmd>CopilotChatTests<CR>", desc = "Copilot Chat Tests", mode = "v" },
