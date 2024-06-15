@@ -12,6 +12,9 @@ return {
         wk.setup(opts)
 
         wk.register({
+            R = {
+                name = "Overseer",
+            },
             l = {
                 name = "LSP",
                 i = { "<Cmd>LspInfo<CR>", "LSP Info" },
