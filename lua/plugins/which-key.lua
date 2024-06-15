@@ -15,6 +15,11 @@ return {
             R = {
                 name = "Overseer",
             },
+            i = {
+                name = "Installers",
+                l = { "<Cmd>Lazy<CR>", "Plugin Manager" },
+                m = { "<Cmd>Mason<CR>", "LSP Installer" },
+            },
             l = {
                 name = "LSP",
                 i = { "<Cmd>LspInfo<CR>", "LSP Info" },
@@ -107,11 +112,6 @@ return {
                 s = { "<Cmd>Gitsigns stage_hunk<CR>", "Stage Hunk" },
                 t = { "<Cmd>Gitsigns toggle_word_diff<CR>", "Toggle Word Diff" },
                 u = { "<Cmd>Gitsigns undo_stage_hunk<CR>", "Undo Stage Hunk" },
-            },
-            i = {
-                name = "Installers",
-                l = { "<Cmd>Lazy<CR>", "Lazy" },
-                m = { "<Cmd>Mason<CR>", "Mason" },
             },
             l = {
                 name = "LSP",
