@@ -54,7 +54,3 @@ remap("n", "i", function()
         return "i"
     end
 end, { expr = true })
-
-remap("n", "g=", function()
-    vim.lsp.buf.format({ async = true })
-end)
