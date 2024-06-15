@@ -3,25 +3,17 @@ return {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
-        config = function()
-            vim.g.transparent = true
+        opts = {
+            flavour = "mocha",
+            background = {
+                light = "latte",
+                dark = "mocha",
+            },
+            transparent_background = true,
+        },
+        config = function(_, opts)
             local catppuccin = require("catppuccin")
-
-            catppuccin.setup({
-                flavour = "mocha",
-                background = {
-                    light = "latte",
-                    dark = "mocha",
-                },
-                transparent_background = vim.g.transparent,
-            })
-
-            function transparency()
-                vim.g.transparent = not vim.g.transparent
-                catppuccin.setup({ transparent_background = vim.g.transparent })
-                vim.cmd.colorscheme("catppuccin")
-            end
-            vim.api.nvim_create_user_command("Transparency", "lua transparency()", {})
+            catppuccin.setup(opts)
 
             vim.cmd.syntax("on")
             vim.cmd.colorscheme("catppuccin")

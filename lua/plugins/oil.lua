@@ -4,6 +4,10 @@ return {
         lazy = true,
         cmd = "Oil",
         dependencies = "nvim-tree/nvim-web-devicons",
+        init = function()
+            vim.g.loaded_netrw = 1
+            vim.g.loaded_netrwPlugin = 1
+        end,
         opts = {
             default_file_explorer = true,
             delete_to_trash = true,

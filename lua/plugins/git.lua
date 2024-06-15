@@ -3,18 +3,19 @@ return {
         "lewis6991/gitsigns.nvim",
         event = { "BufReadPost", "BufNewFile" },
         dependencies = "nvim-lua/plenary.nvim",
-        config = function()
-            require("gitsigns").setup({
-                signs = {
-                    add = { text = "│" },
-                    change = { text = "│" },
-                    delete = { text = "│" },
-                    topdelete = { text = "║" },
-                    changedelete = { text = "║" },
-                    untracked = { text = "┆" },
-                },
-                numhl = true,
-            })
+        opts = {
+            signs = {
+                add = { text = "│" },
+                change = { text = "│" },
+                delete = { text = "│" },
+                topdelete = { text = "║" },
+                changedelete = { text = "║" },
+                untracked = { text = "┆" },
+            },
+            numhl = true,
+        },
+        config = function(_, opts)
+            require("gitsigns").setup(opts)
 
             local hl = vim.api.nvim_set_hl
             hl(0, "GitSignsAddLn", { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_sky })

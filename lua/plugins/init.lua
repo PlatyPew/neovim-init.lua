@@ -23,6 +23,10 @@ return {
     {
         "mbbill/undotree",
         cmd = "UndotreeToggle",
+        init = function()
+            vim.o.undodir = vim.fn.stdpath("cache") .. "/undotree"
+            vim.o.undofile = true
+        end,
     },
 
     {
@@ -36,6 +40,9 @@ return {
     {
         "lambdalisue/suda.vim",
         cmd = { "SudaWrite", "SudaRead" },
+        init = function()
+            vim.api.nvim_create_user_command("W", "SudaWrite", {})
+        end,
     },
 
     {

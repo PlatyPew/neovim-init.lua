@@ -40,22 +40,3 @@ glo.clipboard = {
     copy = { ["+"] = copy, ["*"] = copy },
     paste = { ["+"] = "pbpaste", ["*"] = "pbpaste" },
 }
-
--- Disable netrw
-glo.loaded_netrw = 1
-glo.loaded_netrwPlugin = 1
-
--- TreeSitter
-opt.foldenable = false
-opt.foldlevel = 20
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-
--- WhichKey
-opt.timeoutlen = 500
-
--- UndoTree
-opt.undodir = vim.fn.stdpath("cache") .. "/undotree"
-opt.undofile = true
-
--- Suda
-vim.api.nvim_create_user_command("W", "SudaWrite", {})

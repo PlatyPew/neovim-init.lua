@@ -1,12 +1,15 @@
 return {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    config = function()
+    init = function()
+        vim.o.timeoutlen = 500
+    end,
+    opts = {
+        ignore_missing = true,
+    },
+    config = function(_, opts)
         local wk = require("which-key")
-
-        wk.setup({
-            ignore_missing = true,
-        })
+        wk.setup(opts)
 
         wk.register({
             D = { "<Cmd>DogeGenerate<CR>", "Generate Docs" },
@@ -18,7 +21,6 @@ return {
                 R = { "<Cmd>OverseerRun<CR>", "Run builtin" },
                 r = { "<Cmd>OverseerRunCmd<CR>", "Run command" },
             },
-            T = { "<Cmd>Transparency<CR>", "Toggle Transparency" },
             W = { "<Cmd>SudaWrite<CR>", "Write with sudo" },
             o = { "<Cmd>lua require('oil').toggle_float()<CR>", "Edit Filesystem" },
             p = { "<Cmd>Incolla<CR>", "Paste Image" },
