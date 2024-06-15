@@ -25,12 +25,12 @@ return {
                 l = { "<Cmd>Lazy<CR>", "Plugin Manager" },
                 m = { "<Cmd>Mason<CR>", "LSP Installer" },
             },
+            h = { name = "Harpoon" },
             l = {
                 name = "LSP",
                 f = { name = "FZF" },
                 i = { "<Cmd>LspInfo<CR>", "LSP Info" },
             },
-            m = { name = "Harpoon" },
             r = { name = "Sniprun" },
         }, { mode = "n", prefix = "<Leader>" })
 
