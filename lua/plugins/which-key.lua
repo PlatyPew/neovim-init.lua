@@ -20,6 +20,9 @@ return {
             },
             d = {
                 name = "DAP",
+                f = {
+                    name = "FZF",
+                },
             },
             f = {
                 name = "FZF",

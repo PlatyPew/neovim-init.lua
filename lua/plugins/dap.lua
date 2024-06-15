@@ -100,6 +100,21 @@ return {
             remap("n", "<Leader>du", function()
                 require("dapui").toggle()
             end, { desc = "Toggle UI" })
+
+            remap(
+                "n",
+                "<Leader>dfb",
+                "<Cmd>FzfLua dap_breakpoints<CR>",
+                { desc = "Breakpoints" }
+            )
+            remap(
+                "n",
+                "<Leader>dfc",
+                "<Cmd>FzfLua dap_configurations<CR>",
+                { desc = "Configurations" }
+            )
+            remap("n", "<Leader>dff", "<Cmd>FzfLua dap_frames<CR>", { desc = "Frames" })
+            remap("n", "<Leader>dfv", "<Cmd>FzfLua dap_variables<CR>", { desc = "Variables" })
         end,
     },
 }
