@@ -84,6 +84,7 @@ return {
                             },
                             padding = 1,
                             filetype_names = {
+                                ["copilot-chat"] = " Copilot Chat",
                                 dashboard = "󰕮 Dashboard",
                                 mason = "󰇚 Mason",
                                 undotree = " UndoTree",
