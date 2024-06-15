@@ -35,6 +35,9 @@ return {
             c = {
                 name = "Copilot",
             },
+            s = {
+                name = "Git",
+            },
         }, { mode = "v", prefix = "<Leader>" })
 
         wk.register({

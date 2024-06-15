@@ -57,6 +57,8 @@ return {
                 "<Cmd>Gitsigns undo_stage_hunk<CR>",
                 { desc = "Undo Stage Hunk" }
             )
+            remap("v", "<Leader>gs", "<Cmd>Gitsigns stage_hunk<CR>", { desc = "Stage Hunk" })
+            remap("v", "<Leader>gu", "<Cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Undo Stage Hunk" })
 
             remap(
                 "n",
