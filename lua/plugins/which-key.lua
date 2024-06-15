@@ -27,6 +27,9 @@ return {
             f = {
                 name = "FZF",
             },
+            g = {
+                name = "Git",
+            },
             i = {
                 name = "Installers",
                 l = { "<Cmd>Lazy<CR>", "Plugin Manager" },
