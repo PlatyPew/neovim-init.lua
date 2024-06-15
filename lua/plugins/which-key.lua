@@ -6,6 +6,9 @@ return {
     end,
     opts = {
         ignore_missing = true,
+        window = {
+            border = "double"
+        }
     },
     config = function(_, opts)
         local wk = require("which-key")
