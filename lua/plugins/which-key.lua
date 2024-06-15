@@ -12,24 +12,11 @@ return {
         wk.setup(opts)
 
         wk.register({
-            R = {
-                name = "Overseer",
-            },
-            c = {
-                name = "Copilot",
-            },
-            d = {
-                name = "DAP",
-                f = {
-                    name = "FZF",
-                },
-            },
-            f = {
-                name = "FZF",
-            },
-            g = {
-                name = "Git",
-            },
+            R = { name = "Overseer" },
+            c = { name = "Copilot" },
+            d = { name = "DAP", f = { name = "FZF" } },
+            f = { name = "FZF" },
+            g = { name = "Git" },
             i = {
                 name = "Installers",
                 l = { "<Cmd>Lazy<CR>", "Plugin Manager" },
@@ -37,18 +24,18 @@ return {
             },
             l = {
                 name = "LSP",
-                f = {
-                    name = "FZF",
-                },
+                f = { name = "FZF" },
                 i = { "<Cmd>LspInfo<CR>", "LSP Info" },
             },
-            m = {
-                name = "Harpoon",
-            },
-            r = {
-                name = "Sniprun",
-            },
+            m = { name = "Harpoon" },
+            r = { name = "Sniprun" },
         }, { mode = "n", prefix = "<Leader>" })
+
+        wk.register({
+            c = {
+                name = "Copilot",
+            },
+        }, { mode = "v", prefix = "<Leader>" })
 
         wk.register({
             D = { "<Cmd>DogeGenerate<CR>", "Generate Docs" },
