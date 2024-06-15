@@ -42,6 +42,9 @@ return {
                 },
                 i = { "<Cmd>LspInfo<CR>", "LSP Info" },
             },
+            m = {
+                name = "Harpoon",
+            },
         }, { mode = "n", prefix = "<Leader>" })
 
         wk.register({
