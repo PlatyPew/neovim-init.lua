@@ -34,6 +34,9 @@ return {
             },
             l = {
                 name = "LSP",
+                f = {
+                    name = "FZF",
+                },
                 i = { "<Cmd>LspInfo<CR>", "LSP Info" },
             },
         }, { mode = "n", prefix = "<Leader>" })
