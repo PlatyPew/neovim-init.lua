@@ -3,6 +3,9 @@ return {
         "stevearc/oil.nvim",
         lazy = true,
         cmd = "Oil",
+        keys = {
+            { "<Leader>o", function() require("oil").toggle_float() end, desc = "File Explorer" },
+        },
         dependencies = "nvim-tree/nvim-web-devicons",
         init = function()
             vim.g.loaded_netrw = 1
