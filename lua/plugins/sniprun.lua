@@ -2,12 +2,12 @@ return {
     "michaelb/sniprun",
     build = "bash ./install.sh",
     keys = {
-        "<Plug>SnipReplMemoryClean",
-        "<Plug>SnipReset",
-        "<Plug>SnipClose",
-        "<Plug>SnipInfo",
-        "<Plug>SnipRun",
-        "<Plug>SnipTerminate",
+        { "<Leader>rC", "<Plug>SnipReplMemoryClean", desc = "Clean REPL memory" },
+        { "<Leader>rR", "<Plug>SnipReset", desc = "Reset SnipRun" },
+        { "<Leader>rc", "<Plug>SnipClose", desc = "Close SnipRun" },
+        { "<Leader>ri", "<Plug>SnipInfo", desc = "Get SnipRun Info" },
+        { "<Leader>rr", "<Plug>SnipRun", desc = "Run Code" },
+        { "<Leader>rt", "<Plug>SnipTerminate", desc = "Terminate SnipRun" },
         { "<Plug>SnipRun", mode = "v" },
     },
     opts = {

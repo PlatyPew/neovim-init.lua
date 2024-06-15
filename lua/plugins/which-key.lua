@@ -45,6 +45,9 @@ return {
             m = {
                 name = "Harpoon",
             },
+            r = {
+                name = "Sniprun",
+            },
         }, { mode = "n", prefix = "<Leader>" })
 
         wk.register({
