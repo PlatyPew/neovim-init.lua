@@ -2,6 +2,11 @@ return {
     {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
+        keys = {
+            { "<Leader>ct", "<Cmd>Copilot toggle<CR>", desc = "Toggle Copilot" },
+            { "<Leader>cp", "<Cmd>Copilot panel<CR>", desc = "Copilot Panel" },
+            { "<Leader>cs", "<Cmd>Copilot status<CR>", desc = "Copilot Status" },
+        },
         opts = {
             suggestion = {
                 auto_trigger = true,
@@ -28,6 +33,9 @@ return {
             "CopilotChatTests",
             "CopilotChatFixDiagnostic",
         },
+        keys = {
+            { "<Leader>cc", "<Cmd>CopilotChatToggle<CR>", desc = "Toggle Copilot Chat" },
+        },
         dependencies = {
             "zbirenbaum/copilot.lua",
             "nvim-lua/plenary.nvim",
@@ -35,8 +43,8 @@ return {
         opts = {
             temperature = 0.2,
             window = {
-                layout = 'float',
-            }
+                layout = "float",
+            },
         },
     },
 }

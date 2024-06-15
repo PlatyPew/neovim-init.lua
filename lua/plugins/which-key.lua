@@ -15,6 +15,9 @@ return {
             R = {
                 name = "Overseer",
             },
+            c = {
+                name = "Copilot",
+            },
             i = {
                 name = "Installers",
                 l = { "<Cmd>Lazy<CR>", "Plugin Manager" },
