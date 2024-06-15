@@ -92,6 +92,7 @@ return {
                                 lazy = "󰒲 Lazy",
                                 harpoon = "󱡅 Harpoon",
                                 oil = "󰏇 Oil",
+                                NeogitStatus = " Neogit",
                             },
                         },
                     },
