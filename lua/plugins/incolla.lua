@@ -2,6 +2,9 @@ return {
     {
         "mattdibi/incolla.nvim",
         cmd = "Incolla",
+        keys = {
+            { "<Leader>p", "<Cmd>Incolla<CR>", desc = "Paste Image" },
+        },
         cond = function()
             return vim.fn.has("macunix") == 1
         end,
