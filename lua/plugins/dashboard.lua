@@ -51,7 +51,7 @@ return {
                             key = "m",
                         },
                         {
-                            action = "Oil --float",
+                            action = 'lua require("oil").toggle_float()',
                             desc = " File Explorer",
                             icon = " ",
                             key = "o",

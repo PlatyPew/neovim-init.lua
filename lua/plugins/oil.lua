@@ -4,7 +4,7 @@ return {
         lazy = true,
         cmd = "Oil",
         keys = {
-            { "<Leader>o", "<Cmd>Oil --float<CR>", desc = "File Explorer" },
+            { "<Leader>o", '<Cmd>lua require("oil").toggle_float()<CR>', desc = "File Explorer" },
         },
         dependencies = "nvim-tree/nvim-web-devicons",
         init = function()
