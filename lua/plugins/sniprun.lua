@@ -8,7 +8,7 @@ return {
         { "<Leader>ri", "<Plug>SnipInfo", desc = "Get SnipRun Info" },
         { "<Leader>rr", "<Plug>SnipRun", desc = "Run Code" },
         { "<Leader>rt", "<Plug>SnipTerminate", desc = "Terminate SnipRun" },
-        { "<Plug>SnipRun", mode = "v" },
+        { "<Leader>rr", "<Plug>SnipRun", desc = "Run Code", mode = "v" },
     },
     opts = {
         display = { "TerminalWithCode", "VirtualTextOk" },

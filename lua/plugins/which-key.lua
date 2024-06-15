@@ -38,6 +38,9 @@ return {
             s = {
                 name = "Git",
             },
+            r = {
+                name = "Sniprun",
+            },
         }, { mode = "v", prefix = "<Leader>" })
 
         wk.register({
