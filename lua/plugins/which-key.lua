@@ -18,6 +18,9 @@ return {
             c = {
                 name = "Copilot",
             },
+            d = {
+                name = "DAP"
+            },
             i = {
                 name = "Installers",
                 l = { "<Cmd>Lazy<CR>", "Plugin Manager" },

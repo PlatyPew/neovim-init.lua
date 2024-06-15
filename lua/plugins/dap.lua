@@ -1,6 +1,9 @@
 return {
     {
         "rcarriga/nvim-dap-ui",
+        keys = {
+            { "<Leader>du", "<Cmd>lua require'dapui'.toggle()<CR>", desc = "Toggle UI" },
+        },
         lazy = true,
         dependencies = {
             "mfussenegger/nvim-dap",
@@ -74,33 +77,29 @@ return {
             require("overseer").enable_dap()
 
             local remap = vim.keymap.set
-            remap("n", "<F5>", function()
-                require("dap").continue()
-            end)
-            remap("n", "<F6>", function()
-                require("dap").toggle_breakpoint()
-            end)
-            remap("n", "<F10>", function()
-                require("dap").step_over()
-            end)
-            remap("n", "<F11>", function()
-                require("dap").step_into()
-            end)
-            remap("n", "<F12>", function()
-                require("dap").step_out()
-            end)
-            remap("n", "<Leader>dc", function()
-                require("dap").close()
-            end)
-            remap("n", "<Leader>dr", function()
-                require("dap").repl.open()
-            end)
+            remap("n", "<F5>", "<Cmd>DapContinue<CR>", { desc = "Continue" })
+            remap("n", "<F6>", "<Cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
+            remap("n", "<F10>", "<Cmd>DapStepOver<CR>", { desc = "Step Over" })
+            remap("n", "<F11>", "<Cmd>DapStepInto<CR>", { desc = "Step Into" })
+            remap("n", "<F12>", "<Cmd>DapStepOut<CR>", { desc = "Step Out" })
+
+            remap("n", "<Leader>dC", "<Cmd>DapTerminate<CR>", { desc = "Close" })
+            remap("n", "<Leader>dR", "<Cmd>DapToggleRepl<CR>", { desc = "REPL" })
+            remap("n", "<Leader>dS", "<Cmd>DapStepInto<CR>", { desc = "Step Into" })
+            remap("n", "<Leader>da", function()
+                _G.dap_args()
+            end, { desc = "Set Program Arguments" })
+            remap("n", "<Leader>db", "<Cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
+            remap("n", "<Leader>dc", "<Cmd>DapContinue<CR>", { desc = "Continue" })
+            remap("n", "<Leader>de", "<Cmd>DapEval<CR>", { desc = "Evaluate" })
+            remap("n", "<Leader>dp", function()
+                _G.dap_program()
+            end, { desc = "Set Executable Path" })
+            remap("n", "<Leader>do", "<Cmd>DapStepOut<CR>", { desc = "Step Out" })
+            remap("n", "<Leader>ds", "<Cmd>DapStepOver<CR>", { desc = "Step Over" })
             remap("n", "<Leader>du", function()
                 require("dapui").toggle()
-            end)
-            remap("n", "<Leader>de", function()
-                require("dapui").eval()
-            end)
+            end, { desc = "Toggle UI" })
         end,
     },
 }
