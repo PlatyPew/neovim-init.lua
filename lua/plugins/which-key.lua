@@ -19,7 +19,10 @@ return {
                 name = "Copilot",
             },
             d = {
-                name = "DAP"
+                name = "DAP",
+            },
+            f = {
+                name = "FZF",
             },
             i = {
                 name = "Installers",
