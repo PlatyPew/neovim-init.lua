@@ -2,7 +2,7 @@ return {
     {
         "rcarriga/nvim-dap-ui",
         keys = {
-            { "<Leader>du", "<Cmd>lua require'dapui'.toggle()<CR>", desc = "Toggle UI" },
+            { "<Leader>du", "<Cmd>lua require'dapui'.toggle()<CR>", desc = "Toggle DAP UI" },
         },
         lazy = true,
         dependencies = {
@@ -99,7 +99,7 @@ return {
             remap("n", "<Leader>ds", "<Cmd>DapStepOver<CR>", { desc = "Step Over" })
             remap("n", "<Leader>du", function()
                 require("dapui").toggle()
-            end, { desc = "Toggle UI" })
+            end, { desc = "Toggle DAP UI" })
 
             remap(
                 "n",
