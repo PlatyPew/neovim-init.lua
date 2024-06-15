@@ -23,11 +23,11 @@ remap("n", ";", ":")
 remap("v", ";", ":")
 
 -- Cycling buffers
-remap("n", "<Leader>bh", "<Cmd>:bfirst<CR>")
-remap("n", "<Leader>bj", "<Cmd>:bnext<CR>")
-remap("n", "<Leader>bk", "<Cmd>:bprevious<CR>")
-remap("n", "<Leader>bl", "<Cmd>:blast<CR>")
-remap("n", "<Leader>bq", "<Cmd>bdelete<CR>")
+remap("n", "<Leader>bh", "<Cmd>:bfirst<CR>", { desc = "Cycle First Buffer" })
+remap("n", "<Leader>bj", "<Cmd>:bnext<CR>", { desc = "Cycle Next Buffer" })
+remap("n", "<Leader>bk", "<Cmd>:bprevious<CR>", { desc = "Cycle Previous Buffer" })
+remap("n", "<Leader>bl", "<Cmd>:blast<CR>", { desc = "Cycle Last Buffer" })
+remap("n", "<Leader>bq", "<Cmd>bdelete<CR>", { desc = "Delete Buffer" })
 
 -- Stops cursor from flying everywhere
 remap("n", "n", "nzzzv")
