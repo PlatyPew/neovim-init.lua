@@ -22,7 +22,10 @@ return {
 
             local opts = {
                 theme = "doom",
-                hide = { statusline = false },
+                hide = {
+                    statusline = false,
+                    tabline = false,
+                },
                 config = {
                     header = vim.split(logo, "\n"),
                     center = {
