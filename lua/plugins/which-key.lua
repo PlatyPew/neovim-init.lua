@@ -25,18 +25,9 @@ return {
             u = { "<Cmd>UndotreeToggle<CR>", "Toggle UndoTree" },
             m = { "<Cmd>MarkdownPreviewToggle<CR>", "Toggle Markdown Preview" },
             t = { "<Cmd>Lspsaga term_toggle<CR>", "Open Terminal" },
-            a = {
-                name = "Ollama AI",
-                a = { "<Cmd>Ollama Ask_About_Code<CR>", "Ask About Code" },
-                c = { "<Cmd>Ollama Comment<CR>", "Comment Code" },
-                e = { "<Cmd>Ollama Explain_Code<CR>", "Explain Code" },
-                g = { "<Cmd>Ollama Generate_Code<CR>", "Generate Code" },
-                m = { "<Cmd>Ollama Modify_Code<CR>", "Modify Code" },
-                r = { "<Cmd>Ollama Raw<CR>", "Raw Input" },
-                s = { "<Cmd>Ollama Simplify_Code<CR>", "Simplify Code" },
-            },
             c = {
                 name = "Copilot",
+                c = { "<Cmd>CopilotChatToggle<CR>", "Toggle Copilot Chat" },
                 t = { "<Cmd>Copilot toggle<CR>", "Toggle Copilot" },
                 p = { "<Cmd>Copilot panel<CR>", "Copilot Panel" },
                 s = { "<Cmd>Copilot status<CR>", "Copilot Status" },
@@ -136,17 +127,17 @@ return {
         }, { mode = "n", prefix = "," })
 
         wk.register({
-            a = {
-                name = "Ollama AI",
-                a = { "<Cmd>Ollama Ask_About_Code<CR>", "Ask About Code" },
-                c = { "<Cmd>Ollama Comment<CR>", "Comment Code" },
-                e = { "<Cmd>Ollama Explain_Code<CR>", "Explain Code" },
-                g = { "<Cmd>Ollama Generate_Code<CR>", "Generate Code" },
-                m = { "<Cmd>Ollama Modify_Code<CR>", "Modify Code" },
-                r = { "<Cmd>Ollama Raw<CR>", "Raw Input" },
-                s = { "<Cmd>Ollama Simplify_Code<CR>", "Simplify Code" },
+            C = { "<Cmd>lua require('Comment.api').call('toggle_linewise_op')<CR>g@", "Comment" },
+            c = {
+                name = "Copilot Chat",
+                D = { "<Cmd>CopilotChatDocs<CR>", "Copilot Chat Docs" },
+                T = { "<Cmd>CopilotChatTests<CR>", "Copilot Chat Tests" },
+                d = { "<Cmd>CopilotChatFixDiagnostic<CR>", "Copilot Chat Fix Diagnostics" },
+                e = { "<Cmd>CopilotChatExplain<CR>", "Copilot Chat Explain" },
+                f = { "<Cmd>CopilotChatFix<CR>", "Copilot Chat Fix" },
+                o = { "<Cmd>CopilotChatOptimize<CR>", "Copilot Chat Optimise" },
+                r = { "<Cmd>CopilotChatReview<CR>", "Copilot Chat Review" },
             },
-            c = { "<Cmd>lua require('Comment.api').call('toggle_linewise_op')<CR>g@", "Comment" },
             g = {
                 name = "Git",
                 s = { "<Cmd>Gitsigns stage_hunk<CR>", "Stage Hunk" },

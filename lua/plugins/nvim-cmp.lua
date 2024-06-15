@@ -116,22 +116,4 @@ return {
             vim.api.nvim_set_hl(0, "CmpItemKindVariable", { link = "@variable" })
         end,
     },
-
-    {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        opts = {
-            suggestion = {
-                auto_trigger = true,
-                keymap = {
-                    accept = "<A-CR>",
-                    accept_word = false,
-                    accept_line = false,
-                    next = "<A-Tab>",
-                    prev = "<A-S-Tab>",
-                    dismiss = "<A-[>",
-                },
-            },
-        },
-    },
 }
