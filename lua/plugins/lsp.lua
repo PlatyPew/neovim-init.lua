@@ -86,6 +86,26 @@ return {
             { "gf", "<Cmd>Lspsaga finder<CR>", desc = "Find Reference" },
             { "gh", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
             { "gr", "<Cmd>Lspsaga rename<CR>", desc = "Rename Variable" },
+
+            { "<Leader>t", "<Cmd>Lspsaga term_toggle<CR>", desc = "Open Terminal" },
+            {
+                "<Leader>lD",
+                "<Cmd>Lspsaga show_buf_diagnostics<CR>",
+                desc = "Show Buffer Diagnostics",
+            },
+            { "<Leader>l[", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous Diagnostic" },
+            { "<Leader>l]", "<Cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next Diagnostic" },
+            { "<Leader>lc", "<Cmd>Lspsaga code_action<CR>", desc = "Code Action" },
+            {
+                "<Leader>ld",
+                "<Cmd>Lspsaga show_line_diagnostics<CR>",
+                desc = "Show Line Diagnostics",
+            },
+            { "<Leader>lf", "<Cmd>Lspsaga finder<CR>", desc = "Find Reference" },
+            { "<Leader>lh", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
+            { "<Leader>lo", "<Cmd>Lspsaga outline<CR>", desc = "Show Outline" },
+            { "<Leader>lp", "<Cmd>Lspsaga peek_definition<CR>", desc = "Preview Definition" },
+            { "<Leader>lr", "<Cmd>Lspsaga rename<CR>", desc = "Rename Variable" },
         },
         opts = {
             finder = {

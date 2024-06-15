@@ -12,6 +12,13 @@ return {
         wk.setup(opts)
 
         wk.register({
+            l = {
+                name = "LSP",
+                i = { "<Cmd>LspInfo<CR>", "LSP Info" },
+            },
+        }, { mode = "n", prefix = "<Leader>" })
+
+        wk.register({
             D = { "<Cmd>DogeGenerate<CR>", "Generate Docs" },
             S = { "<Cmd>DBUIToggle<CR>", "Open DB UI" },
             F = { "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", "Format code" },
