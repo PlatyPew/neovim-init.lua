@@ -44,12 +44,6 @@ return {
     },
 
     {
-        "ojroques/nvim-osc52",
-        lazy = true,
-        opts = { trim = false, silent = true },
-    },
-
-    {
         "christoomey/vim-tmux-navigator",
         event = "VeryLazy",
     },

@@ -1,5 +1,4 @@
 local opt = vim.o
-local glo = vim.g
 
 -- Optimisation
 opt.foldmethod = "expr"
@@ -29,14 +28,3 @@ opt.whichwrap = "b,s,<,>,h,l"
 opt.wrap = true
 opt.cmdheight = 0
 opt.showcmdloc = "statusline"
-
--- Copy Paste
-local function copy(lines, _)
-    require("osc52").copy(table.concat(lines, "\n"))
-end
-
-glo.clipboard = {
-    name = "osc52",
-    copy = { ["+"] = copy, ["*"] = copy },
-    paste = { ["+"] = "pbpaste", ["*"] = "pbpaste" },
-}
