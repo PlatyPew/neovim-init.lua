@@ -3,6 +3,7 @@ return {
         "ibhagwan/fzf-lua",
         lazy = true,
         cmd = "FzfLua",
+        -- stylua: ignore
         keys = {
             {
                 "<C-p>",

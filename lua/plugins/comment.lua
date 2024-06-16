@@ -1,6 +1,7 @@
 return {
     {
         "numToStr/Comment.nvim",
+        -- stylua: ignore
         keys = {
             { "gcc", "<Plug>(comment_toggle_linewise_current)" },
             { "gc", "<Plug>(comment_toggle_linewise_current)", mode = "v" },

@@ -2,6 +2,7 @@ return {
     {
         "mattdibi/incolla.nvim",
         cmd = "Incolla",
+        -- stylua: ignore
         keys = {
             { "<Leader>p", "<Cmd>Incolla<CR>", desc = "Paste Image" },
         },

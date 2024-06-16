@@ -1,6 +1,7 @@
 return {
     {
         "mattn/emmet-vim",
+        -- stylua: ignore
         keys = {
             { "<C-Y>,", "<Plug>(emmet-expand-abbr)", mode = { "i", "n", "v" } },
             { "<C-Y>/", "<Plug>(emmet-toggle-comment)", mode = { "i", "n" } },

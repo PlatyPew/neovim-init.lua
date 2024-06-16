@@ -7,8 +7,8 @@ return {
     opts = {
         ignore_missing = true,
         window = {
-            border = "double"
-        }
+            border = "double",
+        },
     },
     config = function(_, opts)
         local wk = require("which-key")

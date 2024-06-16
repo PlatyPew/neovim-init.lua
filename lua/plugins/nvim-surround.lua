@@ -1,6 +1,7 @@
 return {
     {
         "kylechui/nvim-surround",
+        -- stylua: ignore
         keys = {
             { "ys", "<Plug>(nvim-surround-normal)" },
             { "cs", "<Plug>(nvim-surround-change)" },

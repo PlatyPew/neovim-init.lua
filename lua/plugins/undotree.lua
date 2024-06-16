@@ -2,6 +2,7 @@ return {
     {
         "mbbill/undotree",
         cmd = "UndotreeToggle",
+        -- stylua: ignore
         keys = {
             { "<Tab>", "<Cmd>UndotreeToggle<CR>", desc = "Toggle Undotree" },
             { "<Leader>u", "<Cmd>UndotreeToggle<CR>", desc = "Toggle UndoTree" },

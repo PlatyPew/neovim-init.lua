@@ -76,6 +76,7 @@ return {
 
             require("overseer").enable_dap()
 
+            -- stylua: ignore start
             local remap = vim.keymap.set
             remap("n", "<F5>", "<Cmd>DapContinue<CR>", { desc = "Continue" })
             remap("n", "<F6>", "<Cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
@@ -86,35 +87,20 @@ return {
             remap("n", "<Leader>dC", "<Cmd>DapTerminate<CR>", { desc = "Close" })
             remap("n", "<Leader>dR", "<Cmd>DapToggleRepl<CR>", { desc = "REPL" })
             remap("n", "<Leader>dS", "<Cmd>DapStepInto<CR>", { desc = "Step Into" })
-            remap("n", "<Leader>da", function()
-                _G.dap_args()
-            end, { desc = "Set Program Arguments" })
+            remap("n", "<Leader>da", function() _G.dap_args() end, { desc = "Set Program Arguments" })
             remap("n", "<Leader>db", "<Cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
             remap("n", "<Leader>dc", "<Cmd>DapContinue<CR>", { desc = "Continue" })
             remap("n", "<Leader>de", "<Cmd>DapEval<CR>", { desc = "Evaluate" })
-            remap("n", "<Leader>dp", function()
-                _G.dap_program()
-            end, { desc = "Set Executable Path" })
+            remap("n", "<Leader>dp", function() _G.dap_program() end, { desc = "Set Executable Path" })
             remap("n", "<Leader>do", "<Cmd>DapStepOut<CR>", { desc = "Step Out" })
             remap("n", "<Leader>ds", "<Cmd>DapStepOver<CR>", { desc = "Step Over" })
-            remap("n", "<Leader>du", function()
-                require("dapui").toggle()
-            end, { desc = "Toggle DAP UI" })
+            remap("n", "<Leader>du", function() require("dapui").toggle() end, { desc = "Toggle DAP UI" })
 
-            remap(
-                "n",
-                "<Leader>dfb",
-                "<Cmd>FzfLua dap_breakpoints<CR>",
-                { desc = "Breakpoints" }
-            )
-            remap(
-                "n",
-                "<Leader>dfc",
-                "<Cmd>FzfLua dap_configurations<CR>",
-                { desc = "Configurations" }
-            )
+            remap("n", "<Leader>dfb", "<Cmd>FzfLua dap_breakpoints<CR>", { desc = "Breakpoints" })
+            remap("n", "<Leader>dfc", "<Cmd>FzfLua dap_configurations<CR>", { desc = "Configurations" })
             remap("n", "<Leader>dff", "<Cmd>FzfLua dap_frames<CR>", { desc = "Frames" })
             remap("n", "<Leader>dfv", "<Cmd>FzfLua dap_variables<CR>", { desc = "Variables" })
+            -- stylua: ignore end
         end,
     },
 }

@@ -3,6 +3,7 @@ return {
         "stevearc/oil.nvim",
         lazy = true,
         cmd = "Oil",
+        -- stylua: ignore
         keys = {
             { "<Leader>o", '<Cmd>lua require("oil").toggle_float()<CR>', desc = "File Explorer" },
         },

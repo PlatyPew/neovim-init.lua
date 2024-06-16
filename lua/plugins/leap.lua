@@ -1,6 +1,7 @@
 return {
     {
         "ggandor/leap.nvim",
+        -- stylua: ignore
         keys = {
             { "s", "<Plug>(leap)" },
             { "S", "<Plug>(leap-cross-window)" },

@@ -11,6 +11,7 @@ return {
             "DBUIAddConnection",
             "DBUIFindBuffer",
         },
+        -- stylua: ignore
         keys = {
             { "<Leader>S", "<Cmd>DBUIToggle<CR>", desc = "Toggle DB UI" },
         },

@@ -16,6 +16,7 @@ return {
             "OverseerTaskAction",
             "OverseerClearCache",
         },
+        -- stylua: ignore
         keys = {
             { "<Leader>RO", "<Cmd>OverseerToggle right<CR>", desc = "Toggles overseer window" },
             { "<Leader>RR", "<Cmd>OverseerRun<CR>", desc = "Run builtin" },

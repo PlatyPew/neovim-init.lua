@@ -1,6 +1,7 @@
 return {
     "michaelb/sniprun",
     build = "bash ./install.sh",
+    -- stylua: ignore
     keys = {
         { "<Leader>rC", "<Plug>SnipReplMemoryClean", desc = "Clean REPL memory" },
         { "<Leader>rR", "<Plug>SnipReset", desc = "Reset SnipRun" },

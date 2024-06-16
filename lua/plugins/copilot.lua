@@ -2,6 +2,7 @@ return {
     {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
+        -- stylua: ignore
         keys = {
             { "<Leader>ct", "<Cmd>Copilot toggle<CR>", desc = "Toggle Copilot" },
             { "<Leader>cp", "<Cmd>Copilot panel<CR>", desc = "Copilot Panel" },
@@ -33,39 +34,16 @@ return {
             "CopilotChatTests",
             "CopilotChatFixDiagnostic",
         },
+        -- stylua: ignore
         keys = {
-            {
-                "<Leader>cc",
-                "<Cmd>CopilotChatToggle<CR>",
-                desc = "Toggle Copilot Chat",
-            },
+            { "<Leader>cc", "<Cmd>CopilotChatToggle<CR>", desc = "Toggle Copilot Chat" },
             { "<Leader>cD", "<Cmd>CopilotChatDocs<CR>", desc = "Copilot Chat Docs", mode = "v" },
             { "<Leader>cT", "<Cmd>CopilotChatTests<CR>", desc = "Copilot Chat Tests", mode = "v" },
-            {
-                "<Leader>cd",
-                "<Cmd>CopilotChatFixDiagnostic<CR>",
-                desc = "Copilot Chat Fix Diagnostics",
-                mode = "v",
-            },
-            {
-                "<Leader>ce",
-                "<Cmd>CopilotChatExplain<CR>",
-                desc = "Copilot Chat Explain",
-                mode = "v",
-            },
+            { "<Leader>cd", "<Cmd>CopilotChatFixDiagnostic<CR>", desc = "Copilot Chat Fix Diagnostics", mode = "v" },
+            { "<Leader>ce", "<Cmd>CopilotChatExplain<CR>", desc = "Copilot Chat Explain", mode = "v" },
             { "<Leader>cf", "<Cmd>CopilotChatFix<CR>", desc = "Copilot Chat Fix", mode = "v" },
-            {
-                "<Leader>co",
-                "<Cmd>CopilotChatOptimize<CR>",
-                desc = "Copilot Chat Optimise",
-                mode = "v",
-            },
-            {
-                "<Leader>cr",
-                "<Cmd>CopilotChatReview<CR>",
-                desc = "Copilot Chat Review",
-                mode = "v",
-            },
+            { "<Leader>co", "<Cmd>CopilotChatOptimize<CR>", desc = "Copilot Chat Optimise", mode = "v" },
+            { "<Leader>cr", "<Cmd>CopilotChatReview<CR>", desc = "Copilot Chat Review", mode = "v" },
         },
         dependencies = {
             "zbirenbaum/copilot.lua",
