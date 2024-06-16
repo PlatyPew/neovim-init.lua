@@ -8,9 +8,3 @@ function _G.DiffviewToggle()
         vim.cmd.DiffviewOpen()
     end
 end
-
--- Oil
-function _G.OilToggle()
-    vim.cmd("vertical split | wincmd h | enew | vertical resize 35")
-    require("oil").open()
-end
