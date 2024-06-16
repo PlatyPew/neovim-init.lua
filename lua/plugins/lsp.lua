@@ -112,6 +112,7 @@ return {
             finder = {
                 keys = { toggle_or_open = "<CR>" },
             },
+            rename = { in_select = false },
             lightbulb = { enable = false },
             symbol_in_winbar = { enable = false },
         },
