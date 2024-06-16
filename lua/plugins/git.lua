@@ -21,6 +21,9 @@ return {
                 untracked = { text = "┆" },
             },
             numhl = true,
+            preview_config = {
+                border = "rounded",
+            },
         },
         config = function(_, opts)
             require("gitsigns").setup(opts)
