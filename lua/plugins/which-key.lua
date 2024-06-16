@@ -28,8 +28,8 @@ return {
             h = { name = "Harpoon" },
             l = {
                 name = "LSP",
+                I = { "<Cmd>LspInfo<CR>", "LSP Info" },
                 f = { name = "FZF" },
-                i = { "<Cmd>LspInfo<CR>", "LSP Info" },
             },
             r = { name = "Sniprun" },
         }, { mode = "n", prefix = "<Leader>" })

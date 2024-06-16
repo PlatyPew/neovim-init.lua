@@ -75,6 +75,8 @@ return {
 
             -- stylua: ignore start
             local remap = vim.keymap.set
+            remap("n", "<Leader>li", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, { desc = "Toggle Inlay Hints" })
+
             remap("n", "<Leader>lfs", "<Cmd>FzfLua lsp_document_symbols<CR>", { desc = "Document Symbols" })
             remap("n", "<Leader>lfS", "<Cmd>FzfLua lsp_workspace_symbols<CR>", { desc = "Workspace Symbols" })
             remap("n", "<Leader>lfd", "<Cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "Document Diagnostics" })
@@ -88,8 +90,6 @@ return {
         cmd = "Lspsaga",
         -- stylua: ignore
         keys = {
-            { "[g", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous Diagnostic" },
-            { "]g", "<Cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next Diagnostic" },
             { "gc", "<Cmd>Lspsaga code_action<CR>", desc = "Show Code Actions" },
             { "gp", "<Cmd>Lspsaga peek_definition<CR>", desc = "Preview Definition" },
             { "gh", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
