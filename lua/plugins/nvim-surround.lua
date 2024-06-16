@@ -17,7 +17,10 @@ return {
                 ["{"] = { add = { "{", "}" } },
                 ["}"] = { add = { "{ ", " }" } },
             },
-            visual = "s",
+            keymaps = {
+                visual_line = "",
+                visual = "s",
+            },
         },
     },
 }
