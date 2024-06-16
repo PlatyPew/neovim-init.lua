@@ -36,7 +36,7 @@ return {
                             key = "i",
                         },
                         {
-                            action = "lua require'fzf-lua'.files({cmd='rg --files --hidden --no-ignore-vcs -g \"!.git/*\"'})",
+                            action = "FzfLua files",
                             desc = " Find Files",
                             icon = " ",
                             key = "f",
@@ -54,7 +54,7 @@ return {
                             key = "m",
                         },
                         {
-                            action = 'lua require("oil").toggle_float()',
+                            action = "Oil --float",
                             desc = " File Explorer",
                             icon = " ",
                             key = "o",
