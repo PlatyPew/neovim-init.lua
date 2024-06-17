@@ -32,6 +32,8 @@ remap("n", "<Leader>bq", "<Cmd>bdelete<CR>", { desc = "Delete Buffer" })
 -- Stops cursor from flying everywhere
 remap("n", "n", "nzzzv")
 remap("n", "N", "Nzzzv")
+remap("n", "<C-d>", "<C-d>zz")
+remap("n", "<C-u>", "<C-u>zz")
 
 -- Prevents pasted over text from replacing register
 remap("x", "p", "pgvy")
