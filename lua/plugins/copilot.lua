@@ -50,6 +50,7 @@ return {
             "nvim-lua/plenary.nvim",
         },
         opts = {
+            show_help = false,
             temperature = 0.2,
             window = {
                 layout = "float",
