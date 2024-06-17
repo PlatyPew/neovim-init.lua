@@ -100,7 +100,7 @@ return {
                     },
                     lualine_y = {
                         function()
-                            return [[buffers]]
+                            return [[光速]]
                         end,
                     },
                 },

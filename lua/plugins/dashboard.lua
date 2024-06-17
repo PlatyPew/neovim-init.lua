@@ -18,7 +18,11 @@ return {
 ▐██▀       ███████▀  ▀█▀  ▀▀▀▀█████████▀
             ]]
 
-            logo = string.rep("\n", 8) .. logo .. "\n" .. "Better Than VSCode" .. "\n\n"
+            logo = string.rep("\n", 8)
+                .. logo
+                .. "\n"
+                .. "🚀 Moving At The Speed Of Light 🚀"
+                .. "\n\n"
 
             local opts = {
                 theme = "doom",
