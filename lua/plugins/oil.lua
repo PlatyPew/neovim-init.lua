@@ -32,6 +32,7 @@ return {
                 winblend = 0,
             },
             keymaps = {
+                ["<BS>"] = "actions.parent",
                 ["<C-c>"] = false,
                 ["q"] = "actions.close",
             },
