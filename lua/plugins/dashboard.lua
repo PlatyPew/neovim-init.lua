@@ -18,7 +18,7 @@ return {
 ▐██▀       ███████▀  ▀█▀  ▀▀▀▀█████████▀
             ]]
 
-            logo = string.rep("\n", 8)
+            logo = string.rep("\n", 6)
                 .. logo
                 .. "\n"
                 .. "🚀 Moving At The Speed Of Light 🚀"
