@@ -29,9 +29,9 @@ return {
             require("gitsigns").setup(opts)
 
             local hl = vim.api.nvim_set_hl
-            hl(0, "GitSignsAddLn", { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_sky })
-            hl(0, "GitSignsChangeLn", { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_yellow })
-            hl(0, "GitSignsDeleteLn", { fg = vim.g.catppuccin_crust, bg = vim.g.catppuccin_maroon })
+            hl(0, "GitSignsAddLn", { fg = vim.g.palette.crust, bg = vim.g.palette.sky })
+            hl(0, "GitSignsChangeLn", { fg = vim.g.palette.crust, bg = vim.g.palette.yellow })
+            hl(0, "GitSignsDeleteLn", { fg = vim.g.palette.crust, bg = vim.g.palette.maroon })
 
             -- stylua: ignore start
             local remap = vim.keymap.set

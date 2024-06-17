@@ -11,15 +11,17 @@ return {
         { "<Leader>rt", "<Plug>SnipTerminate", desc = "Terminate SnipRun" },
         { "<Leader>rr", "<Plug>SnipRun", desc = "Run Code", mode = "v" },
     },
-    opts = {
-        display = { "TerminalWithCode", "VirtualTextOk" },
-        selected_interpreters = { "Python3_fifo", "JS_TS_deno" },
-        repl_enable = { "Python3_fifo", "JS_TS_deno" },
-        snipruncolors = {
-            SniprunVirtualTextOk = {
-                fg = vim.g.catppuccin_crust,
-                bg = vim.g.catppuccin_teal,
+    config = function()
+        require("sniprun").setup({
+            display = { "TerminalWithCode", "VirtualTextOk" },
+            selected_interpreters = { "Python3_fifo", "JS_TS_deno" },
+            repl_enable = { "Python3_fifo", "JS_TS_deno" },
+            snipruncolors = {
+                SniprunVirtualTextOk = {
+                    fg = vim.g.palette.crust,
+                    bg = vim.g.palette.teal,
+                },
             },
-        },
-    },
+        })
+    end,
 }

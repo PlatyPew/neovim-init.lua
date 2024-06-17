@@ -62,17 +62,16 @@ return {
             require("nvim-treesitter.configs").setup(opts)
 
             local hl = vim.api.nvim_set_hl
-
             hl(0, "TSDefinitionUsage", { underline = true })
 
             require("rainbow-delimiters").enable()
-            hl(0, "RainbowDelimeterRed", { fg = vim.g.catppuccin_red })
-            hl(0, "RainbowDelimeterOrange", { fg = vim.g.catppuccin_peach })
-            hl(0, "RainbowDelimeterYellow", { fg = vim.g.catppuccin_yellow })
-            hl(0, "RainbowDelimeterGreen", { fg = vim.g.catppuccin_green })
-            hl(0, "RainbowDelimeterCyan", { fg = vim.g.catppuccin_sapphire })
-            hl(0, "RainbowDelimeterBlue", { fg = vim.g.catppuccin_blue })
-            hl(0, "RainbowDelimeterViolet", { fg = vim.g.catppuccin_mauve })
+            hl(0, "RainbowDelimeterRed", { fg = vim.g.palette.red })
+            hl(0, "RainbowDelimeterOrange", { fg = vim.g.palette.peach })
+            hl(0, "RainbowDelimeterYellow", { fg = vim.g.palette.yellow })
+            hl(0, "RainbowDelimeterGreen", { fg = vim.g.palette.green })
+            hl(0, "RainbowDelimeterCyan", { fg = vim.g.palette.sapphire })
+            hl(0, "RainbowDelimeterBlue", { fg = vim.g.palette.blue })
+            hl(0, "RainbowDelimeterViolet", { fg = vim.g.palette.mauve })
         end,
     },
 

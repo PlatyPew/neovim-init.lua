@@ -13,8 +13,8 @@ return {
 
             local hl = vim.api.nvim_set_hl
             hl(0, "LeapLabelPrimary", {
-                fg = vim.g.catppuccin_crust,
-                bg = vim.g.catppuccin_red,
+                fg = vim.g.palette.crust,
+                bg = vim.g.palette.red,
             })
             hl(0, "LeapBackdrop", { link = "Comment" })
         end,

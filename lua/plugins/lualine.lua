@@ -42,7 +42,7 @@ return {
                         {
                             require("noice").api.status.mode.get,
                             cond = require("noice").api.status.mode.has,
-                            color = { fg = vim.g.catppuccin_overlay0 },
+                            color = { fg = vim.g.palette.overlay0 },
                         },
                         "selectioncount",
                         "location",
@@ -64,10 +64,10 @@ return {
                             sources = { "nvim_diagnostic" },
                             symbols = { error = " ", warn = " ", info = " " },
                             diagnostics_color = {
-                                error = { bg = vim.g.catppuccin_base, fg = vim.g.catppuccin_red },
-                                warn = { bg = vim.g.catppuccin_base, fg = vim.g.catppuccin_peach },
-                                info = { bg = vim.g.catppuccin_base, fg = vim.g.catppuccin_yellow },
-                                hint = { bg = vim.g.catppuccin_base, fg = vim.g.catppuccin_sky },
+                                error = { bg = vim.g.palette.base, fg = vim.g.palette.red },
+                                warn = { bg = vim.g.palette.base, fg = vim.g.palette.peach },
+                                info = { bg = vim.g.palette.base, fg = vim.g.palette.yellow },
+                                hint = { bg = vim.g.palette.base, fg = vim.g.palette.sky },
                             },
                         },
                     },
@@ -78,8 +78,8 @@ return {
                             "buffers",
                             buffers_color = {
                                 inactive = {
-                                    bg = vim.g.catppuccin_surface0,
-                                    fg = vim.g.catppuccin_text,
+                                    bg = vim.g.palette.surface0,
+                                    fg = vim.g.palette.text,
                                 },
                             },
                             padding = 1,

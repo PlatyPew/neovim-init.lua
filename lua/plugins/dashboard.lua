@@ -23,7 +23,6 @@ return {
             local opts = {
                 theme = "doom",
                 hide = {
-                    statusline = false,
                     tabline = false,
                 },
                 config = {
@@ -92,8 +91,8 @@ return {
             end
 
             local hl = vim.api.nvim_set_hl
-            hl(0, "DashboardHeader", { fg = vim.g.catppuccin_yellow })
-            hl(0, "DashboardFooter", { fg = vim.g.catppuccin_peach })
+            hl(0, "DashboardHeader", { fg = vim.g.palette.yellow })
+            hl(0, "DashboardFooter", { fg = vim.g.palette.peach })
 
             return opts
         end,
