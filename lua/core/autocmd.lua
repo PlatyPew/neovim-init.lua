@@ -15,22 +15,6 @@ autocmd("FileType", {
     command = "if &ft!='dashboard' && &ft!='WhichKey' && &ft!='lazy' && &ft!='mason' && &ft!='fzf' && &ft!='NeogitStatus' | call matchadd('ColorColumn', '\\%101v[^\n]')",
 })
 
--- Dashboard
-local dashboard = augroup("dashboard_au", {})
-autocmd("User", {
-    pattern = "DashboardReady",
-    command = "nnoremap <buffer> i <Cmd>enew<CR>i",
-    group = dashboard,
-})
-autocmd(
-    "User",
-    { pattern = "DashboardReady", command = "nnoremap <buffer> e <Cmd>enew<CR>", group = dashboard }
-)
-autocmd(
-    "User",
-    { pattern = "DashboardReady", command = "nnoremap <buffer> q <Cmd>exit<CR>", group = dashboard }
-)
-
 -- Null-ls
 local null_ls = augroup("null-ls_au", {})
 autocmd("BufReadPost", {
