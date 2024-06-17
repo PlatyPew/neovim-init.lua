@@ -44,8 +44,8 @@ return {
                             cond = require("noice").api.status.mode.has,
                             color = { fg = vim.g.palette.overlay0 },
                         },
-                        "selectioncount",
-                        "location",
+                        "%S",
+                        "%l:%c",
                         {
                             "filetype",
                             colored = true,
