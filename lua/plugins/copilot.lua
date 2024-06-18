@@ -54,8 +54,16 @@ return {
             temperature = 0.2,
             window = {
                 layout = "float",
+                width = 0.8,
+                height = 0.8,
             },
             auto_insert_mode = true,
+            mappings = {
+                submit_prompt = {
+                    normal = "<CR>",
+                    insert = "<C-m>",
+                },
+            },
         },
     },
 }
