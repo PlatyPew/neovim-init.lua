@@ -33,6 +33,8 @@ return {
 
     {
         "jonatan-branting/nvim-better-n",
+        keys = { "n", "N", "f", "F", "t", "T", "/", "?" },
+        lazy = true,
         opts = {},
-    }
+    },
 }

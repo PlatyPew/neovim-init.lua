@@ -34,6 +34,7 @@
   "noice.nvim": { "branch": "main", "commit": "8bccd26e912a439f45829bd1fe83e77c4dc263ad" },
   "none-ls.nvim": { "branch": "main", "commit": "cc0a3c45047e3daf85d07c1571d65476cfce6480" },
   "nui.nvim": { "branch": "main", "commit": "322978c734866996274467de084a95e4f9b5e0b1" },
+  "nvim-better-n": { "branch": "master", "commit": "f7cc2ce7bbfede13cc62ba28d4c3d1353d79a5eb" },
   "nvim-bqf": { "branch": "main", "commit": "1b24dc6050c34e8cd377b6b4cd6abe40509e0187" },
   "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "a065833f35a3a7cc3ef137ac88b5381da2ba302e" },

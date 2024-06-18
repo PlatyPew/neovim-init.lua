@@ -35,11 +35,17 @@ return {
 
             -- stylua: ignore start
             local remap = vim.keymap.set
-            remap("n", "[c", "<Cmd>Gitsigns prev_hunk<CR>", { desc = "Previous Hunk" })
-            remap("n", "]c", "<Cmd>Gitsigns next_hunk<CR>", { desc = "Next Hunk" })
 
-            remap("n", "<Leader>g[", "<Cmd>Gitsigns prev_hunk<CR>", { desc = "Previous Hunk" })
-            remap("n", "<Leader>g]", "<Cmd>Gitsigns next_hunk<CR>", { desc = "Next Hunk" })
+            local hunk_nav = require("better-n").create({
+                previous = require("gitsigns").prev_hunk,
+                next = require("gitsigns").next_hunk,
+            })
+
+            remap("n", "[c", hunk_nav.previous, { desc = "Previous Hunk" })
+            remap("n", "]c", hunk_nav.next, { desc = "Next Hunk" })
+
+            remap("n", "<Leader>g[", hunk_nav.previous, { desc = "Previous Hunk" })
+            remap("n", "<Leader>g]", hunk_nav.next, { desc = "Next Hunk" })
             remap("n", "<Leader>gR", "<Cmd>Gitsigns reset_buffer<CR>", { desc = "Reset Buffer" })
             remap("n", "<Leader>gS", "<Cmd>Gitsigns stage_buffer<CR>", { desc = "Stage Buffer" })
             remap("n", "<Leader>gU", "<Cmd>Gitsigns reset_buffer_index<CR>", { desc = "Reset Buffer Index" })
