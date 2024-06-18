@@ -55,6 +55,7 @@ return {
             window = {
                 layout = "float",
             },
+            auto_insert_mode = true,
         },
     },
 }
