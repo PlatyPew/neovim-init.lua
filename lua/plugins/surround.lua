@@ -6,7 +6,7 @@ return {
             { "ys", "<Plug>(nvim-surround-normal)" },
             { "cs", "<Plug>(nvim-surround-change)" },
             { "ds", "<Plug>(nvim-surround-delete)" },
-            { "s", "<Plug>(nvim-surround-visual)", mode = "v" },
+            { "s", "<Plug>(nvim-surround-visual)", mode = { "x", "o" } },
         },
         opts = {
             surrounds = {
@@ -18,7 +18,7 @@ return {
                 ["}"] = { add = { "{ ", " }" } },
             },
             keymaps = {
-                visual_line = "",
+                -- visual_line = "",
                 visual = "s",
             },
         },
