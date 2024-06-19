@@ -89,4 +89,21 @@ return {
             yank = { suffix = "" },
         },
     },
+
+    {
+        "echasnovski/mini.ai",
+        event = "BufReadPost",
+        dependencies = "nvim-treesitter/nvim-treesitter-textobjects",
+        config = function()
+            local ai = require("mini.ai")
+            local ts = ai.gen_spec.treesitter
+
+            ai.setup({
+                custom_textobjects = {
+                    f = ts({ a = "@function.outer", i = "@function.inner" }),
+                },
+                search_method = 'cover',
+            })
+        end,
+    },
 }

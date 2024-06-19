@@ -5,7 +5,6 @@ return {
         event = "VeryLazy",
         build = ":TSUpdate",
         dependencies = {
-            "nvim-treesitter/nvim-treesitter-textobjects",
             "nvim-treesitter/nvim-treesitter-refactor",
             "HiPhish/rainbow-delimiters.nvim",
         },
@@ -35,25 +34,6 @@ return {
                     enable = true,
                     keymaps = {
                         smart_rename = "gR",
-                    },
-                },
-            },
-            textobjects = {
-                select = {
-                    enable = true,
-                    lookahead = true,
-                    keymaps = {
-                        ["ia"] = "@parameter.inner",
-                        ["aa"] = "@parameter.outer",
-                        ["af"] = "@function.outer",
-                        ["if"] = "@function.inner",
-                        ["ac"] = "@class.outer",
-                        ["ic"] = "@class.inner",
-                        ["ii"] = "@conditional.inner",
-                        ["ai"] = "@conditional.outer",
-                        ["il"] = "@loop.inner",
-                        ["al"] = "@loop.outer",
-                        ["at"] = "@comment.outer",
                     },
                 },
             },
