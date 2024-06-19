@@ -100,7 +100,6 @@ return {
 
             ai.setup({
                 n_lines = 500,
-                search_method = 'cover',
                 custom_textobjects = {
                     f = ts({ a = "@function.outer", i = "@function.inner" }),
                     i = ts({ a = "@conditional.outer", i = "@conditional.inner" }),
