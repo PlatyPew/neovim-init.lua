@@ -83,7 +83,11 @@ return {
             remap("n", "<Leader>lfS", "<Cmd>FzfLua lsp_workspace_symbols<CR>", { desc = "Workspace Symbols" })
             remap("n", "<Leader>lfd", "<Cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "Document Diagnostics" })
             remap("n", "<Leader>lfD", "<Cmd>FzfLua lsp_workspace_diagnostics<CR>", { desc = "Workspace Diagnostics" })
+
+            remap("n", "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Previous Diagnostic" })
+            remap("n", "]d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Next Diagnostic" })
             -- stylua: ignore end
+
         end,
     },
 
@@ -97,8 +101,6 @@ return {
             { "gh", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
             { "gr", "<Cmd>Lspsaga rename<CR>", desc = "Rename Variable" },
             { "gx", "<Cmd>Lspsaga finder<CR>", desc = "Find Reference" },
-            { "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous Diagnostic" },
-            { "]d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Next Diagnostic" },
 
             { "<Leader>t", "<Cmd>Lspsaga term_toggle<CR>", desc = "Toggle Terminal" },
             { "<Leader>lD", "<Cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Show Buffer Diagnostics" },

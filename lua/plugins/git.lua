@@ -35,8 +35,8 @@ return {
 
             -- stylua: ignore start
             local remap = vim.keymap.set
-            remap("n", "[c", "<Cmd>Gitsigns prev_hunk<CR>", { desc = "Previous Hunk" })
-            remap("n", "]c",  "<Cmd>Gitsigns next_hunk<CR>", { desc = "Next Hunk" })
+            remap("n", "[g", "<Cmd>Gitsigns prev_hunk<CR>", { desc = "Previous Hunk" })
+            remap("n", "]g",  "<Cmd>Gitsigns next_hunk<CR>", { desc = "Next Hunk" })
 
             remap("n", "<Leader>g[", "<Cmd>Gitsigns prev_hunk<CR>", { desc = "Previous Hunk" })
             remap("n", "<Leader>g]", "<Cmd>Gitsigns next_hunk<CR>", { desc = "Next Hunk" })

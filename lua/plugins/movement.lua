@@ -71,4 +71,18 @@ return {
         },
         opts = {},
     },
+
+    {
+        "echasnovski/mini.bracketed",
+        keys = { "[", "]" },
+        opts = {
+            diagnostic = { suffix = "" },
+            file = { suffix = "" },
+            indent = { suffix = "" },
+            jump = { suffix = "" },
+            location = { suffix = "" },
+            undo = { suffix = "" },
+            yank = { suffix = "" },
+        },
+    },
 }
