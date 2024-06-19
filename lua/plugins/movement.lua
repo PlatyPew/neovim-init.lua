@@ -30,11 +30,4 @@ return {
             { "ge", function() require("spider").motion("ge") end, mode = { "n", "o", "x" } },
         },
     },
-
-    {
-        "jonatan-branting/nvim-better-n",
-        keys = { "n", "N", "f", "F", "t", "T", "/", "?" },
-        lazy = true,
-        opts = {},
-    },
 }

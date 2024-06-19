@@ -38,6 +38,8 @@ remap("n", "<Leader>ql", "<Cmd>:clast<CR>", { desc = "Cycle Last Quickfix List" 
 remap("n", "<Leader>qq", "<Cmd>:cclose<CR>", { desc = "Close Quickfix List" })
 
 -- Stops cursor from flying everywhere
+remap("n", "n", "nzzzv")
+remap("n", "N", "Nzzzv")
 remap("n", "<C-d>", "<C-d>zz")
 remap("n", "<C-u>", "<C-u>zz")
 
