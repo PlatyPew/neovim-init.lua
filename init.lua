@@ -41,3 +41,7 @@ require("lazy").setup("plugins", {
 require("core.mappings")
 require("core.autocmd")
 require("core.functions")
+
+if vim.g.neovide then
+    require("neovide")
+end

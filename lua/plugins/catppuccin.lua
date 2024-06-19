@@ -12,6 +12,10 @@ return {
             transparent_background = true,
         },
         config = function(_, opts)
+            if vim.g.neovide then
+                opts.transparent_background = false
+            end
+
             local catppuccin = require("catppuccin")
             catppuccin.setup(opts)
 
