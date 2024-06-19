@@ -50,12 +50,6 @@ remap("x", "p", "pgvy")
 remap("i", ",", ",<C-g>u")
 remap("i", ".", ".<C-g>u")
 
--- Move stuff in visual mode
-remap("v", "J", [[:m '>+1'<CR>gv=gv]])
-remap("v", "K", [[:m '<-2'<CR>gv=gv]])
-remap("v", "H", "<gv")
-remap("v", "L", ">gv")
-
 -- Indent when going into insert mode
 remap("n", "i", function()
     if #vim.fn.getline(".") == 0 then

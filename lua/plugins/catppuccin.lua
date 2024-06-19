@@ -27,7 +27,7 @@ return {
     },
 
     {
-        "norcalli/nvim-colorizer.lua",
+        "echasnovski/mini.hipatterns",
         event = { "BufReadPost", "BufNewFile" },
         opts = {},
     },
