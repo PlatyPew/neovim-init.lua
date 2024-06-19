@@ -62,6 +62,10 @@ return {
                 repeat_jump = "",
             },
         },
+        config = function(_, opts)
+            require("mini.jump").setup(opts)
+            vim.api.nvim_set_hl(0, "MiniJump", { link = "SpellLocal" })
+        end,
     },
 
     {
