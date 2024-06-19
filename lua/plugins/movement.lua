@@ -36,7 +36,7 @@ return {
         -- stylua: ignore
         keys = {
             { "<M-h>", function() MiniMove.move_line("left") end, desc = "Move Line Left" },
-            {"<M-j>", function() MiniMove.move_line("down") end, desc = "Move Line Down"},
+            { "<M-j>", function() MiniMove.move_line("down") end, desc = "Move Line Down" },
             { "<M-k>", function() MiniMove.move_line("up") end, desc = "Move Line Up" },
             { "<M-l>", function() MiniMove.move_line("right") end, desc = "Move Line Right" },
             { "H", function() MiniMove.move_selection("left") end, desc = "Move Left", mode = "x" },
