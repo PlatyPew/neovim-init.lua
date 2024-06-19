@@ -99,10 +99,13 @@ return {
             local ts = ai.gen_spec.treesitter
 
             ai.setup({
+                n_lines = 500,
+                search_method = 'cover',
                 custom_textobjects = {
                     f = ts({ a = "@function.outer", i = "@function.inner" }),
+                    i = ts({ a = "@conditional.outer", i = "@conditional.inner" }),
+                    o = ts({ a = "@loop.outer", i = "@loop.inner" }),
                 },
-                search_method = 'cover',
             })
         end,
     },
