@@ -7,7 +7,6 @@ autocmd({ "BufNewFile", "BufRead" }, {
     command = "setlocal formatoptions-=cro",
 })
 
-vim.cmd("setlocal spell")
 local highlights = augroup("highlights", { clear = true })
 autocmd("FileType", {
     pattern = "*",
