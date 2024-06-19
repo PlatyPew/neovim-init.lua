@@ -46,6 +46,7 @@ return {
 
             remap("n", "<Leader>g[", hunk_nav.previous, { desc = "Previous Hunk" })
             remap("n", "<Leader>g]", hunk_nav.next, { desc = "Next Hunk" })
+            remap("n", "<Leader>gB", "<Cmd>Gitsigns blame<CR>", { desc = "Blame Buffer" })
             remap("n", "<Leader>gR", "<Cmd>Gitsigns reset_buffer<CR>", { desc = "Reset Buffer" })
             remap("n", "<Leader>gS", "<Cmd>Gitsigns stage_buffer<CR>", { desc = "Stage Buffer" })
             remap("n", "<Leader>gU", "<Cmd>Gitsigns reset_buffer_index<CR>", { desc = "Reset Buffer Index" })
