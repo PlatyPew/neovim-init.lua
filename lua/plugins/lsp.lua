@@ -90,7 +90,7 @@ return {
         cmd = "Lspsaga",
         -- stylua: ignore
         keys = {
-            { "gc", "<Cmd>Lspsaga code_action<CR>", desc = "Show Code Actions" },
+            { "ga", "<Cmd>Lspsaga code_action<CR>", desc = "Show Code Actions" },
             { "gp", "<Cmd>Lspsaga peek_definition<CR>", desc = "Preview Definition" },
             { "gh", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
             { "gr", "<Cmd>Lspsaga rename<CR>", desc = "Rename Variable" },
