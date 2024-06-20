@@ -10,6 +10,18 @@ return {
                 dark = "mocha",
             },
             transparent_background = true,
+            integrations = {
+                cmp = true,
+                diffview = true,
+                harpoon = true,
+                leap = true,
+                lsp_saga = true,
+                mason = true,
+                mini = true,
+                noice = true,
+                overseer = true,
+                which_key = true,
+            },
         },
         config = function(_, opts)
             if vim.g.neovide then

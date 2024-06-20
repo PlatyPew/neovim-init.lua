@@ -28,11 +28,6 @@ return {
         config = function(_, opts)
             require("gitsigns").setup(opts)
 
-            local hl = vim.api.nvim_set_hl
-            hl(0, "GitSignsAddLn", { fg = vim.g.palette.crust, bg = vim.g.palette.sky })
-            hl(0, "GitSignsChangeLn", { fg = vim.g.palette.crust, bg = vim.g.palette.yellow })
-            hl(0, "GitSignsDeleteLn", { fg = vim.g.palette.crust, bg = vim.g.palette.maroon })
-
             -- stylua: ignore start
             local remap = vim.keymap.set
             remap("n", "[g", "<Cmd>Gitsigns prev_hunk<CR>", { desc = "Previous Hunk" })

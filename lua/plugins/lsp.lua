@@ -115,6 +115,9 @@ return {
             { "<Leader>lx", "<Cmd>Lspsaga finder<CR>", desc = "Find Reference" },
         },
         opts = {
+            ui = {
+                kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+            },
             finder = {
                 keys = { toggle_or_open = "<CR>" },
             },
