@@ -59,3 +59,6 @@ remap("n", "i", function()
         return "i"
     end
 end, { expr = true })
+
+-- Better escape for terminal
+remap("t", "<C-Esc>", "<C-\\><C-n>")
