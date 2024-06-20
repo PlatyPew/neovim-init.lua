@@ -5,6 +5,7 @@ return {
         dependencies = {
             "williamboman/mason.nvim",
             "jay-babu/mason-null-ls.nvim",
+            "nvimtools/none-ls-extras.nvim",
         },
         config = function()
             local null_ls = require("null-ls")
@@ -49,33 +50,11 @@ return {
                 },
             })
 
-            local rustfmt = {
-                method = null_ls.methods.FORMATTING,
-                filetypes = { "rust" },
-                generator = null_ls.generator({
-                    command = "rustfmt",
-                    args = { "--emit=stdout" },
-                    to_stdin = true,
-                    format = "raw",
-                    on_output = function(params, done)
-                        if params.output then
-                            done({
-                                {
-                                    row = 1,
-                                    col = 1,
-                                    end_row = #params.content + 1,
-                                    end_col = 1,
-                                    text = params.output,
-                                },
-                            })
-                        else
-                            done()
-                        end
-                    end,
-                }),
-            }
-
-            null_ls.register(rustfmt)
+            null_ls.setup({
+                sources = {
+                    require("none-ls.formatting.rustfmt"),
+                },
+            })
 
             -- stylua: ignore start
             local remap = vim.keymap.set
