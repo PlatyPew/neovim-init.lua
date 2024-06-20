@@ -70,8 +70,14 @@ return {
             end
 
             function _G.dap_program()
-                dap.configurations[vim.bo.filetype][1].program =
-                    vim.fn.input("Path: ", vim.fn.getcwd() .. "/", "file")
+                require("fzf-lua").files({
+                    cwd = vim.fn.getcwd(),
+                    actions = {
+                        ["default"] = function(selected_fzf_item)
+                            dap.configurations[vim.bo.filetype][1].program = selected_fzf_item[1]:gsub("[^\32-\126]", ""):sub(2)
+                        end,
+                    },
+                })
             end
 
             require("overseer").enable_dap()
