@@ -23,6 +23,7 @@ remap("n", ";", ":")
 remap("v", ";", ":")
 
 -- Cycling buffers
+remap("n", "<Leader>bo", "<Cmd>:enew<CR>", { desc = "Open New Buffer" })
 remap("n", "<Leader>bh", "<Cmd>:bfirst<CR>", { desc = "Cycle First Buffer" })
 remap("n", "<Leader>bj", "<Cmd>:bnext<CR>", { desc = "Cycle Next Buffer" })
 remap("n", "<Leader>bk", "<Cmd>:bprevious<CR>", { desc = "Cycle Previous Buffer" })
