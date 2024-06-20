@@ -14,14 +14,6 @@ autocmd("FileType", {
     command = "if &ft!='dashboard' && &ft!='WhichKey' && &ft!='lazy' && &ft!='mason' && &ft!='fzf' && &ft!='NeogitStatus' | call matchadd('ColorColumn', '\\%101v[^\n]')",
 })
 
--- Null-ls
-local null_ls = augroup("null-ls_au", {})
-autocmd("BufReadPost", {
-    pattern = "*",
-    command = "lua local nls = require('null-ls'); nls.enable({ name = 'cspell', method = nls.methods.DIAGNOSTICS })",
-    group = null_ls,
-})
-
 -- Fix oil lazy load but override netrw
 local oil = augroup("oil_au", {})
 autocmd("UIEnter", {
