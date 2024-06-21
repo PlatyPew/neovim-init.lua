@@ -36,7 +36,7 @@ return {
         },
         -- stylua: ignore
         keys = {
-            { "<Leader>cc", "<Cmd>CopilotChatToggle<CR>", desc = "Toggle Copilot Chat" },
+            { "<Leader>cc", "<Cmd>CopilotChatToggle<CR>", desc = "Toggle Copilot Chat", mode = { "n", "v" } },
             { "<Leader>cD", "<Cmd>CopilotChatDocs<CR>", desc = "Copilot Chat Docs", mode = "v" },
             { "<Leader>cT", "<Cmd>CopilotChatTests<CR>", desc = "Copilot Chat Tests", mode = "v" },
             { "<Leader>cd", "<Cmd>CopilotChatFixDiagnostic<CR>", desc = "Copilot Chat Fix Diagnostics", mode = "v" },
@@ -60,8 +60,7 @@ return {
             auto_insert_mode = true,
             mappings = {
                 submit_prompt = {
-                    normal = "<CR>",
-                    insert = "<C-m>",
+                    insert = "<M-CR>",
                 },
             },
         },
