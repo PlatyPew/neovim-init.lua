@@ -25,4 +25,12 @@ return {
             },
         },
     },
+
+    {
+        "echasnovski/mini.splitjoin",
+        keys = {
+            { "gS", desc = "Toggle Split Join", move = { "n", "x" } },
+        },
+        opts = {},
+    },
 }

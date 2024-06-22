@@ -58,14 +58,6 @@ return {
     },
 
     {
-        "echasnovski/mini.splitjoin",
-        keys = {
-            { "gS", desc = "Toggle Split Join", move = { "n", "x" } },
-        },
-        opts = {},
-    },
-
-    {
         "echasnovski/mini.bracketed",
         keys = { "[", "]" },
         opts = {
