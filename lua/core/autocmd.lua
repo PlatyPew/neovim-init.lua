@@ -25,3 +25,25 @@ autocmd("UIEnter", {
     end,
     group = oil,
 })
+
+local term = vim.api.nvim_create_augroup("term_au", {})
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = "*",
+    command = "setlocal nonumber norelativenumber",
+    group = term,
+})
+vim.api.nvim_create_autocmd("WinEnter", {
+    pattern = "term://*",
+    command = "nohlsearch",
+    group = term,
+})
+vim.api.nvim_create_autocmd("WinEnter", {
+    pattern = "term://*",
+    command = "startinsert",
+    group = term,
+})
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = "*",
+    command = "setlocal listchars= | set nocursorline | set nocursorcolumn",
+    group = term,
+})
