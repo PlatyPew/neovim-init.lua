@@ -1,4 +1,4 @@
-vim.o.guifont = "Comic Code Ligatures:h16"
+vim.o.guifont = "Iosevka Nerd Font Propo:h16"
 
 vim.g.neovide_transparency = 0.9
 vim.g.neovide_floating_blur_amount_x = 2.0
