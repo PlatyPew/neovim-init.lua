@@ -30,6 +30,14 @@ return {
                 opts.transparent_background = false
             end
 
+            local function transparency()
+                catppuccin.setup({
+                    transparent_background = not catppuccin.options.transparent_background,
+                })
+                vim.cmd.colorscheme("catppuccin")
+            end
+            vim.api.nvim_create_user_command("Transparency", transparency, {})
+
             vim.g.palette = require("catppuccin.palettes").get_palette()
 
             opts.custom_highlights = {
@@ -50,6 +58,8 @@ return {
 
             vim.cmd.syntax("on")
             vim.cmd.colorscheme("catppuccin")
+
+            vim.keymap.set("n", "<Leader>T", "<Cmd>Transparency<CR>", { desc = "Toggle Transparent Background" })
         end,
     },
 
