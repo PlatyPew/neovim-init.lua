@@ -24,21 +24,32 @@ return {
             },
         },
         config = function(_, opts)
+            local catppuccin = require("catppuccin")
+
             if vim.g.neovide then
                 opts.transparent_background = false
             end
 
-            local catppuccin = require("catppuccin")
-            catppuccin.setup(opts)
-
             vim.g.palette = require("catppuccin.palettes").get_palette()
+
+            opts.custom_highlights = {
+                ColorColumn = { fg = vim.g.palette.red, bg = vim.g.palette.crust },
+                VertSplit = { fg = vim.g.palette.overlay0 },
+
+                CmpItemAbbrMatch = { fg = vim.g.palette.sapphire },
+
+                DashboardHeader = { fg = vim.g.palette.yellow },
+                DashboardFooter = { fg = vim.g.palette.peach },
+
+                TSDefinitionUsage = { underline = true },
+
+                HighlightedyankRegion = { reverse = true },
+            }
+
+            catppuccin.setup(opts)
 
             vim.cmd.syntax("on")
             vim.cmd.colorscheme("catppuccin")
-
-            local hl = vim.api.nvim_set_hl
-            hl(0, "ColorColumn", { fg = vim.g.palette.red, bg = vim.g.palette.crust })
-            hl(0, "VertSplit", { fg = vim.g.palette.overlay0 })
         end,
     },
 

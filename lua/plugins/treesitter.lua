@@ -41,9 +41,6 @@ return {
         config = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)
 
-            local hl = vim.api.nvim_set_hl
-            hl(0, "TSDefinitionUsage", { underline = true })
-
             require("rainbow-delimiters").enable()
         end,
     },

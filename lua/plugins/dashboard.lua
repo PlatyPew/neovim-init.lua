@@ -93,11 +93,6 @@ return {
                 button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
                 button.key_format = "  %s"
             end
-
-            local hl = vim.api.nvim_set_hl
-            hl(0, "DashboardHeader", { fg = vim.g.palette.yellow })
-            hl(0, "DashboardFooter", { fg = vim.g.palette.peach })
-
             return opts
         end,
     },
