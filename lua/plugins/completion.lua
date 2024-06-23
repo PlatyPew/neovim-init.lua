@@ -16,7 +16,6 @@ return {
             "FelipeLema/cmp-async-path",
             "ray-x/cmp-treesitter",
             "hrsh7th/cmp-buffer",
-            "zbirenbaum/copilot-cmp",
         },
         config = function()
             local cmp = require("cmp")
@@ -108,5 +107,10 @@ return {
                 },
             })
         end,
+    },
+
+    {
+        "zbirenbaum/copilot-cmp",
+        lazy = true,
     },
 }
