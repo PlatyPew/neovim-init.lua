@@ -14,7 +14,6 @@ return {
             vim.o.foldexpr = "nvim_treesitter#foldexpr()"
         end,
         opts = {
-            ensure_installed = { "c", "python", "javascript" },
             sync_install = false,
             ignore_install = {},
             modules = {},
@@ -39,6 +38,10 @@ return {
             },
         },
         config = function(_, opts)
+            if vim.g.install then
+                opts.ensure_installed = "all"
+            end
+
             require("nvim-treesitter.configs").setup(opts)
 
             require("rainbow-delimiters").enable()
