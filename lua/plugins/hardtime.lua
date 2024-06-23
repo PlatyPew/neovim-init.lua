@@ -22,6 +22,7 @@ return {
                 "mason",
                 "oil",
                 "dashboard",
+                "dbui",
             },
         },
     },
