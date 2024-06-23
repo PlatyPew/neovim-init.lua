@@ -22,12 +22,18 @@ return {
                 library = { plugins = { "nvim-dap-ui" }, types = true },
             })
 
-            require("mason-nvim-dap").setup({
+            local ensure_installed = {}
+            if vim.g.install then
                 ensure_installed = {
                     "python",
                     "node2",
                     "codelldb",
-                },
+                    "java-debug-adapter",
+                }
+            end
+
+            require("mason-nvim-dap").setup({
+                ensure_installed = ensure_installed,
                 automatic_setup = true,
                 handlers = {},
             })

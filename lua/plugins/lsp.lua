@@ -12,11 +12,19 @@ return {
         config = function()
             vim.lsp.set_log_level("off")
 
-            local servers = {
-                lua_ls = {},
-                pyright = {},
-                tsserver = {},
-            }
+            local servers = {}
+
+            if vim.g.install then
+                servers = {
+                    bashls = {},
+                    clangd = {},
+                    jdtls = {},
+                    lua_ls = {},
+                    pyright = {},
+                    rust_analyzer = {},
+                    tsserver = {},
+                }
+            end
 
             -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
             local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -87,7 +95,6 @@ return {
             remap("n", "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Previous Diagnostic" })
             remap("n", "]d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Next Diagnostic" })
             -- stylua: ignore end
-
         end,
     },
 
