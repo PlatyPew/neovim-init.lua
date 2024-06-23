@@ -2,6 +2,7 @@ return {
     {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
+        event = "InsertEnter",
         -- stylua: ignore
         keys = {
             { "<Leader>ct", "<Cmd>Copilot toggle<CR>", desc = "Toggle Copilot" },
@@ -9,14 +10,8 @@ return {
             { "<Leader>cs", "<Cmd>Copilot status<CR>", desc = "Copilot Status" },
         },
         opts = {
-            suggestion = {
-                auto_trigger = true,
-                keymap = {
-                    accept = "<M-CR>",
-                    accept_word = false,
-                    accept_line = false,
-                },
-            },
+            suggestion = { enabled = false },
+            panel = { enabled = false },
         },
     },
 

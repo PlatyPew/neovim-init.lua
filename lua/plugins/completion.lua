@@ -16,12 +16,14 @@ return {
             "FelipeLema/cmp-async-path",
             "ray-x/cmp-treesitter",
             "hrsh7th/cmp-buffer",
+            "zbirenbaum/copilot-cmp",
         },
         config = function()
             local cmp = require("cmp")
             local luasnip = require("luasnip")
 
             require("luasnip.loaders.from_vscode").lazy_load()
+            require("copilot_cmp").setup()
 
             local border_opts = {
                 border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
@@ -72,10 +74,12 @@ return {
                             treesitter = "[TS]",
                             buffer = "[BUF]",
                             luasnip = "[SNIP]",
+                            copilot = "[COPILOT]",
                         },
                         symbol_map = {
                             String = "󰊄",
                             Comment = "󰅺",
+                            Copilot = "",
                         },
                     }),
                 },
@@ -84,6 +88,7 @@ return {
                     documentation = cmp.config.window.bordered(border_opts),
                 },
                 sources = {
+                    { name = "copilot" },
                     { name = "nvim_lsp" },
                     { name = "async_path" },
                     { name = "treesitter" },
@@ -92,6 +97,8 @@ return {
                 },
                 sorting = {
                     comparators = {
+                        require("copilot_cmp.comparators").prioritize,
+
                         cmp.config.compare.offset,
                         cmp.config.compare.exact,
                         cmp.config.compare.score,
