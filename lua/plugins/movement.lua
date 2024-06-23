@@ -109,4 +109,9 @@ return {
         },
         opts = {},
     },
+
+    {
+        "christoomey/vim-tmux-navigator",
+        event = "VeryLazy",
+    },
 }
