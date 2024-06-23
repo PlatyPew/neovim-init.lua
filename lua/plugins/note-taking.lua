@@ -10,4 +10,12 @@ return {
             vim.fn["mkdp#util#install"]()
         end,
     },
+
+    {
+        "HakonHarnes/img-clip.nvim",
+        cmd = "PasteImage",
+        keys = {
+            { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste Image" },
+        },
+    },
 }
