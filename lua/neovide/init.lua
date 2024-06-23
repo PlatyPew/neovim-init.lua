@@ -6,6 +6,8 @@ vim.g.neovide_floating_blur_amount_y = 2.0
 
 vim.g.neovide_input_macos_option_key_is_meta = "only_left"
 
+vim.g.neovide_cursor_vfx_mode = "pixiedust"
+
 vim.g.terminal_color_0 = "#45475A"
 vim.g.terminal_color_8 = "#585B70"
 vim.g.terminal_color_1 = "#F38BA8"
@@ -33,3 +35,14 @@ end)
 vim.keymap.set("n", "<Leader>-", function()
     change_scale_factor(1 / 1.1)
 end)
+
+vim.keymap.set("n", "<D-s>", ":w<CR>")
+vim.keymap.set("v", "<D-c>", '"+y')
+vim.keymap.set("n", "<D-v>", '"+P')
+vim.keymap.set("v", "<D-v>", '"+P')
+vim.keymap.set("c", "<D-v>", "<C-R>+")
+vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli')
+vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
