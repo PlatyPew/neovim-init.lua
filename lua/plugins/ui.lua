@@ -128,12 +128,23 @@ return {
                 options = {
                     icons_enabled = true,
                     theme = "catppuccin",
-                    section_separators = { left = "", right = "" },
-                    component_separators = { left = "", right = "" },
+                    section_separators = { left = "", right = "" },
+                    component_separators = { left = "", right = "" },
                     globalstatus = true,
                 },
                 sections = {
-                    lualine_a = { "mode" },
+                    lualine_a = {
+                        {
+                            function()
+                                return ""
+                            end,
+                            separator = "",
+                        },
+                        {
+                            "mode",
+                            padding = { left = 0, right = 1 },
+                        },
+                    },
                     lualine_b = { "branch", "diff" },
                     lualine_c = { "filename", "filesize" },
                     lualine_x = {
