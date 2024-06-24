@@ -10,8 +10,14 @@ autocmd({ "BufNewFile", "BufRead" }, {
 local highlights = augroup("highlights", { clear = true })
 autocmd("FileType", {
     pattern = "*",
+    callback = function()
+        local ft = { "NeogitStatus", "WhichKey", "dashboard", "fzf", "lazy", "mason", "undotree" }
+
+        if not vim.tbl_contains(ft, vim.bo.filetype) then
+            vim.g.colorcolumn = vim.fn.matchadd("ColorColumn", "\\%101v[^\n]")
+        end
+    end,
     group = highlights,
-    command = "if &ft!='dashboard' && &ft!='WhichKey' && &ft!='lazy' && &ft!='mason' && &ft!='fzf' && &ft!='NeogitStatus' | call matchadd('ColorColumn', '\\%101v[^\n]')",
 })
 
 -- Fix oil lazy load but override netrw
