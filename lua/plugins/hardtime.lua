@@ -24,6 +24,9 @@ return {
                 "oil",
                 "dashboard",
                 "dbui",
+                "gitsigns.blame",
+                "copilot-chat",
+                "OverseerList"
             },
         },
     },
