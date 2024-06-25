@@ -6,8 +6,6 @@ return {
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-
-            "folke/neodev.nvim",
         },
         config = function()
             vim.lsp.set_log_level("off")
@@ -38,8 +36,6 @@ return {
             else
                 servers.clangd = {}
             end
-
-            require("neodev").setup()
 
             -- Setup mason so it can manage external tooling
             require("mason").setup()
@@ -131,6 +127,16 @@ return {
             rename = { in_select = false },
             lightbulb = { enable = false },
             symbol_in_winbar = { enable = false },
+        },
+    },
+
+    {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {
+            library = {
+                { path = "luvit-meta/library", words = { "vim%.uv" } },
+            },
         },
     },
 

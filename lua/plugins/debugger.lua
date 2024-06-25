@@ -18,10 +18,6 @@ return {
             vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "Conditional" })
             vim.fn.sign_define("DapStopped", { text = "", texthl = "String" })
 
-            require("neodev").setup({
-                library = { plugins = { "nvim-dap-ui" }, types = true },
-            })
-
             local ensure_installed = {}
             if vim.g.install then
                 ensure_installed = {
