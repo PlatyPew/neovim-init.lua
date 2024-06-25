@@ -1,9 +1,12 @@
 return {
     {
         "nvim-pack/nvim-spectre",
-        build = false,
+        dependencies = "nvim-lua/plenary.nvim",
         cmd = "Spectre",
-        opts = { open_cmd = "noswapfile vnew" },
+        opts = {
+            open_cmd = "noswapfile vnew",
+            live_update = true,
+        },
         -- stylua: ignore
         keys = {
             { "<D-f>", "<Cmd>Spectre<CR>", desc = "Replace in Files" },
