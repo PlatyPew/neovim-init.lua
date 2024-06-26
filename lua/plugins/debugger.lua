@@ -22,8 +22,8 @@ return {
             if vim.g.install then
                 ensure_installed = {
                     "python",
-                    "node2",
                     "codelldb",
+                    "js-debug-adapter",
                     "java-debug-adapter",
                 }
             end
@@ -37,6 +37,48 @@ return {
             require("nvim-dap-virtual-text").setup({})
 
             require("dapui").setup()
+
+            dap.adapters["pwa-node"] = {
+                type = "server",
+                host = "localhost",
+                port = "${port}",
+                executable = {
+                    command = "node",
+                    args = {
+                        require("mason-registry")
+                            .get_package("js-debug-adapter")
+                            :get_install_path()
+                            .. "/js-debug/src/dapDebugServer.js",
+                        "${port}",
+                    },
+                },
+            }
+
+            for _, language in ipairs({
+                "typescript",
+                "javascript",
+                "typescriptreact",
+                "javascriptreact",
+            }) do
+                dap.configurations[language] = {
+                    {
+                        type = "pwa-node",
+                        request = "launch",
+                        name = "Launch file",
+                        program = "${file}",
+                        cwd = vim.fn.getcwd(),
+                        sourceMaps = true,
+                    },
+                    {
+                        type = "pwa-node",
+                        request = "attach",
+                        name = "Attach",
+                        processId = require("dap.utils").pick_process,
+                        cwd = vim.fn.getcwd(),
+                        sourceMaps = true,
+                    },
+                }
+            end
 
             dap.configurations.java = {
                 {
@@ -76,7 +118,8 @@ return {
                     cwd = vim.fn.getcwd(),
                     actions = {
                         ["default"] = function(selected_fzf_item)
-                            dap.configurations[vim.bo.filetype][1].program = selected_fzf_item[1]:gsub("[^\32-\126]", ""):sub(2)
+                            dap.configurations[vim.bo.filetype][1].program =
+                                selected_fzf_item[1]:gsub("[^\32-\126]", ""):sub(2)
                         end,
                     },
                 })
