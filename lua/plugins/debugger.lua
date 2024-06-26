@@ -38,19 +38,31 @@ return {
 
             require("dapui").setup()
 
-            dap.adapters["pwa-node"] = {
-                type = "server",
-                host = "localhost",
-                port = "${port}",
-                executable = {
-                    command = "node",
-                    args = {
-                        require("mason-registry")
-                            .get_package("js-debug-adapter")
-                            :get_install_path()
-                            .. "/js-debug/src/dapDebugServer.js",
-                        "${port}",
+            for _, adapters in ipairs({ "pwa-node", "pwa-chrome" }) do
+                dap.adapters[adapters] = {
+                    type = "server",
+                    host = "localhost",
+                    port = "${port}",
+                    executable = {
+                        command = "node",
+                        args = {
+                            require("mason-registry")
+                                .get_package("js-debug-adapter")
+                                :get_install_path()
+                                .. "/js-debug/src/dapDebugServer.js",
+                            "${port}",
+                        },
                     },
+                }
+            end
+
+            dap.adapters.firefox = {
+                type = "executable",
+                command = "node",
+                args = {
+                    require("mason-registry")
+                        .get_package("firefox-debug-adapter")
+                        :get_install_path() .. "/dist/adapter.bundle.js",
                 },
             }
 
@@ -76,6 +88,32 @@ return {
                         processId = require("dap.utils").pick_process,
                         cwd = vim.fn.getcwd(),
                         sourceMaps = true,
+                    },
+                    {
+                        type = "pwa-chrome",
+                        name = "Attach - Chrome",
+                        request = "attach",
+                        program = "${file}",
+                        cwd = vim.fn.getcwd(),
+                        sourceMaps = true,
+                        protocol = "inspector",
+                        port = 9222, -- Start Chrome google-chrome --remote-debugging-port=9222
+                        webRoot = "${workspaceFolder}",
+                    },
+                    {
+                        type = "firefox",
+                        request = "launch",
+                        name = "Attach - Firefox",
+                        reAttach = true,
+                        url = "http://localhost:3000",
+                        webRoot = "${workspaceFolder}",
+                        firefoxExecutable = function()
+                            if vim.fn.has("macunix") == 1 then
+                                return "/Applications/Firefox.app/Contents/MacOS/firefox"
+                            else
+                                return "/usr/bin/firefox"
+                            end
+                        end,
                     },
                 }
             end
