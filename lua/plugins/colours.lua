@@ -56,7 +56,6 @@ return {
 
             catppuccin.setup(opts)
 
-            vim.cmd.syntax("on")
             vim.cmd.colorscheme("catppuccin")
 
             vim.keymap.set("n", "<Leader>T", "<Cmd>Transparency<CR>", { desc = "Toggle Transparent Background" })
