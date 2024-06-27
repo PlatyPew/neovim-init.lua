@@ -100,6 +100,7 @@ return {
     {
         "folke/noice.nvim",
         event = "VeryLazy",
+        cond = not vim.g.vscode,
         opts = {
             lsp = {
                 override = {
@@ -118,6 +119,7 @@ return {
 
     {
         "nvim-lualine/lualine.nvim",
+        cond = not vim.g.vscode,
         event = "UIEnter",
         dependencies = {
             "folke/noice.nvim",
