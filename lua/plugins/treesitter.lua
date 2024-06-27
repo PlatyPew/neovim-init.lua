@@ -43,8 +43,6 @@ return {
             end
 
             require("nvim-treesitter.configs").setup(opts)
-
-            require("rainbow-delimiters").enable()
         end,
     },
 
