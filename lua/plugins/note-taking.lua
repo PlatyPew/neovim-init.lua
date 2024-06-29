@@ -18,4 +18,11 @@ return {
             { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste Image" },
         },
     },
+
+    {
+        "OXY2DEV/markview.nvim",
+        dependencies = "nvim-tree/nvim-web-devicons",
+        ft = "markdown",
+        opts = {},
+    },
 }
