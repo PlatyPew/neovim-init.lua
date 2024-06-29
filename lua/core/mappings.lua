@@ -44,6 +44,9 @@ remap("n", "N", "Nzzzv")
 remap("n", "<C-d>", "<C-d>zz")
 remap("n", "<C-u>", "<C-u>zz")
 
+-- Easier copy to clipboard
+remap({ "n", "x" }, "<Leader>y", '"+y', { desc = "Yank To Clipboard" })
+
 -- Prevents pasted over text from replacing register
 remap("x", "p", "pgvy")
 
