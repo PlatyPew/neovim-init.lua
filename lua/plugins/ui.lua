@@ -126,6 +126,21 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         config = function()
+            local mode_map = {
+                n = "(ᴗ_ ᴗ。)",
+                nt = "(ᴗ_ ᴗ。)",
+                i = "(•̀ - •́ )",
+                R = "( •̯́ ₃ •̯̀)",
+                v = "(⊙ _ ⊙ )",
+                V = "(⊙ _ ⊙ )",
+                no = "Σ(°△°ꪱꪱꪱ)",
+                ["\22"] = "(⊙ _ ⊙ )",
+                t = "(⌐■_■)",
+                ["!"] = "Σ(°△°ꪱꪱꪱ)",
+                c = "Σ(°△°ꪱꪱꪱ)",
+                s = "SUB",
+            }
+
             require("lualine").setup({
                 options = {
                     icons_enabled = true,
@@ -211,9 +226,12 @@ return {
                         },
                     },
                     lualine_y = {
-                        function()
-                            return [[光速]]
-                        end,
+                        {
+                            function()
+                                return mode_map[vim.api.nvim_get_mode().mode] or [[光速]]
+                            end,
+                            padding = { left = 0, right = 1 },
+                        },
                     },
                 },
                 extensions = { "nvim-dap-ui", "quickfix" },
