@@ -21,6 +21,17 @@ return {
                 noice = true,
                 overseer = true,
                 which_key = true,
+
+                native_lsp = {
+                    enabled = true,
+                    underlines = {
+                        errors = { "undercurl" },
+                        hints = { "undercurl" },
+                        warnings = { "undercurl" },
+                        information = { "undercurl" },
+                        ok = { "undercurl" },
+                    },
+                },
             },
         },
         config = function(_, opts)
@@ -58,7 +69,12 @@ return {
 
             vim.cmd.colorscheme("catppuccin")
 
-            vim.keymap.set("n", "<Leader>T", "<Cmd>Transparency<CR>", { desc = "Toggle Transparent Background" })
+            vim.keymap.set(
+                "n",
+                "<Leader>T",
+                "<Cmd>Transparency<CR>",
+                { desc = "Toggle Transparent Background" }
+            )
         end,
     },
 
