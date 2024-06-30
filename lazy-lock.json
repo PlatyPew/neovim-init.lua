@@ -24,6 +24,7 @@
   "hardtime.nvim": { "branch": "main", "commit": "9a4e24fb40482dc85a93bf6cf344a030b9bf9a39" },
   "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
   "img-clip.nvim": { "branch": "main", "commit": "1924e20ab19afec9779109d083b6e5f8bee8fb17" },
+  "kulala.nvim": { "branch": "main", "commit": "db014fccf14fb42ed0b8e2557f6074395c43b439" },
   "lazy.nvim": { "branch": "main", "commit": "7af8a317e24e31f4ee276ecb6d1f5f44e5bd11e2" },
   "lazydev.nvim": { "branch": "main", "commit": "78d8a11fbd02ad4eafa07dd8a43a959a69fb3bf8" },
   "leap.nvim": { "branch": "main", "commit": "eca8108dcd5f41fbde2a674dceb58b81ed887dc8" },
