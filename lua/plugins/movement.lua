@@ -160,6 +160,7 @@ return {
                 "copilot-chat",
                 "OverseerList",
                 "sagafinder",
+                "grug-far",
             },
         },
     },
