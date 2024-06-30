@@ -17,6 +17,7 @@ return {
             "FelipeLema/cmp-async-path",
             "ray-x/cmp-treesitter",
             "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-nvim-lsp-signature-help",
         },
         config = function()
             local cmp = require("cmp")
@@ -94,6 +95,7 @@ return {
                     { name = "treesitter" },
                     { name = "buffer" },
                     { name = "luasnip" },
+                    { name = "nvim_lsp_signature_help" },
                 },
                 sorting = {
                     comparators = {
