@@ -18,7 +18,7 @@ return {
                     clangd = {},
                     jdtls = {},
                     lua_ls = {},
-                    pyright = {},
+                    basedpyright = {},
                     rust_analyzer = {},
                     tsserver = {},
                 }
