@@ -147,7 +147,6 @@ return {
                 ["<Down>"] = {},
                 ["<Left>"] = {},
                 ["<Right>"] = {},
-                ["<Space>"] = { "n", "x" },
             },
             disabled_filetypes = {
                 "qf",
