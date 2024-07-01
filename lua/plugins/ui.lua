@@ -230,7 +230,8 @@ return {
                             function()
                                 return mode_map[vim.api.nvim_get_mode().mode] or [[光速]]
                             end,
-                            padding = { left = 0, right = 1 },
+                            separator = { left = "", right = "" },
+                            padding = 0,
                         },
                     },
                 },
