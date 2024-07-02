@@ -28,19 +28,17 @@ return {
     {
         "michaelb/sniprun",
         build = "bash ./install.sh",
-    -- stylua: ignore
-    keys = {
-        { "<Leader>rC", "<Plug>SnipReplMemoryClean", desc = "Clean REPL memory" },
-        { "<Leader>rR", "<Plug>SnipReset", desc = "Reset SnipRun" },
-        { "<Leader>rc", "<Plug>SnipClose", desc = "Close SnipRun" },
-        { "<Leader>ri", "<Plug>SnipInfo", desc = "Get SnipRun Info" },
-        { "<Leader>rr", "<Plug>SnipRun", desc = "Run Code" },
-        { "<Leader>rt", "<Plug>SnipTerminate", desc = "Terminate SnipRun" },
-        { "<Leader>rr", "<Plug>SnipRun", desc = "Run Code", mode = "v" },
-    },
+        cmd = { "SnipRun", "SnipInfo" },
+        -- stylua: ignore
+        keys = {
+            --[[ { "<Leader>r", "<Plug>SnipRunOperator" }, ]]
+            { "<Leader>rc", "<Plug>SnipReset", desc = "Reset SnipRun" },
+            { "<Leader>rq", "<Plug>SnipClose", desc = "Close SnipRun" },
+            { "<Leader>rr", "<Plug>SnipRun", desc = "Run Code", mode = { "n", "v" } },
+        },
         config = function()
             require("sniprun").setup({
-                display = { "TerminalWithCode", "VirtualTextOk" },
+                display = { "TerminalWithCode", "VirtualTextOk", "Api" },
                 selected_interpreters = { "Python3_fifo", "JS_TS_deno" },
                 repl_enable = { "Python3_fifo", "JS_TS_deno" },
                 snipruncolors = {
@@ -50,6 +48,21 @@ return {
                     },
                 },
             })
+
+            local api_listener = function(d)
+                if vim.bo.filetype ~= "markdown" then
+                    return
+                end
+
+                if d.status ~= "ok" or d.message == "" then
+                    return
+                end
+
+                local output = string.format("```plain\n%s\n```\n", d.message)
+                vim.fn.setreg('"', output)
+            end
+
+            require("sniprun.api").register_listener(api_listener)
         end,
     },
 
