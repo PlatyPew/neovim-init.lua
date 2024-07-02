@@ -96,6 +96,7 @@ return {
                     { name = "buffer" },
                     { name = "luasnip" },
                     { name = "nvim_lsp_signature_help" },
+                    { name = "otter" },
                 },
                 sorting = {
                     comparators = {
@@ -158,6 +159,14 @@ return {
                 }),
                 matching = { disallow_symbol_nonprefix_matching = false },
             })
+        end,
+    },
+
+    {
+        "jmbuhr/otter.nvim",
+        ft = "markdown",
+        config = function()
+            require("otter").activate()
         end,
     },
 }
