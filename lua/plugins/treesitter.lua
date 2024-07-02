@@ -36,6 +36,9 @@ return {
                     },
                 },
             },
+            indent = {
+                enable = true,
+            },
         },
         config = function(_, opts)
             if vim.g.install then
