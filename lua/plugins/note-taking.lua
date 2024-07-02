@@ -25,4 +25,35 @@ return {
         ft = "markdown",
         opts = {},
     },
+
+    {
+        "jbyuki/nabla.nvim",
+        ft = "markdown",
+        keys = {
+            {
+                "<Leader>L",
+                function()
+                    require("nabla").popup()
+                end,
+                desc = "Preview Latex Equations",
+            },
+        },
+        config = function()
+            require("nabla").enable_virt()
+            vim.o.wrap = true
+
+            local conceal = vim.api.nvim_create_augroup("conceal", {})
+            vim.api.nvim_create_autocmd("InsertEnter", {
+                pattern = "*.md",
+                command = "setlocal conceallevel=0",
+                group = conceal,
+            })
+
+            vim.api.nvim_create_autocmd("InsertLeave", {
+                pattern = "*.md",
+                command = "setlocal conceallevel=2",
+                group = conceal,
+            })
+        end,
+    },
 }
