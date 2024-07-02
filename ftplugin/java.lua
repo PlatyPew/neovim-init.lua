@@ -16,22 +16,24 @@ vim.list_extend(
 
 local home
 local runtimes
+local config
 if vim.fn.has("macunix") == 1 then
     home = "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
     runtimes = {
         {
             name = "JavaSE-11",
-            path = "/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home",
+            path = "/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home",
         },
         {
             name = "JavaSE-17",
-            path = "/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home",
+            path = "/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home",
         },
         {
             name = "JavaSE-21",
-            path = "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home",
+            path = "/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home",
         },
     }
+    config = vim.fn.stdpath("data") .. "/mason/packages/jdtls/config_macos"
 else
     home = "/usr/lib/jvm/default"
     runtimes = {
@@ -48,6 +50,7 @@ else
             path = "/usr/lib/jvm/java-21-openjdk",
         },
     }
+    config = vim.fn.stdpath("data") .. "/mason/packages/jdtls/config_linux"
 end
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
@@ -74,7 +77,7 @@ local config = {
         vim.fn.stdpath("data") .. "/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
         -- TODO Update this to point to the correct jdtls subdirectory for your OS (config_linux, config_mac, config_win, etc)
         "-configuration",
-        vim.fn.stdpath("data") .. "/mason/packages/jdtls/config_linux",
+        config,
         "-data",
         workspace_dir,
     },
