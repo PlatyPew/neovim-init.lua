@@ -96,6 +96,7 @@ return {
                     { name = "buffer" },
                     { name = "luasnip" },
                     { name = "nvim_lsp_signature_help" },
+                    { name = "vim-dadbod-completion" },
                     { name = "otter" },
                 },
                 sorting = {
@@ -122,18 +123,6 @@ return {
         "kristijanhusak/vim-dadbod-completion",
         dependencies = "vim-dadbod",
         ft = { "sql", "mysql", "plsql" },
-        config = function()
-            local cmp = require("cmp")
-            local sources = vim.tbl_map(function(source)
-                return { name = source.name }
-            end, cmp.get_config().sources)
-
-            -- add vim-dadbod-completion source
-            table.insert(sources, { name = "vim-dadbod-completion" })
-
-            -- update sources for the current buffer
-            cmp.setup.buffer({ sources = sources })
-        end,
     },
 
     {
