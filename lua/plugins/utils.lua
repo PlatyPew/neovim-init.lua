@@ -119,6 +119,7 @@ return {
 
             wk.register({
                 R = { name = "Overseer" },
+                M = { name = "Markdown" },
                 c = { name = "Copilot" },
                 d = { name = "DAP", f = { name = "FZF" } },
                 f = { name = "FZF" },

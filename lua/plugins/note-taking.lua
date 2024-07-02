@@ -4,7 +4,7 @@ return {
         ft = "markdown",
         cmd = "MarkdownPreviewToggle",
         keys = {
-            { "<Leader>M", "<Cmd>MarkdownPreviewToggle<CR>", desc = "Toggle Markdown Preview" },
+            { "<Leader>MM", "<Cmd>MarkdownPreviewToggle<CR>", desc = "Toggle Markdown Preview" },
         },
         build = function()
             vim.fn["mkdp#util#install"]()
@@ -20,10 +20,21 @@ return {
     },
 
     {
-        "OXY2DEV/markview.nvim",
-        dependencies = "nvim-tree/nvim-web-devicons",
+        "MeanderingProgrammer/markdown.nvim",
         ft = "markdown",
-        opts = {},
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter", -- Mandatory
+            "nvim-tree/nvim-web-devicons", -- Optional but recommended
+        },
+        opts = {
+            latex_enabled = false,
+        },
+        config = function(_, opts)
+            require("render-markdown").setup(opts)
+            vim.keymap.set("n", "<Leader>MR", function()
+                require("render-markdown").toggle()
+            end, { desc = "Toggle Markdown Render" })
+        end,
     },
 
     {
