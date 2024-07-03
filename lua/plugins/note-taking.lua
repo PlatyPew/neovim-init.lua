@@ -21,13 +21,15 @@ return {
 
     {
         "MeanderingProgrammer/markdown.nvim",
-        ft = "markdown",
+        ft = { "markdown", "quarto" },
         dependencies = {
             "nvim-treesitter/nvim-treesitter", -- Mandatory
             "nvim-tree/nvim-web-devicons", -- Optional but recommended
         },
         opts = {
             latex_enabled = false,
+            file_types = { "markdown", "quarto" },
+            highlights = { code = "" },
         },
         config = function(_, opts)
             require("render-markdown").setup(opts)
