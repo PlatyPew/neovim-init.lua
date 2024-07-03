@@ -153,7 +153,7 @@ return {
 
     {
         "jmbuhr/otter.nvim",
-        ft = "markdown",
+        ft = { "markdown", "quarto" },
         config = function()
             require("otter").activate()
         end,

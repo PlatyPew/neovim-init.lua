@@ -78,4 +78,44 @@ return {
         end,
         opts = {},
     },
+
+    {
+        --[[ Start ipykernel ]]
+        --[[ venv project_name # activate the project venv ]]
+        --[[ pip install ipykernel ]]
+        --[[ python -m ipykernel install --user --name project_name ]]
+        "benlubas/molten-nvim",
+        ft = { "quarto" },
+        version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
+        dependencies = "3rd/image.nvim",
+        build = function()
+            vim.cmd("UpdateRemotePlugins")
+            vim.cmd(
+                "!"
+                    .. vim.fn.stdpath("data")
+                    .. "/venv/bin/pip install pynvim jupyter_client cairosvg plotly kaleido pnglatex pyperclip pillow nbformat"
+            )
+        end,
+        init = function()
+            vim.g.molten_image_provider = "image.nvim"
+        end,
+        config = function()
+            -- stylua: ignore start
+            local remap = vim.keymap.set
+            remap("n", "[j", ":MoltenPrev<CR>", { desc = "Molten Previous Cell" })
+            remap("n", "]j", ":MoltenNext<CR>", { desc = "Molten Next Cell" })
+            remap("n", "<Leader>j[", ":MoltenPrev<CR>", { desc = "Molten Previous Cell" })
+            remap("n", "<Leader>j]", ":MoltenNext<CR>", { desc = "Molten Next Cell" })
+
+            remap("n", "<Leader>jI", ":MoltenInfo<CR>", { desc = "Molten Info" })
+            remap("n", "<Leader>jc", ":MoltenInterrupt<CR>", { desc = "Molten Interrupt Cell" })
+            remap("n", "<Leader>jd", ":MoltenDelete<CR>", { desc = "Molten Delete Cell" })
+            remap("n", "<Leader>ji", ":MoltenInit<CR>", { desc = "Molten Init" })
+            remap("n", "<Leader>jj", ":MoltenEvaluateLine<CR>", { desc = "Molten Evaluate Line" })
+            remap("n", "<Leader>jq", ":MoltenDeinit<CR>", { desc = "Molten Deinit" })
+            remap("n", "<Leader>jr", ":MoltenRestart<CR>", { desc = "Molten Restart kernel" })
+            remap("v", "<Leader>jj", ":<C-u>MoltenEvaluateVisual<CR>", { desc = "Molten Evaluate Visual Selection" })
+            -- stylua: ignore end
+        end,
+    },
 }
