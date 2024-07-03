@@ -50,7 +50,7 @@ return {
             })
 
             local api_listener = function(d)
-                if vim.bo.filetype ~= "markdown" then
+                if vim.bo.filetype ~= "markdown" and vim.bo.filetype ~= "quarto" then
                     return
                 end
 
