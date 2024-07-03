@@ -28,3 +28,6 @@ opt.whichwrap = "b,s,<,>,h,l"
 opt.wrap = true
 opt.cmdheight = 0
 opt.showcmdloc = "statusline"
+
+-- Python packages
+vim.g.python3_host_prog = vim.fn.stdpath("data") .. "/venv/bin/python"

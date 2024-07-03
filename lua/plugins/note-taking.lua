@@ -60,4 +60,17 @@ return {
             },
         },
     },
+
+    {
+        "3rd/image.nvim",
+        lazy = true,
+        ft = { "markdown", "quarto" },
+        opts = {
+            integrations = {
+                markdown = {
+                    only_render_image_at_cursor = true,
+                },
+            },
+        },
+    },
 }
