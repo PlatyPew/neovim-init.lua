@@ -63,6 +63,9 @@ return {
 
     {
         "3rd/image.nvim",
+        cond = function()
+            return vim.fn.executable("magick") == 1
+        end,
         lazy = true,
         ft = { "markdown", "quarto" },
         opts = {

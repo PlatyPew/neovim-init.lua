@@ -85,7 +85,10 @@ return {
         --[[ pip install ipykernel ]]
         --[[ python -m ipykernel install --user --name project_name ]]
         "benlubas/molten-nvim",
-        ft = { "quarto" },
+        cond = function()
+            return vim.fn.executable("magick") == 1
+        end,
+        ft = { "markdown", "quarto" },
         version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
         dependencies = "3rd/image.nvim",
         build = function()
@@ -112,6 +115,7 @@ return {
             remap("n", "<Leader>jd", ":MoltenDelete<CR>", { desc = "Molten Delete Cell" })
             remap("n", "<Leader>ji", ":MoltenInit<CR>", { desc = "Molten Init" })
             remap("n", "<Leader>jj", ":MoltenEvaluateLine<CR>", { desc = "Molten Evaluate Line" })
+            remap("n", "<Leader>jo", ":noautocmd MoltenEnterOutput<CR>", { desc = "Molten Enter Output" })
             remap("n", "<Leader>jq", ":MoltenDeinit<CR>", { desc = "Molten Deinit" })
             remap("n", "<Leader>jr", ":MoltenRestart<CR>", { desc = "Molten Restart kernel" })
             remap("v", "<Leader>jj", ":<C-u>MoltenEvaluateVisual<CR>", { desc = "Molten Evaluate Visual Selection" })

@@ -160,6 +160,7 @@ return {
                 "OverseerList",
                 "sagafinder",
                 "grug-far",
+                "molten_output",
             },
         },
     },

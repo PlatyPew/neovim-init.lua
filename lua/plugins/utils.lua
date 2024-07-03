@@ -129,6 +129,7 @@ return {
                     l = { "<Cmd>Lazy<CR>", "Plugin Manager" },
                     m = { "<Cmd>Mason<CR>", "LSP Installer" },
                 },
+                j = { name = "Molten" },
                 l = {
                     name = "LSP",
                     I = { "<Cmd>LspInfo<CR>", "LSP Info" },
