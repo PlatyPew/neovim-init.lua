@@ -155,7 +155,7 @@ return {
         "jmbuhr/otter.nvim",
         ft = { "markdown", "quarto" },
         config = function()
-            require("otter").activate()
+            vim.defer_fn(require("otter").activate, 0)
         end,
     },
 }

@@ -27,6 +27,7 @@
   "hererocks": { "branch": "master", "commit": "8bd2fcfdd65cfa7535ce39ea372a63b0bdb8e528" },
   "image.nvim": { "branch": "master", "commit": "7d021c94e231d491355f5e724ba357ace296f06d" },
   "img-clip.nvim": { "branch": "main", "commit": "1924e20ab19afec9779109d083b6e5f8bee8fb17" },
+  "jupytext.nvim": { "branch": "main", "commit": "e2a583cda7f29710845e4d8072d150ab47699c9d" },
   "kulala.nvim": { "branch": "main", "commit": "35b011f39c38b8eaaec8c76f71c228ba65a62a80" },
   "lazy.nvim": { "branch": "main", "commit": "d0921f5b9b3d2c5e09618da55a018228edcc4d16" },
   "lazydev.nvim": { "branch": "main", "commit": "78d8a11fbd02ad4eafa07dd8a43a959a69fb3bf8" },

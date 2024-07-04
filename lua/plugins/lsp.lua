@@ -2,6 +2,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         event = "BufReadPre",
+        ft = "markdown", -- Fix for jupytext
         cmd = "Mason",
         dependencies = {
             "williamboman/mason.nvim",
