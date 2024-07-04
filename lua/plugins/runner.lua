@@ -130,6 +130,14 @@ return {
     {
         "PlatyPew/jupytext.nvim",
         lazy = false,
+        build = function()
+            vim.cmd("UpdateRemotePlugins")
+            vim.cmd(
+                "!"
+                    .. vim.fn.stdpath("data")
+                    .. "/venv/bin/pip install jupytext"
+            )
+        end,
         opts = {
             custom_language_formatting = {
                 python = {

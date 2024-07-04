@@ -30,4 +30,10 @@ opt.cmdheight = 0
 opt.showcmdloc = "statusline"
 
 -- Python packages
+if vim.fn.isdirectory(vim.fn.stdpath("data") .. "/venv") == 0 then
+    if vim.fn.executable("virtualenv") == 1 then
+        vim.fn.system("virtualenv " .. vim.fn.stdpath("data") .. "/venv")
+    end
+end
+
 vim.g.python3_host_prog = vim.fn.stdpath("data") .. "/venv/bin/python"
