@@ -101,6 +101,10 @@ return {
         end,
         init = function()
             vim.g.molten_image_provider = "image.nvim"
+            vim.g.molten_virt_text_output = true
+            vim.g.molten_virt_lines_off_by_1 = true
+            vim.g.molten_output_win_border =
+                { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
         end,
         config = function()
             -- stylua: ignore start
