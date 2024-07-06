@@ -67,6 +67,7 @@ return {
         opts = {
             behaviours = {
                 bigfile = {
+                    filesize = 0.5,
                     features_disabled = {
                         "matchparen",
                         "lsp",
