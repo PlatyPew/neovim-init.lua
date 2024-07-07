@@ -5,7 +5,7 @@ return {
         keys = {
             { "s", "<Plug>(leap)" },
             { "S", "<Plug>(leap-cross-window)" },
-            { "S", "<Plug>(leap)", mode = { "x", "o" } },
+            { "s", "<Plug>(leap)", mode = { "x", "o" } },
         },
         dependencies = { "tpope/vim-repeat" },
         config = function()
