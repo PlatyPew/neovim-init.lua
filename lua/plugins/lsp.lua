@@ -101,7 +101,7 @@ return {
         -- stylua: ignore
         keys = {
             { "ga", "<Cmd>Lspsaga code_action<CR>", desc = "Show Code Actions" },
-            { "gp", "<Cmd>Lspsaga peek_definition<CR>", desc = "Preview Definition" },
+            { "gp", "<Cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
             { "gh", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
             { "gr", "<Cmd>Lspsaga rename<CR>", desc = "Rename Variable" },
             { "gx", "<Cmd>Lspsaga finder<CR>", desc = "Find Reference" },
@@ -113,8 +113,7 @@ return {
             { "<Leader>lc", "<Cmd>Lspsaga code_action<CR>", desc = "Code Action" },
             { "<Leader>ld", "<Cmd>Lspsaga show_line_diagnostics<CR>", desc = "Show Line Diagnostics" },
             { "<Leader>lh", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
-            { "<Leader>lo", "<Cmd>Lspsaga outline<CR>", desc = "Show Outline" },
-            { "<Leader>lp", "<Cmd>Lspsaga peek_definition<CR>", desc = "Preview Definition" },
+            { "<Leader>lp", "<Cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
             { "<Leader>lr", "<Cmd>Lspsaga rename<CR>", desc = "Rename Variable" },
             { "<Leader>lx", "<Cmd>Lspsaga finder<CR>", desc = "Find Reference" },
         },
