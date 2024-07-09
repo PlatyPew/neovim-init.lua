@@ -3,13 +3,21 @@ return {
         "ggandor/leap.nvim",
         -- stylua: ignore
         keys = {
-            { "s", "<Plug>(leap)" },
-            { "S", "<Plug>(leap-cross-window)" },
+            {
+                "s",
+                function()
+                    require("leap").leap({ target_windows = require("leap.user").get_focusable_windows() })
+                end,
+            },
             { "s", "<Plug>(leap)", mode = { "x", "o" } },
         },
         dependencies = { "tpope/vim-repeat" },
-        config = function()
-            require("leap").set_default_keymaps()
+        opts = {
+            equivalence_classes = { " \t\r\n" },
+        },
+        config = function(_, opts)
+            require("leap").setup(opts)
+            require("leap.user").set_repeat_keys("<enter>", "<s-enter>")
         end,
     },
 
@@ -43,16 +51,6 @@ return {
                 down = "J",
                 up = "K",
                 right = "L",
-            },
-        },
-    },
-
-    {
-        "echasnovski/mini.jump",
-        keys = { "f", "F", "t", "T" },
-        opts = {
-            mappings = {
-                repeat_jump = "",
             },
         },
     },
