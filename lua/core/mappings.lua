@@ -44,6 +44,10 @@ remap("n", "N", "Nzzzv")
 remap("n", "<C-d>", "<C-d>zz")
 remap("n", "<C-u>", "<C-u>zz")
 
+-- Move up and down within wrapped lines
+remap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
+remap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
+
 -- Easier copy to clipboard
 remap({ "n", "x" }, "<Leader>y", '"+y', { desc = "Yank To Clipboard" })
 
