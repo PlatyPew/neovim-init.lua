@@ -1,7 +1,6 @@
 return {
     {
-        "PlatyPew/catppuccin-nvim",
-        branch = "fix/leap",
+        "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
         opts = {
