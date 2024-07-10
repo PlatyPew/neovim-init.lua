@@ -1,7 +1,7 @@
 return {
     {
         "machakann/vim-highlightedyank",
-        event = "BufReadPost",
+        event = "UIEnter",
         config = function()
             vim.g.highlightedyank_highlight_duration = 200
         end,
