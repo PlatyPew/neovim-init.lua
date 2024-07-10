@@ -46,6 +46,7 @@ return {
                     transparent_background = not catppuccin.options.transparent_background,
                 })
                 vim.cmd.colorscheme("catppuccin")
+                vim.cmd("edit")
             end
             vim.api.nvim_create_user_command("Transparency", transparency, {})
 
