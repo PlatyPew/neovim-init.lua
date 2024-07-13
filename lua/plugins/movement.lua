@@ -9,7 +9,7 @@ return {
                     require("leap").leap({ target_windows = require("leap.user").get_focusable_windows() })
                 end,
             },
-            { "s", "<Plug>(leap)", mode = { "x", "o" } },
+            { "S", "<Plug>(leap)", mode = { "x", "o" } },
         },
         dependencies = { "tpope/vim-repeat" },
         opts = {

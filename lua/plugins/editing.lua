@@ -6,7 +6,7 @@ return {
             { "ys", "<Plug>(nvim-surround-normal)" },
             { "cs", "<Plug>(nvim-surround-change)" },
             { "ds", "<Plug>(nvim-surround-delete)" },
-            { "ys", "<Plug>(nvim-surround-visual)", mode = "v" },
+            { "s", "<Plug>(nvim-surround-visual)", mode = "v" },
         },
         opts = {
             surrounds = {
