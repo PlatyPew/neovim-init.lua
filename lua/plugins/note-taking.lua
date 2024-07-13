@@ -13,6 +13,7 @@ return {
 
     {
         "HakonHarnes/img-clip.nvim",
+        enabled = vim.fn.executable("pngpaste") == 1 or vim.fn.executable("xclip") == 1,
         cmd = "PasteImage",
         keys = {
             { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste Image" },
