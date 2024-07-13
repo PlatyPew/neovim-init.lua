@@ -137,6 +137,7 @@ return {
             return vim.fn.expand("$USER") == "daryllim"
         end,
         opts = {
+            enabled = false,
             max_count = 5,
             max_time = 1000,
             disable_mouse = false,

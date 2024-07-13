@@ -11,7 +11,7 @@ return {
             { "<Leader>f/", "<Cmd>FzfLua blines<CR>", desc = "Current Buffer Lines" },
             { "<Leader>fM", "<Cmd>FzfLua keymaps<CR>", desc = "Mappings" },
             { "<Leader>fR", "<Cmd>FzfLua registers<CR>", desc = "Registers" },
-            { "<Leader>ff",  "<Cmd>FzfLua files<CR>", "Files" },
+            { "<Leader>ff",  "<Cmd>FzfLua files<CR>", desc = "Files" },
             { "<Leader>fh", "<Cmd>FzfLua command_history<CR>", desc = "Command History" },
             { "<Leader>fm", "<Cmd>FzfLua marks<CR>", desc = "Marks" },
             { "<Leader>fq", "<Cmd>FzfLua quickfix<CR>", desc = "Quickfix List" },

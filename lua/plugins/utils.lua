@@ -105,52 +105,51 @@ return {
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        init = function()
-            vim.o.timeoutlen = 300
-        end,
         opts = {
-            ignore_missing = true,
-            window = {
-                border = "double",
+            preset = "modern",
+            notify = false,
+            icons = {
+                rules = false, -- TODO: Fix icons one day
             },
         },
         config = function(_, opts)
             local wk = require("which-key")
             wk.setup(opts)
 
-            wk.register({
-                R = { name = "Overseer" },
-                M = { name = "Markdown" },
-                c = { name = "Copilot" },
-                d = { name = "DAP", f = { name = "FZF" } },
-                f = { name = "FZF" },
-                g = { name = "Git" },
-                i = {
-                    name = "Installers",
-                    l = { "<Cmd>Lazy<CR>", "Plugin Manager" },
-                    m = { "<Cmd>Mason<CR>", "LSP Installer" },
+            wk.add({
+                { "<Leader>L", group = "Latex" },
+                { "<Leader>R", group = "Overseer" },
+                { "<Leader>M", group = "Markdown" },
+                { "<Leader>b", group = "Buffers" },
+                { "<Leader>c", group = "Copilot" },
+                {
+                    { "<Leader>d", group = "DAP" },
+                    { "<Leader>df", group = "FZF" },
                 },
-                j = { name = "Molten" },
-                l = {
-                    name = "LSP",
-                    I = { "<Cmd>LspInfo<CR>", "LSP Info" },
-                    f = { name = "FZF" },
+                { "<Leader>f", group = "FZF" },
+                { "<Leader>g", group = "Git" },
+                {
+                    { "<Leader>i", group = "Installers" },
+                    { "<Leader>il", "<Cmd>Lazy<CR>", desc = "Plugin Manager" },
+                    { "<Leader>im", "<Cmd>Mason<CR>", desc = "LSP Installer" },
                 },
-                m = { name = "Harpoon" },
-                r = { name = "Sniprun" },
-            }, { mode = "n", prefix = "<Leader>" })
+                { "<Leader>j", group = "Molten" },
+                {
+                    { "<Leader>l", group = "LSP" },
+                    { "<Leader>lI", "<Cmd>LspInfo<CR>", desc = "LSP Info" },
+                    { "<Leader>lf", desc = "FZF" },
+                },
+                { "<Leader>m", group = "Harpoon" },
+                { "<Leader>r", group = "Sniprun" },
+                { "<Leader>q", group = "Quickfix" },
 
-            wk.register({
-                c = {
-                    name = "Copilot",
+                {
+                    mode = { "v" },
+                    { "<Leader>c", group = "Copilot" },
+                    { "<Leader>j", group = "Molten" },
+                    { "<Leader>r", group = "Sniprun" },
                 },
-                s = {
-                    name = "Git",
-                },
-                r = {
-                    name = "Sniprun",
-                },
-            }, { mode = "v", prefix = "<Leader>" })
+            })
         end,
     },
 }
