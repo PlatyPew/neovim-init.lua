@@ -31,7 +31,7 @@ return {
         keys = {
             { "gS", desc = "Toggle Split Join", move = { "n", "x" } },
         },
-        opts = {},
+        config = true,
     },
 
     {
@@ -66,7 +66,7 @@ return {
         "altermo/ultimate-autopair.nvim",
         event = { "InsertEnter", "CmdlineEnter" },
         branch = "v0.6",
-        opts = {},
+        config = true,
     },
 
     {

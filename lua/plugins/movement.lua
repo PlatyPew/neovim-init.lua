@@ -121,7 +121,7 @@ return {
             { "<Leader>m]", function() require("harpoon"):list():prev() end, desc = "Harpoon Previous", },
             { "<Leader>m[", function() require("harpoon"):list():next() end, desc = "Harpoon Next", },
         },
-        opts = {},
+        config = true,
     },
 
     {

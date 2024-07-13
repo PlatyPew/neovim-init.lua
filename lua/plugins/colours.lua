@@ -82,6 +82,6 @@ return {
     {
         "echasnovski/mini.hipatterns",
         event = { "BufReadPost", "BufNewFile" },
-        opts = {},
+        config = true,
     },
 }

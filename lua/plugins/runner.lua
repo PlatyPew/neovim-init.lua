@@ -76,7 +76,7 @@ return {
                 },
             })
         end,
-        opts = {},
+        config = true,
     },
 
     {
