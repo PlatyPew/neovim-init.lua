@@ -85,9 +85,8 @@ return {
         --[[ pip install ipykernel ]]
         --[[ python -m ipykernel install --user --name project_name ]]
         "benlubas/molten-nvim",
-        cond = function()
-            return vim.fn.executable("magick") == 1
-        end,
+        enabled = vim.fn.executable("magick") == 1,
+        cond = not vim.g.vscode,
         ft = { "markdown", "quarto" },
         version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
         dependencies = "3rd/image.nvim",
@@ -132,11 +131,7 @@ return {
         lazy = false,
         build = function()
             vim.cmd("UpdateRemotePlugins")
-            vim.cmd(
-                "!"
-                    .. vim.fn.stdpath("data")
-                    .. "/venv/bin/pip install jupytext"
-            )
+            vim.cmd("!" .. vim.fn.stdpath("data") .. "/venv/bin/pip install jupytext")
         end,
         opts = {
             custom_language_formatting = {

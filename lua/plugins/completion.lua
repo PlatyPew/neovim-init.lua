@@ -153,6 +153,7 @@ return {
 
     {
         "jmbuhr/otter.nvim",
+        cond = not vim.g.vscode,
         ft = { "markdown", "quarto" },
         config = function()
             vim.defer_fn(require("otter").activate, 0)

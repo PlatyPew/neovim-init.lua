@@ -21,6 +21,7 @@ return {
 
     {
         "MeanderingProgrammer/markdown.nvim",
+        cond = not vim.g.vscode,
         ft = { "markdown", "quarto" },
         dependencies = {
             "nvim-treesitter/nvim-treesitter", -- Mandatory
@@ -64,9 +65,8 @@ return {
     {
         "3rd/image.nvim",
         commit = "deb158dd3f49603233a602698b30371af2c3feb7",
-        cond = function()
-            return vim.fn.executable("magick") == 1
-        end,
+        enabled = vim.fn.executable("magick") == 1,
+        cond = not vim.g.vscode,
         lazy = true,
         ft = { "markdown", "quarto" },
         opts = {

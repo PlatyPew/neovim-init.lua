@@ -2,9 +2,7 @@ return {
     {
         "nvimdev/dashboard-nvim",
         lazy = false,
-        cond = function()
-            return vim.api.nvim_buf_get_name(0) == ""
-        end,
+        cond = vim.api.nvim_buf_get_name(0) == "",
         opts = function()
             local logo = [[
          ▄▄                     ▄▄      
@@ -113,7 +111,7 @@ return {
         },
         dependencies = {
             "MunifTanjim/nui.nvim",
-            { "stevearc/dressing.nvim", opts = {} },
+            { "stevearc/dressing.nvim", config = true },
         },
     },
 
