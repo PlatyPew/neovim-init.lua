@@ -143,12 +143,9 @@ return {
                 { "<Leader>r", group = "Sniprun" },
                 { "<Leader>q", group = "Quickfix" },
 
-                {
-                    mode = { "v" },
-                    { "<Leader>c", group = "Copilot" },
-                    { "<Leader>j", group = "Molten" },
-                    { "<Leader>r", group = "Sniprun" },
-                },
+                { "<Leader>c", group = "Copilot", mode = "v" },
+                { "<Leader>j", group = "Molten", mode = "v" },
+                { "<Leader>r", group = "Sniprun", mode = "v" },
             })
         end,
     },
