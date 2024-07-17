@@ -37,7 +37,6 @@ return {
                     prettier = function()
                         null_ls.register(null_ls.builtins.formatting.prettier.with({
                             extra_args = {
-                                "--tab-width=4",
                                 "--print-width=100",
                             },
                         }))
