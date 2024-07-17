@@ -64,6 +64,8 @@ return {
                 TSDefinitionUsage = { underline = true },
 
                 HighlightedyankRegion = { reverse = true },
+
+                LspInlayHint = { fg = vim.g.palette.surface1, italic = true },
             }
 
             catppuccin.setup(opts)
