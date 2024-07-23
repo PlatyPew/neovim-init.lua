@@ -34,8 +34,6 @@ return {
                 require("lspconfig").clangd.setup({
                     capabilities = capabilities,
                 })
-            else
-                servers.clangd = {}
             end
 
             -- Setup mason so it can manage external tooling
