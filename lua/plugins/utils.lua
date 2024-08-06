@@ -17,11 +17,15 @@ return {
         },
         opts = {
             windowCreationCommand = "noswapfile vsplit",
-            placeholders = {
-                enabled = false,
-            },
             keymaps = {
                 close = { n = "q" },
+            },
+            engines = {
+                ripgrep = {
+                    placeholders = {
+                        enabled = false,
+                    },
+                },
             },
         },
     },
