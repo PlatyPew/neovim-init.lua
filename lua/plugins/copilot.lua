@@ -48,9 +48,8 @@ return {
             show_help = false,
             temperature = 0.2,
             window = {
-                layout = "float",
-                width = 0.8,
-                height = 0.8,
+                layout = "vertical",
+                width = 0.333,
             },
             auto_insert_mode = true,
             mappings = {
