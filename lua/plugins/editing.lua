@@ -119,11 +119,12 @@ return {
 
     {
         "monaqa/dial.nvim",
+        -- stylua: ignore
         keys = {
-            { "<C-a>", "<Plug>(dial-increment)", mode = { "n", "x" } },
-            { "<C-x>", "<Plug>(dial-decrement)", mode = { "n", "x" } },
-            { "g<C-a>", "g<Plug>(dial-increment)", mode = { "n", "x" } },
-            { "g<C-x>", "g<Plug>(dial-decrement)", mode = { "n", "x" } },
+            { "<C-a>", function() require("dial.map").manipulate("increment", "normal") end, mode = "n" },
+            { "<C-x>", function() require("dial.map").manipulate("decrement", "normal") end, mode = "n" },
+            { "g<C-a>", function() require("dial.map").manipulate("increment", "gvisual") end, mode = "v" },
+            { "g<C-x>", function() require("dial.map").manipulate("decrement", "gvisual") end, mode = "v" },
         },
     },
 }
