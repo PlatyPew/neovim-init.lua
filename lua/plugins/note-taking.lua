@@ -32,7 +32,7 @@ return {
             latex_enabled = false,
             file_types = { "markdown", "quarto" },
             highlights = { code = "" },
-            code = { above = "", below = "" },
+            -- code = { above = "", below = "" },
         },
         config = function(_, opts)
             require("render-markdown").setup(opts)
