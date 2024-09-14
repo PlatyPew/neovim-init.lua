@@ -50,6 +50,7 @@ remap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
 
 -- Easier copy to clipboard
 remap({ "n", "x" }, "<Leader>y", '"+y', { desc = "Yank To Clipboard" })
+remap("n", "<Leader>Y", '"+y$', { desc = "Yank Line To Clipboard" })
 
 -- Prevents pasted over text from replacing register
 remap("x", "p", "pgvy")
