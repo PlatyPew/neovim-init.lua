@@ -24,7 +24,6 @@ return {
             local luasnip = require("luasnip")
 
             require("luasnip.loaders.from_vscode").lazy_load()
-            require("copilot_cmp").setup()
 
             local border_opts = {
                 border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
@@ -69,18 +68,10 @@ return {
                         mode = "symbol_text",
                         maxwidth = 50,
                         ellipsis_char = "...",
-                        menu = {
-                            nvim_lsp = "[LSP]",
-                            async_path = "[PATH]",
-                            treesitter = "[TS]",
-                            buffer = "[BUF]",
-                            luasnip = "[SNIP]",
-                            copilot = "[COPILOT]",
-                        },
                         symbol_map = {
                             String = "󰊄",
                             Comment = "󰅺",
-                            Copilot = "",
+                            Codeium = "",
                         },
                     }),
                 },
@@ -89,7 +80,6 @@ return {
                     documentation = cmp.config.window.bordered(border_opts),
                 },
                 sources = {
-                    { name = "copilot" },
                     { name = "nvim_lsp" },
                     { name = "async_path" },
                     { name = "treesitter" },
@@ -98,10 +88,19 @@ return {
                     { name = "nvim_lsp_signature_help" },
                     { name = "vim-dadbod-completion" },
                     { name = "otter" },
+                    { name = "codeium" },
                 },
                 sorting = {
                     comparators = {
-                        require("copilot_cmp.comparators").prioritize,
+                        function(entry1, entry2)
+                            local kind1 = entry1.source.name == "codeium" and 1 or 2
+                            local kind2 = entry2.source.name == "codeium" and 1 or 2
+                            if kind1 < kind2 then
+                                return true
+                            elseif kind1 > kind2 then
+                                return false
+                            end
+                        end,
 
                         cmp.config.compare.offset,
                         cmp.config.compare.exact,
@@ -112,11 +111,6 @@ return {
                 },
             })
         end,
-    },
-
-    {
-        "zbirenbaum/copilot-cmp",
-        lazy = true,
     },
 
     {
