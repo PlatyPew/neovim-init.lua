@@ -92,20 +92,10 @@ return {
                     { name = "nvim_lsp_signature_help" },
                     { name = "vim-dadbod-completion" },
                     { name = "otter" },
-                    { name = "codeium" },
+                    { name = "codeium", max_item_count = 2, priority = 1000 },
                 },
                 sorting = {
                     comparators = {
-                        function(entry1, entry2)
-                            local kind1 = entry1.source.name == "codeium" and 1 or 2
-                            local kind2 = entry2.source.name == "codeium" and 1 or 2
-                            if kind1 < kind2 then
-                                return true
-                            elseif kind1 > kind2 then
-                                return false
-                            end
-                        end,
-
                         cmp.config.compare.offset,
                         cmp.config.compare.exact,
                         cmp.config.compare.score,
