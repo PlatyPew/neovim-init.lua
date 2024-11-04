@@ -66,7 +66,6 @@ return {
 
     {
         "3rd/image.nvim",
-        commit = "deb158dd3f49603233a602698b30371af2c3feb7",
         enabled = vim.fn.executable("magick") == 1,
         cond = not vim.g.vscode,
         lazy = true,
