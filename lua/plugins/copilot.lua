@@ -1,6 +1,7 @@
 return {
     {
         "zbirenbaum/copilot.lua",
+        enabled = false,
         cmd = "Copilot",
         event = "InsertEnter",
         -- stylua: ignore
@@ -17,6 +18,7 @@ return {
 
     {
         "CopilotC-Nvim/CopilotChat.nvim",
+        enabled = false,
         branch = "canary",
         cmd = {
             "CopilotChat",
