@@ -71,6 +71,10 @@ return {
                         symbol_map = {
                             String = "󰊄",
                             Comment = "󰅺",
+                            KeywordFunction = "󰊕",
+                            KeywordOperator = "",
+                            KeywordReturn = "󰌑",
+                            Number = "",
                             Codeium = "",
                         },
                     }),
