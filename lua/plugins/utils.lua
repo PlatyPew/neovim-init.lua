@@ -124,8 +124,8 @@ return {
                 { "<Leader>L", group = "Latex" },
                 { "<Leader>R", group = "Overseer" },
                 { "<Leader>M", group = "Markdown" },
+                { "<Leader>a", group = "Avante", mode = { "n", "v" } },
                 { "<Leader>b", group = "Buffers" },
-                { "<Leader>c", group = "Copilot" },
                 {
                     { "<Leader>d", group = "DAP" },
                     { "<Leader>df", group = "FZF" },
@@ -147,7 +147,6 @@ return {
                 { "<Leader>r", group = "Sniprun" },
                 { "<Leader>q", group = "Quickfix" },
 
-                { "<Leader>c", group = "Copilot", mode = "v" },
                 { "<Leader>j", group = "Molten", mode = "v" },
                 { "<Leader>r", group = "Sniprun", mode = "v" },
             })

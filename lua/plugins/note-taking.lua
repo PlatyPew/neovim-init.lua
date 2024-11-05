@@ -30,7 +30,7 @@ return {
         },
         opts = {
             latex_enabled = false,
-            file_types = { "markdown", "quarto" },
+            file_types = { "markdown", "quarto", "Avante" },
             highlights = { code = "" },
             -- code = { above = "", below = "" },
         },
