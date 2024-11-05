@@ -208,9 +208,10 @@ return {
                             },
                             padding = 1,
                             filetype_names = {
+                                Avante = " Avante Chat",
+                                AvanteInput = " Avante Chat",
                                 NeogitStatus = " Neogit",
                                 OverseerList = " Overseer",
-                                ["copilot-chat"] = " Copilot Chat",
                                 checkhealth = " Health Check",
                                 dashboard = "󰕮 Dashboard",
                                 dbui = " DadBod",
