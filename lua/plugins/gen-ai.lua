@@ -11,6 +11,11 @@ return {
 
     {
         "supermaven-inc/supermaven-nvim",
+        build = function()
+            local api = require("supermaven-nvim.api")
+            api.start()
+            api.use_free_version()
+        end,
         event = "InsertEnter",
         opts = {
             log_level = "off",
