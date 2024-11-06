@@ -128,37 +128,4 @@ return {
         "christoomey/vim-tmux-navigator",
         event = "VeryLazy",
     },
-
-    {
-        "m4xshen/hardtime.nvim",
-        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-        event = "VeryLazy",
-        enabled = vim.fn.expand("$USER") == "daryllim",
-        opts = {
-            enabled = true,
-            max_count = 5,
-            max_time = 1000,
-            disable_mouse = false,
-            disabled_keys = {
-                ["<Up>"] = {},
-                ["<Down>"] = {},
-                ["<Left>"] = {},
-                ["<Right>"] = {},
-            },
-            disabled_filetypes = {
-                "qf",
-                "lazy",
-                "mason",
-                "oil",
-                "dashboard",
-                "dbui",
-                "gitsigns.blame",
-                "copilot-chat",
-                "OverseerList",
-                "sagafinder",
-                "grug-far",
-                "molten_output",
-            },
-        },
-    },
 }
