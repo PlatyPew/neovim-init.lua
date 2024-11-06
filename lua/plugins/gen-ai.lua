@@ -20,9 +20,9 @@ return {
         opts = {
             log_level = "off",
             keymaps = {
-                accept_suggestion = "<C-CR>",
-                clear_suggestion = "<C-]>",
-                accept_word = "<C-i>",
+                accept_suggestion = "<M-CR>",
+                clear_suggestion = "<M-]>",
+                accept_word = "<M-w>",
             },
         },
     },
