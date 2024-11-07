@@ -143,7 +143,6 @@ return {
                     { "<Leader>lI", "<Cmd>LspInfo<CR>", desc = "LSP Info" },
                     { "<Leader>lf", desc = "FZF" },
                 },
-                { "<Leader>m", group = "Harpoon" },
                 { "<Leader>r", group = "Sniprun" },
                 { "<Leader>q", group = "Quickfix" },
 
