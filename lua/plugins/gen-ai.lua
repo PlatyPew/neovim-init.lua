@@ -89,9 +89,9 @@ return {
         },
         config = function()
             if vim.fn.has("macunix") == 1 then
-                -- security add-generic-password -a "OpenAI Key" -s "OPENAI_API_KEY" -w "<api_key>"
-                vim.env.OPENAI_API_KEY = vim.fn
-                    .system("security find-generic-password -s OPENAI_API_KEY -w")
+                -- security add-generic-password -a "GitHub Token" -s "GITHUB_TOKEN" -w "<api_key>"
+                vim.env.GITHUB_TOKEN = vim.fn
+                    .system("security find-generic-password -s GITHUB_TOKEN -w")
                     :gsub("[\n\r]", "")
             end
             require("avante").setup({
@@ -101,7 +101,7 @@ return {
                         ["local"] = true,
                         endpoint = "https://models.inference.ai.azure.com",
                         model = "gpt-4o",
-                        api_key = vim.env.OPENAI_API_KEY,
+                        api_key = vim.env.GITHUB_TOKEN,
                         parse_curl_args = function(opts, code_opts)
                             vim.print(opts)
                             return {
