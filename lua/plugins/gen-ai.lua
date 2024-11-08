@@ -103,7 +103,6 @@ return {
                         model = "gpt-4o",
                         api_key = vim.env.GITHUB_TOKEN,
                         parse_curl_args = function(opts, code_opts)
-                            vim.print(opts)
                             return {
                                 url = opts.endpoint .. "/chat/completions",
                                 headers = {
@@ -116,7 +115,7 @@ return {
                                         code_opts
                                     ),
                                     temperature = 0.1,
-                                    max_tokens = 4096,
+                                    max_tokens = 4000,
                                     stream = true,
                                 },
                             }
@@ -145,7 +144,7 @@ return {
                                     messages = require("avante.providers").copilot.parse_messages(
                                         code_opts
                                     ),
-                                    temperature = 0,
+                                    temperature = 0.1,
                                     max_tokens = 4096,
                                     stream = true,
                                 },
