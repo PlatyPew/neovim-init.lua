@@ -18,6 +18,7 @@ return {
         end,
         event = "InsertEnter",
         opts = {
+            ignore_filetypes = { "AvanteInput" },
             log_level = "off",
             keymaps = {
                 accept_suggestion = "<M-CR>",
@@ -89,20 +90,45 @@ return {
         config = function()
             if vim.fn.has("macunix") == 1 then
                 -- security add-generic-password -a "OpenAI Key" -s "OPENAI_API_KEY" -w "<api_key>"
-                vim.env.OPENAI_API_KEY =
-                    vim.fn.system("security find-generic-password -s OPENAI_API_KEY -w")
+                vim.env.OPENAI_API_KEY = vim.fn
+                    .system("security find-generic-password -s OPENAI_API_KEY -w")
+                    :gsub("[\n\r]", "")
             end
             require("avante").setup({
-                provider = "openai",
-                openai = {
-                    endpoint = "https://models.inference.ai.azure.com",
-                    model = "gpt-4o",
-                    timeout = 30000,
-                    temperature = 0.1,
-                    max_tokens = 4000,
-                    ["local"] = false,
-                },
+                provider = "github",
                 vendors = {
+                    github = {
+                        ["local"] = true,
+                        endpoint = "https://models.inference.ai.azure.com",
+                        model = "gpt-4o",
+                        api_key = vim.env.OPENAI_API_KEY,
+                        parse_curl_args = function(opts, code_opts)
+                            vim.print(opts)
+                            return {
+                                url = opts.endpoint .. "/chat/completions",
+                                headers = {
+                                    ["Content-Type"] = "application/json",
+                                    ["Authorization"] = "Bearer " .. opts.api_key,
+                                },
+                                body = {
+                                    model = opts.model,
+                                    messages = require("avante.providers").copilot.parse_messages(
+                                        code_opts
+                                    ),
+                                    temperature = 0.1,
+                                    max_tokens = 4096,
+                                    stream = true,
+                                },
+                            }
+                        end,
+                        parse_response_data = function(data_stream, event_state, opts)
+                            require("avante.providers").openai.parse_response(
+                                data_stream,
+                                event_state,
+                                opts
+                            )
+                        end,
+                    },
                     ollama = {
                         ["local"] = true,
                         endpoint = "127.0.0.1:11434/v1",
