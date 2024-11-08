@@ -33,10 +33,7 @@ return {
         cmd = {
             "AvanteChat",
             "AvanteAsk",
-            "AvanteRefresh",
-            "AvanteFocus",
             "AvanteEdit",
-            "AvanteClear",
             "AvanteSwitchProvider",
             "AvanteToggle",
         },
@@ -90,8 +87,21 @@ return {
             },
         },
         config = function()
+            if vim.fn.has("macunix") == 1 then
+                -- security add-generic-password -a "OpenAI Key" -s "OPENAI_API_KEY" -w "<api_key>"
+                vim.env.OPENAI_API_KEY =
+                    vim.fn.system("security find-generic-password -s OPENAI_API_KEY -w")
+            end
             require("avante").setup({
-                provider = "ollama",
+                provider = "openai",
+                openai = {
+                    endpoint = "https://models.inference.ai.azure.com",
+                    model = "gpt-4o",
+                    timeout = 30000,
+                    temperature = 0.1,
+                    max_tokens = 4000,
+                    ["local"] = false,
+                },
                 vendors = {
                     ollama = {
                         ["local"] = true,
@@ -129,37 +139,6 @@ return {
                     support_paste_from_clipboard = true,
                 },
                 hints = { enabled = false },
-                mappings = {
-                    diff = {
-                        ours = "co",
-                        theirs = "ct",
-                        all_theirs = "ca",
-                        both = "cb",
-                        cursor = "cc",
-                        next = "]x",
-                        prev = "[x",
-                    },
-                    suggestion = {
-                        accept = "<M-l>",
-                        next = "<M-]>",
-                        prev = "<M-[>",
-                        dismiss = "<C-]>",
-                    },
-                    jump = {
-                        next = "]]",
-                        prev = "[[",
-                    },
-                    submit = {
-                        normal = "<CR>",
-                        insert = "<C-s>",
-                    },
-                    sidebar = {
-                        apply_all = "A",
-                        apply_cursor = "a",
-                        switch_windows = "<Tab>",
-                        reverse_switch_windows = "<S-Tab>",
-                    },
-                },
                 windows = {
                     input = {
                         prefix = "❯ ",
