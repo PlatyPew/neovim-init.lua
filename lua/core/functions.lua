@@ -8,3 +8,21 @@ function _G.DiffviewToggle()
         vim.cmd.DiffviewOpen()
     end
 end
+
+--Avante
+local models = { "github", "ollama", "gemini" }
+function _G.Avante_select_model()
+    vim.ui.select(models, {
+        prompt = "Select a model to use:",
+        format_item = function(item)
+            return "Model: " .. item
+        end,
+    }, function(choice)
+        if choice then
+            -- Execute the command with the selected model
+            vim.cmd("AvanteSwitchProvider " .. choice)
+        else
+            print("No model selected")
+        end
+    end)
+end

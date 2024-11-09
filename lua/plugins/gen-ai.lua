@@ -35,7 +35,6 @@ return {
             "AvanteChat",
             "AvanteAsk",
             "AvanteEdit",
-            "AvanteSwitchProvider",
             "AvanteToggle",
         },
         dependencies = {
@@ -45,7 +44,6 @@ return {
             "MunifTanjim/nui.nvim",
             "nvim-tree/nvim-web-devicons",
             "HakonHarnes/img-clip.nvim",
-            "MeanderingProgrammer/render-markdown.nvim",
         },
         keys = {
             {
@@ -85,6 +83,13 @@ return {
                         or require("img-clip").paste_image()
                 end,
                 desc = "Paste Image",
+            },
+            {
+                "<Leader>as",
+                function()
+                    _G.Avante_select_model()
+                end,
+                desc = "Select Model",
             },
         },
         config = function()
