@@ -165,6 +165,7 @@ return {
                 },
                 hints = { enabled = false },
                 windows = {
+                    width = 40,
                     input = {
                         prefix = "❯ ",
                     },
