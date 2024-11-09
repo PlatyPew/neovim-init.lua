@@ -93,9 +93,16 @@ return {
                 vim.env.GITHUB_TOKEN = vim.fn
                     .system("security find-generic-password -s GITHUB_TOKEN -w")
                     :gsub("[\n\r]", "")
+                vim.env.GEMINI_API_KEY = vim.fn
+                    .system("security find-generic-password -s GEMINI_API_KEY -w")
+                    :gsub("[\n\r]", "")
             end
             require("avante").setup({
                 provider = "github",
+                gemini = {
+                    -- model = "gemini-1.5-flash-latest", -- Base model
+                    model = "gemini-1.5-pro-exp-0827", -- Experimental model
+                },
                 vendors = {
                     github = {
                         ["local"] = true,
