@@ -108,6 +108,7 @@ return {
                         ["local"] = true,
                         endpoint = "https://models.inference.ai.azure.com",
                         model = "gpt-4o",
+                        -- model = "gpt-4o-mini", -- Smaller model for rate limit
                         api_key = vim.env.GITHUB_TOKEN,
                         parse_curl_args = function(opts, code_opts)
                             return {
@@ -121,7 +122,7 @@ return {
                                     messages = require("avante.providers").copilot.parse_messages(
                                         code_opts
                                     ),
-                                    temperature = 0.1,
+                                    temperature = 0,
                                     max_tokens = 4000,
                                     stream = true,
                                 },
@@ -151,7 +152,7 @@ return {
                                     messages = require("avante.providers").copilot.parse_messages(
                                         code_opts
                                     ),
-                                    temperature = 0.1,
+                                    temperature = 0,
                                     max_tokens = 4096,
                                     stream = true,
                                 },
