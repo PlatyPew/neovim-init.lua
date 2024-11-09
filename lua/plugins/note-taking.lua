@@ -21,7 +21,7 @@ return {
     },
 
     {
-        "MeanderingProgrammer/markdown.nvim",
+        "MeanderingProgrammer/render-markdown.nvim",
         cond = not vim.g.vscode,
         ft = { "markdown", "quarto" },
         dependencies = {
@@ -30,7 +30,7 @@ return {
         },
         opts = {
             latex_enabled = false,
-            file_types = { "markdown", "quarto", "Avante" },
+            file_types = { "markdown", "quarto" },
             highlights = { code = "" },
             -- code = { above = "", below = "" },
         },
