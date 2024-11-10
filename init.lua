@@ -39,6 +39,7 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {
         { import = "plugins" },
+        -- { import = "minimal" },
     },
     install = { colorscheme = { "catppuccin" } },
     change_detection = { notify = false },
