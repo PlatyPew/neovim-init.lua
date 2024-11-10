@@ -18,7 +18,7 @@ return {
         end,
         event = "InsertEnter",
         opts = {
-            ignore_filetypes = { "AvanteInput" },
+            ignore_filetypes = { "AvanteInput", "oil" },
             log_level = "off",
             keymaps = {
                 accept_suggestion = "<M-CR>",

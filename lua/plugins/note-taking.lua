@@ -23,14 +23,14 @@ return {
     {
         "MeanderingProgrammer/render-markdown.nvim",
         cond = not vim.g.vscode,
-        ft = { "markdown", "quarto" },
+        ft = { "markdown", "quarto", "Avante" },
         dependencies = {
             "nvim-treesitter/nvim-treesitter", -- Mandatory
             "nvim-tree/nvim-web-devicons", -- Optional but recommended
         },
         opts = {
             latex_enabled = false,
-            file_types = { "markdown", "quarto" },
+            file_types = { "markdown", "quarto", "Avante" },
             highlights = { code = "" },
             -- code = { above = "", below = "" },
         },
