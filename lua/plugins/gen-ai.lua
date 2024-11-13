@@ -95,7 +95,7 @@ return {
         config = function()
             if vim.fn.has("macunix") == 1 then
                 -- security add-generic-password -a "GitHub Token" -s "GITHUB_TOKEN" -w "<api_key>"
-                vim.env.GITHUB_TOKEN = vim.fn
+                vim.env.OPENAI_API_KEY = vim.fn
                     .system("security find-generic-password -s GITHUB_TOKEN -w")
                     :gsub("[\n\r]", "")
                 vim.env.GEMINI_API_KEY = vim.fn
@@ -103,44 +103,17 @@ return {
                     :gsub("[\n\r]", "")
             end
             require("avante").setup({
-                provider = "github",
+                provider = "openai",
                 gemini = {
                     -- model = "gemini-1.5-flash-latest", -- Base model
                     model = "gemini-1.5-pro-exp-0827", -- Experimental model
                 },
+                openai = {
+                    endpoint = "https://models.inference.ai.azure.com",
+                    model = "gpt-4o",
+                    -- model = "gpt-4o-mini", -- Smaller model for rate limit
+                },
                 vendors = {
-                    github = {
-                        ["local"] = true,
-                        endpoint = "https://models.inference.ai.azure.com",
-                        model = "gpt-4o",
-                        -- model = "gpt-4o-mini", -- Smaller model for rate limit
-                        api_key = vim.env.GITHUB_TOKEN,
-                        parse_curl_args = function(opts, code_opts)
-                            return {
-                                url = opts.endpoint .. "/chat/completions",
-                                headers = {
-                                    ["Content-Type"] = "application/json",
-                                    ["Authorization"] = "Bearer " .. opts.api_key,
-                                },
-                                body = {
-                                    model = opts.model,
-                                    messages = require("avante.providers").copilot.parse_messages(
-                                        code_opts
-                                    ),
-                                    temperature = 0,
-                                    max_tokens = 4000,
-                                    stream = true,
-                                },
-                            }
-                        end,
-                        parse_response_data = function(data_stream, event_state, opts)
-                            require("avante.providers").openai.parse_response(
-                                data_stream,
-                                event_state,
-                                opts
-                            )
-                        end,
-                    },
                     ollama = {
                         ["local"] = true,
                         endpoint = "127.0.0.1:11434/v1",
