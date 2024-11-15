@@ -36,6 +36,7 @@ return {
             "AvanteAsk",
             "AvanteEdit",
             "AvanteToggle",
+            "AvanteSwitchProvider",
         },
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
@@ -48,11 +49,13 @@ return {
         -- stylua: ignore
         keys = {
             { "<Leader>aa", function() require("avante.api").ask() end, desc = "Ask", mode = { "n", "v" } },
-            { "<Leader>ac", "<Cmd>AvanteChat<CR>", desc = "Chat", mode = { "n", "v" }, }, { "<Leader>ae", function() require("avante.api").edit() end, desc = "Edit", mode = { "n", "v" } },
+            { "<Leader>ac", "<Cmd>AvanteChat<CR>", desc = "Chat", mode = { "n", "v" }, },
+            { "<Leader>ae", function() require("avante.api").edit() end, desc = "Edit", mode = { "n", "v" } },
             { "<Leader>ar", function() require("avante.api").refresh() end, desc = "Refresh" },
             { "<Leader>ap", function() return vim.bo.filetype == "AvanteInput" and require("avante.clipboard").paste_image() or require("img-clip").paste_image() end, desc = "Paste Image" },
             { "<Leader>as", function() _G.Avante_select_model() end, desc = "Select Model" },
         },
+        lazy = true,
         config = function()
             if vim.fn.has("macunix") == 1 then
                 -- security add-generic-password -a "GitHub Token" -s "GITHUB_TOKEN" -w "<api_key>"
