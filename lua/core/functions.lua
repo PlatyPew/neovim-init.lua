@@ -10,7 +10,7 @@ function _G.DiffviewToggle()
 end
 
 --Avante
-local models = { "openai", "ollama", "gemini" }
+local models = { "github_4o", "github_4o_mini", "ollama", "gemini" }
 function _G.Avante_select_model()
     vim.ui.select(models, {
         prompt = "Select a model to use:",

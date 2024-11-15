@@ -95,55 +95,79 @@ return {
         config = function()
             if vim.fn.has("macunix") == 1 then
                 -- security add-generic-password -a "GitHub Token" -s "GITHUB_TOKEN" -w "<api_key>"
-                vim.env.OPENAI_API_KEY = vim.fn
+                vim.env.GITHUB_TOKEN = vim.fn
                     .system("security find-generic-password -s GITHUB_TOKEN -w")
                     :gsub("[\n\r]", "")
                 vim.env.GEMINI_API_KEY = vim.fn
                     .system("security find-generic-password -s GEMINI_API_KEY -w")
                     :gsub("[\n\r]", "")
             end
+            local generate_vendor_config = function(
+                endpoint,
+                model,
+                api_key,
+                max_tokens,
+                temperature
+            )
+                return {
+                    ["local"] = true,
+                    endpoint = endpoint,
+                    model = model,
+                    api_key = api_key,
+                    parse_curl_args = function(opts, code_opts)
+                        return {
+                            url = opts.endpoint .. "/chat/completions",
+                            headers = {
+                                ["Content-Type"] = "application/json",
+                                ["Authorization"] = api_key and ("Bearer " .. api_key) or nil,
+                            },
+                            body = {
+                                model = opts.model,
+                                messages = require("avante.providers").copilot.parse_messages(
+                                    code_opts
+                                ),
+                                temperature = temperature,
+                                max_tokens = max_tokens,
+                                stream = true,
+                            },
+                        }
+                    end,
+                    parse_response_data = function(data_stream, event_state, opts)
+                        require("avante.providers").openai.parse_response(
+                            data_stream,
+                            event_state,
+                            opts
+                        )
+                    end,
+                }
+            end
+            local vendors = {
+                github_4o = generate_vendor_config(
+                    "https://models.inference.ai.azure.com",
+                    "gpt-4o",
+                    vim.env.GITHUB_TOKEN,
+                    4096,
+                    0
+                ),
+                github_4o_mini = generate_vendor_config(
+                    "https://models.inference.ai.azure.com",
+                    "gpt-4o-mini",
+                    vim.env.GITHUB_TOKEN,
+                    4096,
+                    0
+                ),
+                ollama = generate_vendor_config("127.0.0.1:11434/v1", "codeqwen:7b", nil, 4096, 0),
+            }
             require("avante").setup({
-                provider = "openai",
+                provider = "github_4o",
                 gemini = {
                     -- model = "gemini-1.5-flash-latest", -- Base model
                     model = "gemini-1.5-pro-exp-0827", -- Experimental model
                 },
-                openai = {
-                    endpoint = "https://models.inference.ai.azure.com",
-                    model = "gpt-4o",
-                    -- model = "gpt-4o-mini", -- Smaller model for rate limit
-                },
                 vendors = {
-                    ollama = {
-                        ["local"] = true,
-                        endpoint = "127.0.0.1:11434/v1",
-                        model = "codeqwen:7b",
-                        parse_curl_args = function(opts, code_opts)
-                            return {
-                                url = opts.endpoint .. "/chat/completions",
-                                headers = {
-                                    ["Accept"] = "application/json",
-                                    ["Content-Type"] = "application/json",
-                                },
-                                body = {
-                                    model = opts.model,
-                                    messages = require("avante.providers").copilot.parse_messages(
-                                        code_opts
-                                    ),
-                                    temperature = 0,
-                                    max_tokens = 4096,
-                                    stream = true,
-                                },
-                            }
-                        end,
-                        parse_response_data = function(data_stream, event_state, opts)
-                            require("avante.providers").openai.parse_response(
-                                data_stream,
-                                event_state,
-                                opts
-                            )
-                        end,
-                    },
+                    github_4o = vendors.github_4o,
+                    github_4o_mini = vendors.github_4o_mini,
+                    ollama = vendors.ollama,
                 },
                 behaviour = {
                     auto_set_keymaps = false,
