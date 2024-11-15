@@ -45,52 +45,13 @@ return {
             "nvim-tree/nvim-web-devicons",
             "HakonHarnes/img-clip.nvim",
         },
+        -- stylua: ignore
         keys = {
-            {
-                "<Leader>aa",
-                function()
-                    require("avante.api").ask()
-                end,
-                desc = "Ask",
-                mode = { "n", "v" },
-            },
-            {
-                "<Leader>ac",
-                "<Cmd>AvanteChat<CR>",
-                desc = "Chat",
-                mode = { "n", "v" },
-            },
-            {
-                "<Leader>ae",
-                function()
-                    require("avante.api").edit()
-                end,
-                desc = "Edit",
-                mode = { "n", "v" },
-            },
-            {
-                "<Leader>ar",
-                function()
-                    require("avante.api").refresh()
-                end,
-                desc = "Refresh",
-            },
-            {
-                "<Leader>ap",
-                function()
-                    return vim.bo.filetype == "AvanteInput"
-                            and require("avante.clipboard").paste_image()
-                        or require("img-clip").paste_image()
-                end,
-                desc = "Paste Image",
-            },
-            {
-                "<Leader>as",
-                function()
-                    _G.Avante_select_model()
-                end,
-                desc = "Select Model",
-            },
+            { "<Leader>aa", function() require("avante.api").ask() end, desc = "Ask", mode = { "n", "v" } },
+            { "<Leader>ac", "<Cmd>AvanteChat<CR>", desc = "Chat", mode = { "n", "v" }, }, { "<Leader>ae", function() require("avante.api").edit() end, desc = "Edit", mode = { "n", "v" } },
+            { "<Leader>ar", function() require("avante.api").refresh() end, desc = "Refresh" },
+            { "<Leader>ap", function() return vim.bo.filetype == "AvanteInput" and require("avante.clipboard").paste_image() or require("img-clip").paste_image() end, desc = "Paste Image" },
+            { "<Leader>as", function() _G.Avante_select_model() end, desc = "Select Model" },
         },
         config = function()
             if vim.fn.has("macunix") == 1 then
@@ -141,33 +102,22 @@ return {
                     end,
                 }
             end
-            local vendors = {
-                github_4o = generate_vendor_config(
-                    "https://models.inference.ai.azure.com",
-                    "gpt-4o",
-                    vim.env.GITHUB_TOKEN,
-                    4096,
-                    0
-                ),
-                github_4o_mini = generate_vendor_config(
-                    "https://models.inference.ai.azure.com",
-                    "gpt-4o-mini",
-                    vim.env.GITHUB_TOKEN,
-                    4096,
-                    0
-                ),
-                ollama = generate_vendor_config("127.0.0.1:11434/v1", "codeqwen:7b", nil, 4096, 0),
+            -- stylua: ignore
+            local vendors_3rd_party = {
+                gpt_4o = generate_vendor_config("https://models.inference.ai.azure.com", "gpt-4o", vim.env.GITHUB_TOKEN, 4096, 0),
+                gpt_4o_mini = generate_vendor_config( "https://models.inference.ai.azure.com", "gpt-4o-mini", vim.env.GITHUB_TOKEN, 4096, 0),
+                codeqwen = generate_vendor_config("127.0.0.1:11434/v1", "qwen2.5-coder:7b", nil, 4096, 0),
             }
             require("avante").setup({
-                provider = "github_4o",
+                provider = "gpt_4o",
                 gemini = {
                     -- model = "gemini-1.5-flash-latest", -- Base model
                     model = "gemini-1.5-pro-exp-0827", -- Experimental model
                 },
                 vendors = {
-                    github_4o = vendors.github_4o,
-                    github_4o_mini = vendors.github_4o_mini,
-                    ollama = vendors.ollama,
+                    gpt_4o = vendors_3rd_party.gpt_4o,
+                    gpt_4o_mini = vendors_3rd_party.gpt_4o_mini,
+                    codeqwen = vendors_3rd_party.codeqwen,
                 },
                 behaviour = {
                     auto_set_keymaps = false,
