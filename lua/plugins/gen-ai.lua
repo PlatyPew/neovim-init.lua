@@ -65,14 +65,14 @@ return {
                 vim.env.GEMINI_API_KEY = vim.fn
                     .system({ "security", "find-generic-password", "-s", "GEMINI_API_KEY", "-w" })
                     :gsub("[\n\r]", "")
-            else
+            --[[ else
                 -- gpg --encrypt ~/.apikeys/github_token --output ~/.apikeys/github_token.gpg
                 vim.env.GITHUB_TOKEN = vim.fn
                     .system({ "gpg", "--decrypt", vim.fn.expand("$HOME") .. "/.apikeys/github_token.gpg" })
                     :gsub("[\n\r]", "")
                 vim.env.GEMINI_API_KEY = vim.fn
                     .system({ "gpg", "--decrypt", vim.fn.expand("$HOME") .. "/.apikeys/gemini_api_key.gpg" })
-                    :gsub("[\n\r]", "")
+                    :gsub("[\n\r]", "") ]]
             end
             local generate_vendor_config = function(
                 endpoint,
