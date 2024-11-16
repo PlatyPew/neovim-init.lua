@@ -123,7 +123,7 @@ return {
                 provider = "gpt_4o",
                 gemini = {
                     -- model = "gemini-1.5-flash-latest", -- Base model
-                    model = "gemini-1.5-pro-exp-0827", -- Experimental model
+                    model = "gemini-exp-1114", -- Experimental model
                 },
                 vendors = {
                     gpt_4o = vendors_3rd_party.gpt_4o,
