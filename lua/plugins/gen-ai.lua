@@ -65,14 +65,19 @@ return {
                 vim.env.GEMINI_API_KEY = vim.fn
                     .system({ "security", "find-generic-password", "-s", "GEMINI_API_KEY", "-w" })
                     :gsub("[\n\r]", "")
-            --[[ else
-                -- gpg --encrypt ~/.apikeys/github_token --output ~/.apikeys/github_token.gpg
-                vim.env.GITHUB_TOKEN = vim.fn
-                    .system({ "gpg", "--decrypt", vim.fn.expand("$HOME") .. "/.apikeys/github_token.gpg" })
-                    :gsub("[\n\r]", "")
-                vim.env.GEMINI_API_KEY = vim.fn
-                    .system({ "gpg", "--decrypt", vim.fn.expand("$HOME") .. "/.apikeys/gemini_api_key.gpg" })
-                    :gsub("[\n\r]", "") ]]
+            else
+                -- echo "<api_key>" > ~/.apikeys/github_token && chmod 600 ~/.apikeys/github_token
+                local github_token_path = vim.fn.expand("$HOME/.apikeys/github_token")
+                local gemini_api_key_path = vim.fn.expand("$HOME/.apikeys/gemini_api_key")
+
+                if vim.fn.filereadable(github_token_path) == 1 then
+                    vim.env.GITHUB_TOKEN = vim.fn.readfile(github_token_path)[1]:gsub("[\n\r]", "")
+                end
+
+                if vim.fn.filereadable(gemini_api_key_path) == 1 then
+                    vim.env.GEMINI_API_KEY =
+                        vim.fn.readfile(gemini_api_key_path)[1]:gsub("[\n\r]", "")
+                end
             end
             local generate_vendor_config = function(
                 endpoint,
