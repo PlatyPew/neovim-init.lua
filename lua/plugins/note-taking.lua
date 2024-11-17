@@ -47,14 +47,14 @@ return {
         ft = "markdown",
         keys = {
             {
-                "<Leader>LL",
+                "<Leader>ML",
                 function()
                     require("nabla").popup()
                 end,
                 desc = "Preview Latex Equations",
             },
             {
-                "<Leader>Ll",
+                "<Leader>Ml",
                 function()
                     require("nabla").toggle_virt()
                     vim.o.wrap = true

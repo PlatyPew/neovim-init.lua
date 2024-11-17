@@ -121,7 +121,6 @@ return {
             wk.setup(opts)
 
             wk.add({
-                { "<Leader>L", group = "Latex" },
                 { "<Leader>R", group = "Overseer" },
                 { "<Leader>M", group = "Markdown" },
                 { "<Leader>a", group = "Avante", mode = { "n", "v" } },
@@ -131,7 +130,7 @@ return {
                     { "<Leader>df", group = "FZF" },
                 },
                 { "<Leader>f", group = "FZF" },
-                { "<Leader>g", group = "Git" },
+                { "<Leader>g", group = "Git", mode = {"n", "v"} },
                 {
                     { "<Leader>i", group = "Installers" },
                     { "<Leader>il", "<Cmd>Lazy<CR>", desc = "Plugin Manager" },
