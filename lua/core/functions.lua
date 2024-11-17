@@ -10,7 +10,7 @@ function _G.DiffviewToggle()
 end
 
 --Avante
-local models = { "gpt_4o", "gpt_4o_mini", "codeqwen", "gemini" }
+local models = { "gpt_4o", "gpt_4o_mini", "qwen_coder", "gemini" }
 function _G.Avante_select_model()
     vim.ui.select(models, {
         prompt = "Select a provider",
@@ -19,7 +19,6 @@ function _G.Avante_select_model()
         end,
     }, function(choice)
         if choice then
-            -- Execute the command with the selected model
             vim.cmd("AvanteSwitchProvider " .. choice)
         else
             print("No model selected")

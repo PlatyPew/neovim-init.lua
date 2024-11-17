@@ -122,7 +122,7 @@ return {
             local vendors_3rd_party = {
                 gpt_4o = generate_vendor_config("https://models.inference.ai.azure.com", "gpt-4o", vim.env.GITHUB_TOKEN, 4096, 0),
                 gpt_4o_mini = generate_vendor_config( "https://models.inference.ai.azure.com", "gpt-4o-mini", vim.env.GITHUB_TOKEN, 4096, 0),
-                codeqwen = generate_vendor_config("127.0.0.1:11434/v1", "qwen2.5-coder:7b", nil, 4096, 0),
+                qwen_coder = generate_vendor_config("127.0.0.1:11434/v1", "qwen2.5-coder:7b", nil, 4096, 0),
             }
             require("avante").setup({
                 provider = "gpt_4o",
@@ -133,7 +133,7 @@ return {
                 vendors = {
                     gpt_4o = vendors_3rd_party.gpt_4o,
                     gpt_4o_mini = vendors_3rd_party.gpt_4o_mini,
-                    codeqwen = vendors_3rd_party.codeqwen,
+                    qwen_coder = vendors_3rd_party.qwen_coder,
                 },
                 behaviour = {
                     auto_set_keymaps = false,
