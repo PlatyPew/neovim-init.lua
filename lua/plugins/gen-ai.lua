@@ -57,28 +57,28 @@ return {
         },
         lazy = true,
         config = function()
-            if vim.fn.has("macunix") == 1 then
-                -- security add-generic-password -a "GitHub Token" -s "GITHUB_TOKEN" -w "<api_key>"
-                vim.env.GITHUB_TOKEN = vim.fn
-                    .system({ "security", "find-generic-password", "-s", "GITHUB_TOKEN", "-w" })
-                    :gsub("[\n\r]", "")
-                vim.env.GEMINI_API_KEY = vim.fn
-                    .system({ "security", "find-generic-password", "-s", "GEMINI_API_KEY", "-w" })
-                    :gsub("[\n\r]", "")
-            else
-                -- echo "<api_key>" > ~/.apikeys/github_token && chmod 600 ~/.apikeys/github_token
-                local github_token_path = vim.fn.expand("$HOME/.apikeys/github_token")
-                local gemini_api_key_path = vim.fn.expand("$HOME/.apikeys/gemini_api_key")
-
-                if vim.fn.filereadable(github_token_path) == 1 then
-                    vim.env.GITHUB_TOKEN = vim.fn.readfile(github_token_path)[1]:gsub("[\n\r]", "")
-                end
-
-                if vim.fn.filereadable(gemini_api_key_path) == 1 then
-                    vim.env.GEMINI_API_KEY =
-                        vim.fn.readfile(gemini_api_key_path)[1]:gsub("[\n\r]", "")
+            local load_api_key = function(api_name)
+                if vim.fn.has("macunix") == 1 then
+                    -- security add-generic-password -a "GitHub Token" -s "GITHUB_TOKEN" -w "<api_key>"
+                    vim.env[api_name] = vim.fn
+                        .system({ "security", "find-generic-password", "-s", api_name, "-w" })
+                        :gsub("[\n\r]", "")
+                else
+                    -- echo "<api_key>" > ~/.apikeys/GITHUB_TOKEN && chmod 600 ~/.apikeys/GITHUB_TOKEN
+                    local api_key_path = vim.fn.expand("$HOME/.apikeys/" .. api_name)
+                    if vim.fn.filereadable(api_key_path) == 1 then
+                        vim.env[api_name] = vim.fn.readfile(api_key_path)[1]:gsub("[\n\r]", "")
+                    end
                 end
             end
+
+            local api_names = { "GITHUB_TOKEN", "GEMINI_API_KEY" }
+            for _, api_name in ipairs(api_names) do
+                if vim.env[api_name] == nil then
+                    load_api_key(api_name)
+                end
+            end
+
             local generate_vendor_config = function(
                 endpoint,
                 model,
