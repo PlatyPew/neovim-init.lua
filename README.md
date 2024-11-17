@@ -32,3 +32,58 @@ Plugins are stored and automatically sourced in `lua/plugins/`
    └── plugins
       └── *.lua
 ```
+
+## 🤖 AI Features
+
+There are 3 AI features that are enabled by default:
+
+1. Codeium
+2. Supermaven
+3. Avante
+
+### Codeium
+
+To use Codeium, you will need to do `:Codeium Auth`, open in browser and follow the instructions.
+
+It should ask you to create an account if you don't have one, and then paste the API key into the input field.
+
+### Supermaven
+
+Supermaven should already be enabled by default, but to use the pro version, run `:SupermavenUsePro` and follow the instructions.
+
+### Avante
+
+Currently, Avante is configured to use the following models from the following providers:
+
+| Model Name       | Provider                  |
+| ---------------- | ------------------------- |
+| gpt-4o           | GitHub Marketplace Models |
+| gpt-4o-mini      | GitHub Marketplace Models |
+| gemini-exp-1114  | Google AI                 |
+| qwen2.5-coder:7b | Alibaba Cloud (Ollama)    |
+
+#### macOS
+
+```bash
+# GitHub and Google API Keys
+security add-generic-password -a "GitHub Token" -s "GITHUB_TOKEN" -w "<api_key>"
+security add-generic-password -a "Gemini API Key" -s "GEMINI_API_KEY" -w "<api_key>"
+
+# Qwen2.5 Coder
+brew services start ollama
+ollama pull qwen2.5-coder:7b
+```
+
+#### Linux
+
+```bash
+# GitHub and Google API Keys
+mkdir -p ~/.apikeys
+echo "<api_key>" > ~/.apikeys/github_token
+echo "<api_key>" > ~/.apikeys/gemini_api_key
+chmod 600 ~/.apikeys/*
+
+# Qwen2.5 Coder
+sudo systemctl start ollama
+ollama pull qwen2.5-coder:7b
+```
