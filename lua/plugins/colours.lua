@@ -13,7 +13,6 @@ return {
             integrations = {
                 cmp = true,
                 diffview = true,
-                harpoon = true,
                 leap = true,
                 lsp_saga = true,
                 mason = true,
