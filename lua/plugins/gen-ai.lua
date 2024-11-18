@@ -72,7 +72,12 @@ return {
                 end
             end
 
-            local api_names = { "GITHUB_TOKEN", "GEMINI_API_KEY" }
+            local api_names = {
+                "GITHUB_TOKEN",
+                "GEMINI_API_KEY",
+                "CODESTRAL_API_KEY",
+                "MISTRAL_API_KEY",
+            }
             for _, api_name in ipairs(api_names) do
                 if vim.env[api_name] == nil then
                     load_api_key(api_name)
@@ -123,6 +128,8 @@ return {
                 gpt_4o = generate_vendor_config("https://models.inference.ai.azure.com", "gpt-4o", vim.env.GITHUB_TOKEN, 4096, 0),
                 gpt_4o_mini = generate_vendor_config( "https://models.inference.ai.azure.com", "gpt-4o-mini", vim.env.GITHUB_TOKEN, 4096, 0),
                 qwen_coder = generate_vendor_config("127.0.0.1:11434/v1", "qwen2.5-coder:7b", nil, 4096, 0),
+                codestral = generate_vendor_config("https://codestral.mistral.ai/v1", "codestral-latest", vim.env.CODESTRAL_API_KEY, 4096, 0),
+                mistral_large = generate_vendor_config("https://api.mistral.ai/v1/", "mistral-large-latest", vim.env.MISTRAL_API_KEY, 4096, 0),
             }
             require("avante").setup({
                 provider = "gpt_4o",
@@ -134,6 +141,8 @@ return {
                     gpt_4o = vendors_3rd_party.gpt_4o,
                     gpt_4o_mini = vendors_3rd_party.gpt_4o_mini,
                     qwen_coder = vendors_3rd_party.qwen_coder,
+                    codestral = vendors_3rd_party.codestral,
+                    mistral_large = vendors_3rd_party.mistral_large,
                 },
                 behaviour = {
                     auto_set_keymaps = false,
