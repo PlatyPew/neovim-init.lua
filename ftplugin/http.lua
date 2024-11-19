@@ -1,7 +1,7 @@
 local wk = require("which-key")
 
 wk.add({
-    h = { name = "Kulala" },
+    { "<Leader>h", name = "Kulala" },
 }, { mode = "n", prefix = "<Leader>" })
 
 -- stylua: ignore start

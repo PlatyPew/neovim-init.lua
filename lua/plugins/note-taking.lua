@@ -3,9 +3,6 @@ return {
         "iamcco/markdown-preview.nvim",
         ft = "markdown",
         cmd = "MarkdownPreviewToggle",
-        keys = {
-            { "<Leader>MM", "<Cmd>MarkdownPreviewToggle<CR>", desc = "Toggle Markdown Preview" },
-        },
         build = function()
             vim.fn["mkdp#util#install"]()
         end,
@@ -45,23 +42,7 @@ return {
     {
         "jbyuki/nabla.nvim",
         ft = "markdown",
-        keys = {
-            {
-                "<Leader>ML",
-                function()
-                    require("nabla").popup()
-                end,
-                desc = "Preview Latex Equations",
-            },
-            {
-                "<Leader>Ml",
-                function()
-                    require("nabla").toggle_virt()
-                    vim.o.wrap = true
-                end,
-                desc = "Preview Latex Equations",
-            },
-        },
+        lazy = true,
     },
 
     {
