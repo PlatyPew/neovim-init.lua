@@ -128,6 +128,7 @@ return {
 
     {
         "PlatyPew/jupytext.nvim",
+        cond = vim.env.VIRTUAL_ENV ~= nil,
         lazy = false,
         build = function()
             vim.cmd("UpdateRemotePlugins")
