@@ -77,6 +77,7 @@ return {
                 "GEMINI_API_KEY",
                 "CODESTRAL_API_KEY",
                 "MISTRAL_API_KEY",
+                "GLHF_API_KEY",
             }
             for _, api_name in ipairs(api_names) do
                 if vim.env[api_name] == nil then
@@ -130,6 +131,7 @@ return {
                 qwen_coder = generate_vendor_config("127.0.0.1:11434/v1", "qwen2.5-coder:7b", nil, 4096, 0),
                 codestral = generate_vendor_config("https://codestral.mistral.ai/v1", "codestral-latest", vim.env.CODESTRAL_API_KEY, 4096, 0),
                 mistral_large = generate_vendor_config("https://api.mistral.ai/v1/", "mistral-large-latest", vim.env.MISTRAL_API_KEY, 4096, 0),
+                llama3 = generate_vendor_config("https://glhf.chat/api/openai/v1", "hf:meta-llama/Meta-Llama-3.1-405B-Instruct", vim.env.GLHF_API_KEY, 4096, 0),
             }
             require("avante").setup({
                 provider = "gpt_4o",
@@ -143,6 +145,7 @@ return {
                     qwen_coder = vendors_3rd_party.qwen_coder,
                     codestral = vendors_3rd_party.codestral,
                     mistral_large = vendors_3rd_party.mistral_large,
+                    llama3 = vendors_3rd_party.llama3,
                 },
                 behaviour = {
                     auto_set_keymaps = false,
