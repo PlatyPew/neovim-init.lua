@@ -76,6 +76,8 @@ return {
         config = function()
             local ai = require("mini.ai")
             local ts = ai.gen_spec.treesitter
+            local fc = ai.gen_spec.function_call
+            local pr = ai.gen_spec.pair
 
             ai.setup({
                 n_lines = 500,
@@ -101,8 +103,10 @@ return {
                         },
                         "^().*()$",
                     },
-                    u = ai.gen_spec.function_call(),
-                    U = ai.gen_spec.function_call({ name_pattern = "[%w_]" }),
+                    u = fc(),
+                    U = fc({ name_pattern = "[%w_]" }),
+                    ["*"] = pr("*", "*", { type = "greedy" }),
+                    ["_"] = pr("_", "_", { type = "greedy" }),
                 },
             })
         end,
