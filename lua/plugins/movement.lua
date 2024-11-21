@@ -80,9 +80,13 @@ return {
             ai.setup({
                 n_lines = 500,
                 custom_textobjects = {
-                    c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }), -- class
+                    a = ts({
+                        a = { "@attribute.outer", "@parameter.outer" },
+                        i = { "@attribute.inner", "@parameter.inner" },
+                    }),
+                    c = ts({ a = "@class.outer", i = "@class.inner" }), -- class
                     f = ts({ a = "@function.outer", i = "@function.inner" }), -- function
-                    o = ai.gen_spec.treesitter({ -- code block
+                    o = ts({ -- code block
                         a = { "@block.outer", "@conditional.outer", "@loop.outer" },
                         i = { "@block.inner", "@conditional.inner", "@loop.inner" },
                     }),
