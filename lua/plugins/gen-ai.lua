@@ -92,7 +92,7 @@ return {
                 temperature
             )
                 return {
-                    ["local"] = true,
+                    api_key_name = '',
                     endpoint = endpoint,
                     model = model,
                     api_key = api_key,
