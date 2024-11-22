@@ -1,29 +1,45 @@
 return {
     {
-        "kylechui/nvim-surround",
-        -- stylua: ignore
+        "echasnovski/mini.surround",
         keys = {
-            { "ys", "<Plug>(nvim-surround-normal)" },
-            { "cs", "<Plug>(nvim-surround-change)" },
-            { "ds", "<Plug>(nvim-surround-delete)" },
-            { "s", "<Plug>(nvim-surround-visual)", mode = "v" },
+            { "ys", "cs", "ds", mode = "n" },
+            { "s", mode = "x" },
         },
         opts = {
-            surrounds = {
-                ["("] = { add = { "(", ")" } },
-                [")"] = { add = { "( ", " )" } },
-                ["["] = { add = { "[", "]" } },
-                ["]"] = { add = { "[ ", " ]" } },
-                ["{"] = { add = { "{", "}" } },
-                ["}"] = { add = { "{ ", " }" } },
-                ["<"] = { add = { "<", ">" } },
-                [">"] = { add = { "< ", " >" } },
+            mappings = {
+                add = "ys",
+                delete = "ds",
+                find = "",
+                find_left = "",
+                highlight = "",
+                replace = "cs",
+                update_n_lines = "",
+                suffix_last = "l",
+                suffix_next = "n",
             },
-            keymaps = {
-                -- visual_line = "",
-                visual = "s",
+            search_method = "cover_or_next",
+            custom_surroundings = {
+                ["("] = { output = { left = "(", right = ")" } },
+                [")"] = { output = { left = "( ", right = " )" } },
+                ["["] = { output = { left = "[", right = "]" } },
+                ["]"] = { output = { left = "[ ", right = " ]" } },
+                ["{"] = { output = { left = "{", right = "}" } },
+                ["}"] = { output = { left = "{ ", right = " }" } },
+                ["<"] = { output = { left = "<", right = ">" } },
+                [">"] = { output = { left = "< ", right = " >" } },
             },
         },
+        config = function(_, opts)
+            require("mini.surround").setup(opts)
+            vim.keymap.del("x", "ys")
+            vim.keymap.set(
+                "x",
+                "s",
+                [[:<C-u>lua MiniSurround.add('visual')<CR>]],
+                { silent = true }
+            )
+            vim.keymap.set("n", "yss", "ys_", { remap = true })
+        end,
     },
 
     {
