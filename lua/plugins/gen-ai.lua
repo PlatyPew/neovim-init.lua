@@ -128,24 +128,26 @@ return {
             local vendors_3rd_party = {
                 gpt_4o = generate_vendor_config("https://models.inference.ai.azure.com", "gpt-4o", vim.env.GITHUB_TOKEN, 4096, 0),
                 gpt_4o_mini = generate_vendor_config( "https://models.inference.ai.azure.com", "gpt-4o-mini", vim.env.GITHUB_TOKEN, 4096, 0),
-                qwen_coder = generate_vendor_config("127.0.0.1:11434/v1", "qwen2.5-coder:7b", nil, 4096, 0),
+                qwen_coder_7b = generate_vendor_config("127.0.0.1:11434/v1", "qwen2.5-coder:7b", nil, 4096, 0),
                 codestral = generate_vendor_config("https://codestral.mistral.ai/v1", "codestral-latest", vim.env.CODESTRAL_API_KEY, 4096, 0),
                 mistral_large = generate_vendor_config("https://api.mistral.ai/v1/", "mistral-large-latest", vim.env.MISTRAL_API_KEY, 4096, 0),
-                llama3 = generate_vendor_config("https://glhf.chat/api/openai/v1", "hf:meta-llama/Meta-Llama-3.1-405B-Instruct", vim.env.GLHF_API_KEY, 4096, 0),
+                llama3_405b = generate_vendor_config("https://glhf.chat/api/openai/v1", "hf:meta-llama/Meta-Llama-3.1-405B-Instruct", vim.env.GLHF_API_KEY, 4096, 0),
+                qwen_coder_32b = generate_vendor_config("https://glhf.chat/api/openai/v1", "hf:Qwen/Qwen2.5-Coder-32B-Instruct", vim.env.GLHF_API_KEY, 4096, 0),
             }
             require("avante").setup({
                 provider = "gpt_4o",
                 gemini = {
                     -- model = "gemini-1.5-flash-latest", -- Base model
-                    model = "gemini-exp-1114", -- Experimental model
+                    model = "gemini-exp-1121", -- Experimental model
                 },
                 vendors = {
                     gpt_4o = vendors_3rd_party.gpt_4o,
                     gpt_4o_mini = vendors_3rd_party.gpt_4o_mini,
-                    qwen_coder = vendors_3rd_party.qwen_coder,
+                    qwen_coder_7b = vendors_3rd_party.qwen_coder_7b,
                     codestral = vendors_3rd_party.codestral,
                     mistral_large = vendors_3rd_party.mistral_large,
-                    llama3 = vendors_3rd_party.llama3,
+                    llama3_405b = vendors_3rd_party.llama3_405b,
+                    qwen_coder_32b = vendors_3rd_party.qwen_coder_32b,
                 },
                 behaviour = {
                     auto_set_keymaps = false,

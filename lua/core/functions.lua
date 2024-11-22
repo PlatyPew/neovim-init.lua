@@ -10,8 +10,16 @@ function _G.DiffviewToggle()
 end
 
 --Avante
-local models =
-    { "gpt_4o", "gpt_4o_mini", "qwen_coder", "gemini", "codestral", "mistral_large", "llama3" }
+local models = {
+    "gpt_4o",
+    "gpt_4o_mini",
+    "qwen_coder_7b",
+    "gemini",
+    "codestral",
+    "mistral_large",
+    "llama3_405b",
+    "qwen_coder_32b",
+}
 function _G.Avante_select_model()
     vim.ui.select(models, {
         prompt = "Select a provider",
