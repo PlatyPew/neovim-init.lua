@@ -81,6 +81,9 @@ return {
                 local range = U.get_region(vmode)
                 local same_line = range.srow == range.erow
 
+                local filetypes = { "sh", "bash", "zsh" }
+                local is_shell_script = vim.tbl_contains(filetypes, vim.bo.filetype)
+
                 local ctx = {
                     cmode = U.cmode.toggle,
                     range = range,
@@ -100,7 +103,7 @@ return {
                     rcs = rcs,
                 }
 
-                if same_line then
+                if same_line or is_shell_script then
                     Op.linewise(params)
                 else
                     Op.blockwise(params)
