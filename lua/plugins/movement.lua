@@ -70,6 +70,15 @@ return {
     },
 
     {
+        "echasnovski/mini.jump",
+        keys = { "f", "F", "t", "T", mode = { "n", "x" } },
+        opts = {
+            mappings = { repeat_jump = "" },
+            delay = { highlight = 10000000 },
+        },
+    },
+
+    {
         "echasnovski/mini.ai",
         event = { "BufReadPost", "BufNewFile" },
         dependencies = "nvim-treesitter/nvim-treesitter-textobjects",
