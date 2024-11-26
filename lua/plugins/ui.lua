@@ -21,6 +21,8 @@ return {
                 .. "\n"
                 .. "🚀 Moving At The Speed Of Light 🚀"
                 .. "\n\n"
+                .. "<Leader> Is Space Key"
+                .. "\n\n"
 
             local opts = {
                 theme = "doom",
