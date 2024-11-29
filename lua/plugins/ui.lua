@@ -217,7 +217,6 @@ return {
                                 checkhealth = " Health Check",
                                 dashboard = "󰕮 Dashboard",
                                 dbui = " DadBod",
-                                ["snipe-menu"] = "󱡅 Snipe",
                                 lazy = "󰒲 Lazy",
                                 lspinfo = " LSP Info",
                                 mason = "󰇚 Mason",

@@ -122,22 +122,6 @@ return {
     },
 
     {
-        "leath-dub/snipe.nvim",
-        -- stylua: ignore
-        keys = {
-            { "mm", function() require("snipe").open_buffer_menu() end, desc = "Snipe UI" },
-        },
-        opts = {
-            ui = {
-                position = "center",
-                open_win_override = {
-                    border = "rounded",
-                },
-            },
-        },
-    },
-
-    {
         "christoomey/vim-tmux-navigator",
         event = "VeryLazy",
     },
