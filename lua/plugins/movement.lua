@@ -1,24 +1,12 @@
 return {
     {
-        "ggandor/leap.nvim",
+        "folke/flash.nvim",
         -- stylua: ignore
         keys = {
-            {
-                "s",
-                function()
-                    require("leap").leap({ target_windows = require("leap.user").get_focusable_windows() })
-                end,
-            },
-            { "S", "<Plug>(leap)", mode = { "x", "o" } },
+            { "<CR>", function() require("flash").jump() end, mode = { "n", "x" } },
+            { "f", "F", "t", "T", mode = { "n", "x" } },
         },
-        dependencies = { "tpope/vim-repeat" },
-        opts = {
-            equivalence_classes = { " \t\r\n" },
-        },
-        config = function(_, opts)
-            require("leap").setup(opts)
-            require("leap.user").set_repeat_keys("<enter>", "<s-enter>")
-        end,
+        config = true,
     },
 
     {
@@ -62,15 +50,6 @@ return {
             location = { suffix = "" },
             undo = { suffix = "" },
             yank = { suffix = "" },
-        },
-    },
-
-    {
-        "echasnovski/mini.jump",
-        keys = { "f", "F", "t", "T", mode = { "n", "x" } },
-        opts = {
-            mappings = { repeat_jump = "" },
-            delay = { highlight = 10000000 },
         },
     },
 

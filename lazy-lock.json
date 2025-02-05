@@ -17,6 +17,7 @@
   "dressing.nvim": { "branch": "master", "commit": "56ef6a969a4990d938c5fed40c370f65e125fc97" },
   "emmet-vim": { "branch": "master", "commit": "6c511a8d7d2863066f32e25543e2bb99d505172c" },
   "faster.nvim": { "branch": "main", "commit": "c3a5286765b43263791eb736affeb6fdff81e4ef" },
+  "flash.nvim": { "branch": "main", "commit": "f899265876ecdcf7352dbc9f0adf87068cedefbb" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "fzf-lua": { "branch": "main", "commit": "394ddb2b80c58731c09b5775ca5d05d578b1de3d" },
   "gitsigns.nvim": { "branch": "main", "commit": "9b36d497495436c135659902054ee637e0ba6021" },
@@ -28,7 +29,6 @@
   "kulala.nvim": { "branch": "main", "commit": "9892a7c355359f27aa309161ebabd1d0ced8e9ae" },
   "lazy.nvim": { "branch": "main", "commit": "7527af40ddd4a93a02911be570b32609b9d4ea53" },
   "lazydev.nvim": { "branch": "main", "commit": "a1b78b2ac6f978c72e76ea90ae92a94edf380cfc" },
-  "leap.nvim": { "branch": "main", "commit": "be8e6eee2dabc68ce810ddf2e800c14bfda09fee" },
   "lspkind.nvim": { "branch": "master", "commit": "d79a1c3299ad0ef94e255d045bed9fa26025dab6" },
   "lspsaga.nvim": { "branch": "main", "commit": "da8a66c53241876bba140980469876db3a183604" },
   "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
@@ -40,7 +40,6 @@
   "mini.ai": { "branch": "main", "commit": "25f598f5bcfa247de0be783882d0e02ae5432eb1" },
   "mini.bracketed": { "branch": "main", "commit": "95e1023c1734c805ad3b9da364fc3518e0881c70" },
   "mini.hipatterns": { "branch": "main", "commit": "fbf1e2195fdd65cf1bc970316c28098257728868" },
-  "mini.jump": { "branch": "main", "commit": "1fb371cfdcb314c5faa272976f23514f264bd755" },
   "mini.move": { "branch": "main", "commit": "c8b30e92dd2668dd6e56a9a23cb7d4ee38c2266d" },
   "mini.splitjoin": { "branch": "main", "commit": "efe24ba54f9623cb05698355981ec05278976788" },
   "mini.surround": { "branch": "main", "commit": "ceddea5fe862f13b279d9bbe81c3327a0e66d56b" },
@@ -83,7 +82,6 @@
   "vim-dadbod-completion": { "branch": "master", "commit": "c7f1be21a08b8fc9d927a19db89a4aa995402787" },
   "vim-dadbod-ui": { "branch": "master", "commit": "f4d37b7312ae6489e5c04bee654ca521baac188a" },
   "vim-highlightedyank": { "branch": "master", "commit": "285a61425e79742997bbde76a91be6189bc988fb" },
-  "vim-repeat": { "branch": "master", "commit": "65846025c15494983dafe5e3b46c8f88ab2e9635" },
   "vim-tmux-navigator": { "branch": "master", "commit": "d847ea942a5bb4d4fab6efebc9f30d787fd96e65" },
   "which-key.nvim": { "branch": "main", "commit": "0e76a87ac51772569aec678dc74baa8e2a86100c" }
 }
