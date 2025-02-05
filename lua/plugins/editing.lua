@@ -51,12 +51,35 @@ return {
     },
 
     {
-        "mg979/vim-visual-multi",
+        "jake-stewart/multicursor.nvim",
         -- stylua: ignore
         keys = {
-            { "<C-N>", "<Plug>(VM-Find-Under)" },
-            { "<C-N>", "<Plug>(VM-Find-Subword-Under)", mode = "v" },
+            { "<A-Up>", function() require("multicursor-nvim").lineAddCursor(-1) end, mode = { "n", "x" } },
+            { "<A-Down>", function() require("multicursor-nvim").lineAddCursor(1) end, mode = { "n", "x" } },
+            { "<C-N>", function() require("multicursor-nvim").matchAddCursor(1) end, mode = { "n", "x" } },
         },
+        config = function()
+            local mc = require("multicursor-nvim")
+            mc.setup()
+
+            vim.keymap.set({"n", "v"}, "<A-S-up>", function() mc.lineSkipCursor(-1) end)
+            vim.keymap.set({"n", "v"}, "<A-S-down>", function() mc.lineSkipCursor(1) end)
+            vim.keymap.set({"n", "v"}, "<A-left>", mc.nextCursor)
+            vim.keymap.set({"n", "v"}, "<A-right>", mc.prevCursor)
+            vim.keymap.set({"n", "v"}, "<C-q>", function() mc.matchSkipCursor(1) end)
+            vim.keymap.set({"n", "v"}, "<leader>x", mc.deleteCursor)
+
+            vim.keymap.set("n", "<esc>", function()
+                if not mc.cursorsEnabled() then
+                    mc.enableCursors()
+                elseif mc.hasCursors() then
+                    mc.clearCursors()
+                else
+                end
+            end)
+
+            vim.keymap.set("v", "M", mc.matchCursors)
+        end,
     },
 
     {
