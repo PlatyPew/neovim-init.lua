@@ -64,8 +64,8 @@ return {
 
             vim.keymap.set({"n", "v"}, "<A-S-up>", function() mc.lineSkipCursor(-1) end)
             vim.keymap.set({"n", "v"}, "<A-S-down>", function() mc.lineSkipCursor(1) end)
-            vim.keymap.set({"n", "v"}, "<A-left>", mc.nextCursor)
-            vim.keymap.set({"n", "v"}, "<A-right>", mc.prevCursor)
+            vim.keymap.set({"n", "v"}, "<A-left>", mc.prevCursor)
+            vim.keymap.set({"n", "v"}, "<A-right>", mc.nextCursor)
             vim.keymap.set({"n", "v"}, "<C-q>", function() mc.matchSkipCursor(1) end)
             vim.keymap.set({"n", "v"}, "<leader>x", mc.deleteCursor)
 
