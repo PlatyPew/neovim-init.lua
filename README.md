@@ -48,12 +48,15 @@ Supermaven should already be enabled by default, but to use the pro version, run
 
 Currently, Avante is configured to use the following models from the following providers:
 
-| Model Name       | Provider                  |
-| ---------------- | ------------------------- |
-| gpt-4o           | GitHub Marketplace Models |
-| gpt-4o-mini      | GitHub Marketplace Models |
-| gemini-exp-1114  | Google AI                 |
-| qwen2.5-coder:7b | Alibaba Cloud (Ollama)    |
+| Model Name           | Provider                  |
+| -------------------- | ------------------------- |
+| codestral-latest     | Codestral Mistral AI      |
+| deepseek-r1          | Deepseek (Ollama)         |
+| gemini-exp-1206      | Google AI                 |
+| gpt-4o               | GitHub Marketplace Models |
+| gpt-4o-mini          | GitHub Marketplace Models |
+| llama3.1-405B        | Meta                      |
+| mistral-large-latest | Mistral AI                |
 
 #### macOS
 
@@ -64,7 +67,7 @@ security add-generic-password -a "Gemini API Key" -s "GEMINI_API_KEY" -w "<api_k
 
 # Qwen2.5 Coder
 brew services start ollama
-ollama pull qwen2.5-coder:7b
+ollama pull deepseek-r1:8b
 ```
 
 #### Linux
