@@ -37,15 +37,8 @@ Plugins are stored and automatically sourced in `lua/plugins/`
 
 There are 3 AI features that are enabled by default:
 
-1. Codeium
-2. Supermaven
-3. Avante
-
-### Codeium
-
-To use Codeium, you will need to do `:Codeium Auth`, open in browser and follow the instructions.
-
-It should ask you to create an account if you don't have one, and then paste the API key into the input field.
+1. Supermaven
+2. Avante
 
 ### Supermaven
 

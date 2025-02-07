@@ -75,7 +75,6 @@ return {
                             KeywordOperator = "",
                             KeywordReturn = "󰌑",
                             Number = "",
-                            Codeium = "",
                         },
                     }),
                 },
@@ -92,7 +91,6 @@ return {
                     { name = "nvim_lsp_signature_help" },
                     { name = "vim-dadbod-completion" },
                     { name = "otter" },
-                    { name = "codeium", max_item_count = 2, priority = 1000 },
                 },
                 sorting = {
                     comparators = {

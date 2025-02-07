@@ -1,15 +1,5 @@
 return {
     {
-        "Exafunction/codeium.nvim",
-        event = "InsertEnter",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-        opts = { enable_chat = false },
-    },
-
-    {
         "supermaven-inc/supermaven-nvim",
         build = function()
             local api = require("supermaven-nvim.api")
