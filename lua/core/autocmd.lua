@@ -31,15 +31,15 @@ autocmd("FileType", {
 })
 
 -- Fix oil lazy load but override netrw
-local oil = augroup("oil_au", {})
+local minifiles = augroup("minifiles_au", {})
 autocmd("UIEnter", {
     pattern = "*",
     callback = function()
         if vim.fn.isdirectory(vim.fn.expand("%:p")) == 1 then
-            require("oil")
+            require("mini.files").open()
         end
     end,
-    group = oil,
+    group = minifiles,
 })
 
 local term = vim.api.nvim_create_augroup("term_au", {})
