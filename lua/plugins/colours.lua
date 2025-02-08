@@ -11,7 +11,7 @@ return {
             },
             transparent_background = true,
             integrations = {
-                cmp = true,
+                blink_cmp = true,
                 diffview = true,
                 flash = true,
                 lsp_saga = true,
@@ -54,8 +54,6 @@ return {
             opts.custom_highlights = {
                 ColorColumn = { fg = vim.g.palette.red, bg = vim.g.palette.crust },
                 VertSplit = { fg = vim.g.palette.overlay0 },
-
-                CmpItemAbbrMatch = { fg = vim.g.palette.sapphire },
 
                 DashboardHeader = { fg = vim.g.palette.yellow },
                 DashboardFooter = { fg = vim.g.palette.peach },

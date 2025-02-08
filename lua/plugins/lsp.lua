@@ -7,6 +7,7 @@ return {
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
+            "saghen/blink.cmp",
         },
         config = function()
             vim.lsp.set_log_level("off")
@@ -26,14 +27,11 @@ return {
             end
 
             -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+            local capabilities = require("blink.cmp").get_lsp_capabilities()
             capabilities.offsetEncoding = { "utf-16" }
 
             if require("jit").os == "Linux" and require("jit").arch == "arm64" then
-                require("lspconfig").clangd.setup({
-                    capabilities = capabilities,
-                })
+                require("lspconfig").clangd.setup({ capabilities = capabilities })
             end
 
             -- Setup mason so it can manage external tooling
