@@ -11,7 +11,7 @@ return {
             },
             appearance = { nerd_font_variant = "mono" },
             sources = {
-                default = { "lazydev", "lsp", "path", "snippets", "buffer", "dadbod"  },
+                default = { "lazydev", "lsp", "path", "snippets", "buffer", "dadbod" },
                 providers = {
                     buffer = {
                         opts = {
