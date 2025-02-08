@@ -17,13 +17,11 @@ return {
     {
         "nvim-lua/plenary.nvim",
         lazy = true,
-        config = true,
     },
 
     {
         "MunifTanjim/nui.nvim",
         lazy = true,
-        config = true,
     },
 
     {
