@@ -14,6 +14,7 @@ return {
                 blink_cmp = true,
                 diffview = true,
                 flash = true,
+                grug_far = true,
                 lsp_saga = true,
                 mason = true,
                 mini = true,
