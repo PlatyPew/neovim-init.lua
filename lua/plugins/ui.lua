@@ -111,20 +111,12 @@ return {
             },
             presets = { long_message_to_split = true },
         },
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            { "stevearc/dressing.nvim", config = true },
-        },
     },
 
     {
         "nvim-lualine/lualine.nvim",
         cond = not vim.g.vscode,
         event = "UIEnter",
-        dependencies = {
-            "folke/noice.nvim",
-            "nvim-tree/nvim-web-devicons",
-        },
         config = function()
             local mode_map = {
                 n = "(ᴗ_ ᴗ。)",

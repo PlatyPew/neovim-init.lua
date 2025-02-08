@@ -23,7 +23,6 @@ return {
         ft = { "markdown", "quarto", "Avante" },
         dependencies = {
             "nvim-treesitter/nvim-treesitter", -- Mandatory
-            "nvim-tree/nvim-web-devicons", -- Optional but recommended
         },
         opts = {
             latex_enabled = false,

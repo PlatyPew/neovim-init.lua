@@ -2,7 +2,6 @@ return {
     {
         "lewis6991/gitsigns.nvim",
         event = { "BufReadPost", "BufNewFile" },
-        dependencies = "nvim-lua/plenary.nvim",
         opts = {
             signs = {
                 add = { text = "│" },
@@ -65,7 +64,6 @@ return {
             { "<Leader>gg", "<Cmd>Neogit<CR>", desc = "Open Neogit" },
         },
         dependencies = {
-            "nvim-lua/plenary.nvim",
             "sindrets/diffview.nvim",
             "ibhagwan/fzf-lua",
         },

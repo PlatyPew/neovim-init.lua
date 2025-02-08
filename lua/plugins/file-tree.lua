@@ -7,7 +7,6 @@ return {
         keys = {
             { "<Leader>o", '<Cmd>lua require("oil").toggle_float()<CR>', desc = "File Explorer" },
         },
-        dependencies = "nvim-tree/nvim-web-devicons",
         init = function()
             vim.g.loaded_netrw = 1
             vim.g.loaded_netrwPlugin = 1
