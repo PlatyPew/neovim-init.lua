@@ -30,6 +30,7 @@ return {
         },
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
+            "stevearc/dressing.nvim",
             "HakonHarnes/img-clip.nvim",
         },
         -- stylua: ignore
