@@ -60,11 +60,11 @@ return {
             end
 
             local api_names = {
+                "TAVILY_API_KEY", -- Web search
                 "GITHUB_TOKEN",
-                "GEMINI_API_KEY",
                 "CODESTRAL_API_KEY",
+                "GEMINI_API_KEY",
                 "MISTRAL_API_KEY",
-                "GLHF_API_KEY",
             }
             for _, api_name in ipairs(api_names) do
                 if vim.env[api_name] == nil then
@@ -72,55 +72,7 @@ return {
                 end
             end
 
-            local generate_vendor_config = function(
-                endpoint,
-                model,
-                api_key,
-                max_tokens,
-                temperature
-            )
-                return {
-                    api_key_name = '',
-                    endpoint = endpoint,
-                    model = model,
-                    api_key = api_key,
-                    parse_curl_args = function(opts, code_opts)
-                        return {
-                            url = opts.endpoint .. "/chat/completions",
-                            headers = {
-                                ["Content-Type"] = "application/json",
-                                ["Authorization"] = api_key and ("Bearer " .. api_key) or nil,
-                            },
-                            body = {
-                                model = opts.model,
-                                messages = require("avante.providers").copilot.parse_messages(
-                                    code_opts
-                                ),
-                                temperature = temperature,
-                                max_tokens = max_tokens,
-                                stream = true,
-                            },
-                        }
-                    end,
-                    parse_response_data = function(data_stream, event_state, opts)
-                        require("avante.providers").openai.parse_response(
-                            data_stream,
-                            event_state,
-                            opts
-                        )
-                    end,
-                }
-            end
             -- stylua: ignore
-            local vendors_3rd_party = {
-                gpt_4o = generate_vendor_config("https://models.inference.ai.azure.com", "gpt-4o", vim.env.GITHUB_TOKEN, 4096, 0),
-                gpt_4o_mini = generate_vendor_config( "https://models.inference.ai.azure.com", "gpt-4o-mini", vim.env.GITHUB_TOKEN, 4096, 0),
-                deepseek_8b = generate_vendor_config("127.0.0.1:11434/v1", "deepseek-r1:8b", nil, 4096, 0),
-                codestral = generate_vendor_config("https://codestral.mistral.ai/v1", "codestral-latest", vim.env.CODESTRAL_API_KEY, 4096, 0),
-                mistral_large = generate_vendor_config("https://api.mistral.ai/v1/", "mistral-large-latest", vim.env.MISTRAL_API_KEY, 4096, 0),
-                llama3_405b = generate_vendor_config("https://glhf.chat/api/openai/v1", "hf:meta-llama/Meta-Llama-3.1-405B-Instruct", vim.env.GLHF_API_KEY, 4096, 0),
-                qwen_coder_32b = generate_vendor_config("https://glhf.chat/api/openai/v1", "hf:Qwen/Qwen2.5-Coder-32B-Instruct", vim.env.GLHF_API_KEY, 4096, 0),
-            }
             require("avante").setup({
                 provider = "gpt_4o",
                 gemini = {
@@ -128,13 +80,36 @@ return {
                     model = "gemini-exp-1206", -- Experimental model
                 },
                 vendors = {
-                    gpt_4o = vendors_3rd_party.gpt_4o,
-                    gpt_4o_mini = vendors_3rd_party.gpt_4o_mini,
-                    deepseek_8b = vendors_3rd_party.deepseek_8b,
-                    codestral = vendors_3rd_party.codestral,
-                    mistral_large = vendors_3rd_party.mistral_large,
-                    llama3_405b = vendors_3rd_party.llama3_405b,
-                    qwen_coder_32b = vendors_3rd_party.qwen_coder_32b,
+                    gpt_4o = {
+                        __inherited_from = "openai",
+                        api_key_name = "GITHUB_TOKEN",
+                        endpoint = "https://models.inference.ai.azure.com",
+                        model = "gpt-4o",
+                    },
+                    gpt_4o_mini = {
+                        __inherited_from = "openai",
+                        api_key_name = "GITHUB_TOKEN",
+                        endpoint = "https://models.inference.ai.azure.com",
+                        model = "gpt-4o-mini",
+                    },
+                    deepseek_r1 = {
+                        __inherited_from = "openai",
+                        api_key_name = "GITHUB_TOKEN",
+                        endpoint = "https://models.inference.ai.azure.com",
+                        model = "deepseek-r1",
+                    },
+                    codestral = {
+                        __inherited_from = "openai",
+                        api_key_name = "CODESTRAL_API_KEY",
+                        endpoint = "https://codestral.mistral.ai/v1",
+                        model = "codestral-latest",
+                    },
+                    mistral_large = {
+                        __inherited_from = "openai",
+                        api_key_name = "MISTRAL_API_KEY",
+                        endpoint = "https://api.mistral.ai/v1/",
+                        model = "mistral-large-latest",
+                    },
                 },
                 behaviour = {
                     auto_set_keymaps = false,

@@ -13,12 +13,10 @@ end
 local models = {
     "gpt_4o",
     "gpt_4o_mini",
-    "qwen_coder_7b",
+    "deepseek_r1",
     "gemini",
     "codestral",
     "mistral_large",
-    "llama3_405b",
-    "qwen_coder_32b",
 }
 function _G.Avante_select_model()
     vim.ui.select(models, {
