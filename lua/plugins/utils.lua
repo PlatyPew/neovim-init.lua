@@ -1,10 +1,10 @@
 return {
     {
-        "machakann/vim-highlightedyank",
-        event = "UIEnter",
-        config = function()
-            vim.g.highlightedyank_highlight_duration = 200
-        end,
+        "echasnovski/mini.basics",
+        event = "VeryLazy",
+        opts = {
+            mappings = { windows = true },
+        },
     },
 
     {
@@ -130,7 +130,7 @@ return {
                     { "<Leader>df", group = "FZF" },
                 },
                 { "<Leader>f", group = "FZF" },
-                { "<Leader>g", group = "Git", mode = {"n", "v"} },
+                { "<Leader>g", group = "Git", mode = { "n", "v" } },
                 {
                     { "<Leader>i", group = "Installers" },
                     { "<Leader>il", "<Cmd>Lazy<CR>", desc = "Plugin Manager" },
