@@ -20,6 +20,7 @@ return {
                 mini = true,
                 noice = true,
                 overseer = true,
+                snacks = true,
                 which_key = true,
 
                 native_lsp = {
@@ -56,12 +57,10 @@ return {
                 ColorColumn = { fg = vim.g.palette.red, bg = vim.g.palette.crust },
                 VertSplit = { fg = vim.g.palette.overlay0 },
 
-                DashboardHeader = { fg = vim.g.palette.yellow },
-                DashboardFooter = { fg = vim.g.palette.peach },
+                SnacksDashboardHeader = { fg = vim.g.palette.yellow },
+                SnacksDashboardFooter = { fg = vim.g.palette.peach },
 
                 TSDefinitionUsage = { underline = true },
-
-                HighlightedyankRegion = { reverse = true },
 
                 LspInlayHint = { fg = vim.g.palette.surface1, italic = true },
 

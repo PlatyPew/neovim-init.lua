@@ -105,7 +105,6 @@ return {
             { "gr", "<Cmd>Lspsaga rename<CR>", desc = "Rename Variable" },
             { "gx", "<Cmd>Lspsaga finder<CR>", desc = "Find Reference" },
 
-            { "<Leader>t", "<Cmd>Lspsaga term_toggle<CR>", desc = "Toggle Terminal" },
             { "<Leader>lD", "<Cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Show Buffer Diagnostics" },
             { "<Leader>l[", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous Diagnostic" },
             { "<Leader>l]", "<Cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next Diagnostic" },

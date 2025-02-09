@@ -8,6 +8,69 @@ return {
     },
 
     {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            bufdelete = { enabled = true },
+            dashboard = {
+                enabled = true,
+                preset = {
+                    header = [[
+         ▄▄                     ▄▄      
+  ▄█▄   ▐█▌    ██     ▀█▄  ████████████▌
+   ▀██  ▐█▌  ▄██        ▀   ▄▄▄▄██▄▄▄▄▄ 
+     ▀  ▐█▌                ▐██  ██   █▌ 
+ ▀▀▀▀▀██▀▀▀██▀▀▀▀▀   ▀▀▀█  ▐██▄▄██▄▄▄█▌ 
+      █▌  ▐█▌          ▐█     ████ ▄▄   
+     ██   ▐█▌          ▐█  ▄██  ▐█  ▀██▄
+   ██▀    ▐█▌    ██    ▄██▄     ▐█      
+▐██▀       ███████▀  ▀█▀  ▀▀▀▀█████████▀
+
+
+   🚀 Moving At The Speed Of Light 🚀
+ ]],
+                },
+                sections = {
+                    { section = "header" },
+                    { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+                    {
+                        icon = " ",
+                        title = "Recent Files",
+                        section = "recent_files",
+                        indent = 2,
+                        padding = 1,
+                    },
+                    {
+                        icon = " ",
+                        title = "Projects",
+                        section = "projects",
+                        indent = 2,
+                        padding = 1,
+                    },
+                    { section = "startup" },
+                },
+            },
+
+            input = { enabled = true },
+            notifier = { enabled = true, timeout = 3000 },
+            picker = { enabled = false },
+            quickfile = { enabled = true },
+            rename = { enabled = true },
+            scope = { enabled = true },
+            terminal = { enabled = false },
+        },
+        -- stylua: ignore
+        keys = {
+            { "<leader>bq", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+            { "<leader>bD", function() Snacks.bufdelete.other() end, desc = "Delete All Other Buffers" },
+            { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
+            { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+            { "<Leader>t", function() Snacks.terminal() end, desc = "Toggle Terminal" },
+        },
+    },
+
+    {
         "MagicDuck/grug-far.nvim",
         cmd = "GrugFar",
         -- stylua: ignore

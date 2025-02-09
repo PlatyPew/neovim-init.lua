@@ -19,11 +19,6 @@ remap({ "n", "x" }, ";", ":")
 
 -- Cycling buffers
 remap("n", "<Leader>bo", "<Cmd>enew<CR>", { desc = "Open New Buffer" })
-remap("n", "<Leader>bh", "<Cmd>bfirst<CR>", { desc = "Cycle First Buffer" })
-remap("n", "<Leader>bj", "<Cmd>bnext<CR>", { desc = "Cycle Next Buffer" })
-remap("n", "<Leader>bk", "<Cmd>bprevious<CR>", { desc = "Cycle Previous Buffer" })
-remap("n", "<Leader>bl", "<Cmd>blast<CR>", { desc = "Cycle Last Buffer" })
-remap("n", "<Leader>bq", "<Cmd>bdelete!<CR>", { desc = "Delete Buffer" })
 
 -- Quickfix lists
 remap("n", "<Leader>qo", "<Cmd>copen<CR>", { desc = "Open Quickfix List" })
