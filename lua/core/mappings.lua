@@ -3,24 +3,19 @@ local remap = vim.keymap.set
 -- Vanilla
 -- Rebinds arrow keys to increase/decrease size of pane while in normal/visual mode
 -- Increase horizontal split
-remap("n", "<Up>", "<Cmd>resize +2<CR>")
-remap("v", "<Up>", "<Cmd>resize +2<CR>")
+remap({ "n", "x" }, "<Up>", "<Cmd>resize +2<CR>")
 
 -- Decrease horizontal split
-remap("n", "<Down>", "<Cmd>resize -2<CR>")
-remap("v", "<Down>", "<Cmd>resize -2<CR>")
+remap({ "n", "x" }, "<Down>", "<Cmd>resize -2<CR>")
 
 -- Decrease vertical split
-remap("n", "<Left>", "<Cmd>vertical resize -2<CR>")
-remap("v", "<Left>", "<Cmd>vertical resize -2<CR>")
+remap({ "n", "x" }, "<Left>", "<Cmd>vertical resize -2<CR>")
 
 -- Increase vertical split
-remap("n", "<Right>", "<Cmd>vertical resize +2<CR>")
-remap("v", "<Right>", "<Cmd>vertical resize +2<CR>")
+remap({ "n", "x" }, "<Right>", "<Cmd>vertical resize +2<CR>")
 
 -- Remap semicolon to colon
-remap("n", ";", ":")
-remap("v", ";", ":")
+remap({ "n", "x" }, ";", ":")
 
 -- Cycling buffers
 remap("n", "<Leader>bo", "<Cmd>enew<CR>", { desc = "Open New Buffer" })
@@ -57,11 +52,7 @@ remap("i", ".", ".<C-g>u")
 
 -- Indent when going into insert mode
 remap("n", "i", function()
-    if #vim.fn.getline(".") == 0 then
-        return [["_cc]]
-    else
-        return "i"
-    end
+    return #vim.fn.getline(".") == 0 and [["_cc]] or "i"
 end, { expr = true })
 
 -- Better escape for terminal
