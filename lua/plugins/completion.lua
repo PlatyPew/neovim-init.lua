@@ -7,8 +7,8 @@ return {
         opts = {
             keymap = {
                 preset = "default",
-                ["<S-Tab>"] = { "select_prev", "fallback" },
-                ["<Tab>"] = { "select_next", "fallback" },
+                ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+                ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
                 ["<CR>"] = { "accept", "fallback" },
             },
             appearance = { nerd_font_variant = "mono" },
