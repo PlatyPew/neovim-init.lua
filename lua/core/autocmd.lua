@@ -15,12 +15,11 @@ autocmd("FileType", {
             "NeogitStatus",
             "WhichKey",
             "dashboard",
-            "fzf",
             "lazy",
             "mason",
-            "undotree",
             "Avante",
             "AvanteInput",
+            "snacks_picker_input",
         }
 
         if not vim.tbl_contains(ft, vim.bo.filetype) then

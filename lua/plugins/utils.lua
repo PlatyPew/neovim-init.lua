@@ -54,7 +54,7 @@ return {
 
             input = { enabled = true },
             notifier = { enabled = true, timeout = 3000 },
-            picker = { enabled = false },
+            picker = { enabled = true },
             quickfile = { enabled = true },
             rename = { enabled = true },
             scope = { enabled = true },
@@ -63,10 +63,30 @@ return {
         -- stylua: ignore
         keys = {
             { "<leader>bq", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
-            { "<leader>bD", function() Snacks.bufdelete.other() end, desc = "Delete All Other Buffers" },
+            { "<leader>bQ", function() Snacks.bufdelete.other() end, desc = "Delete All Other Buffers" },
             { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
-            { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
             { "<Leader>t", function() Snacks.terminal() end, desc = "Toggle Terminal" },
+
+            { "<C-p>", function() Snacks.picker.smart() end, desc = "Fuzzy Find Files" },
+            { "<Leader>ff", function() Snacks.picker.smart() end, desc = "Fuzzy Find Files" },
+            { "<C-g>", function() Snacks.picker.grep() end, desc = "Fuzzy Grep Files" },
+            { "<Leader>fr", function() Snacks.picker.grep() end, desc = "Fuzzy Grep Files" },
+            { "<leader>f/", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
+            { "<leader>fM", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+            { "<leader>fR", function() Snacks.picker.registers() end, desc = "Registers" },
+            { "<leader>fc", function() Snacks.picker.command_history() end, desc = "Command History" },
+            { "<leader>fm", function() Snacks.picker.marks() end, desc = "Marks" },
+            { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
+            { "<leader>fq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
+            { "<leader>fs", function() Snacks.picker.spelling() end, desc = "Spell Suggest" },
+
+            { "<leader>gl", function() Snacks.picker.git_log({ layout = "sidebar" }) end, desc = "Git Log" },
+            { "<leader>gL", function() Snacks.picker.git_log_line({ layout = "sidebar" }) end, desc = "Git Log Line" },
+
+            { "<leader>ld", function() Snacks.picker.diagnostics({ layout = "ivy" }) end, desc = "Diagnostics" },
+            { "<leader>lD", function() Snacks.picker.diagnostics_buffer({ layout = "ivy" }) end, desc = "Buffer Diagnostics" },
+
+            { "<Leader>u", function() Snacks.picker.undo({ layout = "sidebar" }) end, desc = "Undo History" },
         },
     },
 
@@ -101,20 +121,6 @@ return {
         },
         init = function()
             vim.api.nvim_create_user_command("W", "SudaWrite", {})
-        end,
-    },
-
-    {
-        "mbbill/undotree",
-        cmd = "UndotreeToggle",
-        -- stylua: ignore
-        keys = {
-            { "<Tab>", "<Cmd>UndotreeToggle<CR>", desc = "Toggle Undotree" },
-            { "<Leader>u", "<Cmd>UndotreeToggle<CR>", desc = "Toggle UndoTree" },
-        },
-        init = function()
-            vim.o.undodir = vim.fn.stdpath("cache") .. "/undotree"
-            vim.o.undofile = true
         end,
     },
 
@@ -188,11 +194,8 @@ return {
                 { "<Leader>M", group = "Markdown" },
                 { "<Leader>a", group = "Avante", mode = { "n", "v" } },
                 { "<Leader>b", group = "Buffers" },
-                {
-                    { "<Leader>d", group = "DAP" },
-                    { "<Leader>df", group = "FZF" },
-                },
-                { "<Leader>f", group = "FZF" },
+                { "<Leader>d", group = "DAP" },
+                { "<Leader>f", group = "Picker" },
                 { "<Leader>g", group = "Git", mode = { "n", "v" } },
                 {
                     { "<Leader>i", group = "Installers" },
@@ -203,7 +206,6 @@ return {
                 {
                     { "<Leader>l", group = "LSP" },
                     { "<Leader>lI", "<Cmd>LspInfo<CR>", desc = "LSP Info" },
-                    { "<Leader>lf", desc = "FZF" },
                 },
                 { "<Leader>r", group = "Sniprun" },
                 { "<Leader>q", group = "Quickfix" },

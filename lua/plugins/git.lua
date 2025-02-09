@@ -48,11 +48,6 @@ return {
             remap("n", "<Leader>gu", "<Cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Undo Stage Hunk" })
             remap("v", "<Leader>gs", "<Cmd>Gitsigns stage_hunk<CR>", { desc = "Stage Hunk" })
             remap("v", "<Leader>gu", "<Cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Undo Stage Hunk" })
-
-            remap("n", "<Leader>gfC", "<Cmd>FzfLua git_bcommits<CR>", { desc = "Buffer Commit Log" })
-            remap("n", "<Leader>gfc", "<Cmd>FzfLua git_commits<CR>", { desc = "Project Commit Log" })
-            remap("n", "<Leader>gff", "<Cmd>FzfLua git_files<CR>", { desc = "Files" })
-            remap("n", "<Leader>gfs", "<Cmd>FzfLua git_status<CR>", { desc = "Status" })
             -- stylua: ignore end
         end,
     },
@@ -65,7 +60,6 @@ return {
         },
         dependencies = {
             "sindrets/diffview.nvim",
-            "ibhagwan/fzf-lua",
         },
         opts = {
             kind = "auto",

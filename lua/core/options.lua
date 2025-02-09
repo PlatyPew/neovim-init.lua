@@ -28,6 +28,8 @@ opt.whichwrap = "b,s,<,>,h,l"
 opt.wrap = true
 opt.cmdheight = 0
 opt.showcmdloc = "statusline"
+opt.undodir = vim.fn.stdpath("cache") .. "/undotree"
+opt.undofile = true
 
 -- Python packages
 if vim.fn.isdirectory(vim.fn.stdpath("data") .. "/venv") == 0 then

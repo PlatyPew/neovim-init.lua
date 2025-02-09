@@ -82,14 +82,6 @@ return {
             -- stylua: ignore start
             local remap = vim.keymap.set
             remap("n", "<Leader>li", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, { desc = "Toggle Inlay Hints" })
-
-            remap("n", "<Leader>lfs", "<Cmd>FzfLua lsp_document_symbols<CR>", { desc = "Document Symbols" })
-            remap("n", "<Leader>lfS", "<Cmd>FzfLua lsp_workspace_symbols<CR>", { desc = "Workspace Symbols" })
-            remap("n", "<Leader>lfd", "<Cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "Document Diagnostics" })
-            remap("n", "<Leader>lfD", "<Cmd>FzfLua lsp_workspace_diagnostics<CR>", { desc = "Workspace Diagnostics" })
-
-            remap("n", "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Previous Diagnostic" })
-            remap("n", "]d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Next Diagnostic" })
             -- stylua: ignore end
         end,
     },
@@ -102,14 +94,14 @@ return {
             { "ga", "<Cmd>Lspsaga code_action<CR>", desc = "Show Code Actions" },
             { "gp", "<Cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
             { "gh", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
+            { "K", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
             { "gr", "<Cmd>Lspsaga rename<CR>", desc = "Rename Variable" },
             { "gx", "<Cmd>Lspsaga finder<CR>", desc = "Find Reference" },
 
-            { "<Leader>lD", "<Cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Show Buffer Diagnostics" },
-            { "<Leader>l[", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous Diagnostic" },
-            { "<Leader>l]", "<Cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next Diagnostic" },
+            { "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous Diagnostic" },
+            { "]d", "<Cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next Diagnostic" },
+
             { "<Leader>lc", "<Cmd>Lspsaga code_action<CR>", desc = "Code Action" },
-            { "<Leader>ld", "<Cmd>Lspsaga show_line_diagnostics<CR>", desc = "Show Line Diagnostics" },
             { "<Leader>lh", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Documentation" },
             { "<Leader>lp", "<Cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
             { "<Leader>lr", "<Cmd>Lspsaga rename<CR>", desc = "Rename Variable" },
