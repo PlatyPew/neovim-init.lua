@@ -9,6 +9,7 @@ return {
                 preset = "default",
                 ["<S-Tab>"] = { "select_prev", "fallback" },
                 ["<Tab>"] = { "select_next", "fallback" },
+                ["<CR>"] = { "accept", "fallback" },
             },
             appearance = { nerd_font_variant = "mono" },
             sources = {
