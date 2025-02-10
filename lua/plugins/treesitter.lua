@@ -2,7 +2,7 @@ return {
     {
         -- Highlight, edit, and navigate code
         "nvim-treesitter/nvim-treesitter",
-        event = "VeryLazy",
+        event = "BufRead",
         build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-refactor",
