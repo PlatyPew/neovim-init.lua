@@ -36,7 +36,7 @@ return {
             { "<leader>fc", function() Snacks.picker.command_history() end, desc = "Command History" },
             { "<leader>fm", function() Snacks.picker.marks() end, desc = "Marks" },
             { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
-            { "<leader>fq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
+            { "<leader>fq", function() Snacks.picker.qflist({ layout = "ivy" }) end, desc = "Quickfix List" },
             { "<leader>fs", function() Snacks.picker.spelling() end, desc = "Spell Suggest" },
 
             { "<leader>gl", function() Snacks.picker.git_log({ layout = "sidebar" }) end, desc = "Git Log" },
@@ -47,5 +47,6 @@ return {
 
             { "<Leader>u", function() Snacks.picker.undo({ layout = "sidebar" }) end, desc = "Undo History" },
         }
+,
     },
 }
