@@ -2,7 +2,9 @@ return {
     {
         "echasnovski/mini.surround",
         keys = {
-            { "ys", "cs", "ds", mode = "n" },
+            { "ys" },
+            { "cs" },
+            { "ds" },
             { "s", mode = "x" },
         },
         opts = {
