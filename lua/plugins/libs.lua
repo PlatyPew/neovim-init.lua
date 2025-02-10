@@ -5,6 +5,14 @@ return {
         specs = {
             { "nvim-tree/nvim-web-devicons", enabled = false, optional = true },
         },
+        opts = {
+            filetype = {
+                sh = { glyph = "" },
+                bash = { glyph = "" },
+                fish = { glyph = "" },
+                zsh = { glyph = "" },
+            },
+        },
         init = function()
             package.preload["nvim-web-devicons"] = function()
                 require("mini.icons").mock_nvim_web_devicons()
@@ -28,5 +36,5 @@ return {
         "stevearc/dressing.nvim",
         lazy = true,
         config = true,
-    }
+    },
 }
