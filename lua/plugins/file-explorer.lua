@@ -27,9 +27,9 @@ return {
         -- stylua: ignore
         keys = {
             { "<C-p>", function() Snacks.picker.smart() end, desc = "Fuzzy Find Files" },
-            { "<Leader>ff", function() Snacks.picker.smart() end, desc = "Fuzzy Find Files" },
-            { "<C-g>", function() Snacks.picker.grep() end, desc = "Fuzzy Grep Files" },
-            { "<Leader>fr", function() Snacks.picker.grep() end, desc = "Fuzzy Grep Files" },
+            { "<C-g>", function() Snacks.picker.grep({ hidden = true }) end, desc = "Fuzzy Grep Files" },
+            { "<Leader>ff", function() Snacks.picker.files() end, desc = "Fuzzy Find Files" },
+            { "<Leader>fr", function() Snacks.picker.grep({ hidden = true }) end, desc = "Fuzzy Grep Files" },
             { "<leader>f/", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
             { "<leader>fM", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
             { "<leader>fR", function() Snacks.picker.registers() end, desc = "Registers" },
